@@ -119,3 +119,7 @@
     flex-direction: column;
   }
 }
+
+.bio img {
+  border-radius: 50%;
+}
