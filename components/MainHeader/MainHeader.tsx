@@ -3,9 +3,14 @@ import React, { FC } from "react";
 import HeaderNav from "./HeaderNav";
 import MainMenuMobile from "./MainMenuMobile";
 import styles from "./styles.module.css";
+// import { useScroll } from "@umijs/hooks";
 
 const MainHeader: FC = () => {
   const { lg } = useResponsive();
+  // if (process.browser) {
+  //   const [scroll] = useScroll(document);
+  //   console.log(scroll);
+  // }
 
   return (
     <header className={styles.mainHeaderContainer}>

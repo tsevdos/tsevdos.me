@@ -1,6 +1,9 @@
 .socialButtonsContainer {
   list-style-type: none;
-  /* display: flex; */
-  text-align: end;
-  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.socialButtonsContainer li {
+  margin: 0 1rem;
 }
