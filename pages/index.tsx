@@ -1,5 +1,6 @@
 import Head from "next/head";
-import { MainHeader } from "../components";
+import { MainHeader, SocialButtons } from "../components";
+import styles from "../styles/Home.module.css";
 
 const Home = () => {
   return (
@@ -10,15 +11,23 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <MainHeader />
-        <section>
-          {/* <h1 className={styles.title}>
-            Hi, I’m a software engineer from Athens 🇬🇷 and huge fan of Jamstack. I'm working
-            full-time at Epignosis and I'm sharing my JavaScript and React knowledge at Code.Hub and
-            Social Hackers Academy! Say hello or keep scrolling!
-          </h1> */}
-          {/* <SocialButtons /> */}
+      <MainHeader />
+      <main className={styles.main}>
+        <section id="intro">
+          <div className={styles.intro}>
+            <h1>John Tsevdos</h1>
+
+            <SocialButtons />
+          </div>
+        </section>
+        <section className="bio" id="bio">
+          <h1>About me</h1>
+          <p>
+            I'm a lead front-end developer that hand-crafts usable, elegant and effective web
+            applications. I'm currently working at Epignosis an eLearning solutions company with 3
+            products, TalentLMS, eFront and TalentCards. I have over 12 years of experience in
+            front-end technologies and love working with TypeScript and JavaScript.
+          </p>
         </section>
       </main>
     </>
