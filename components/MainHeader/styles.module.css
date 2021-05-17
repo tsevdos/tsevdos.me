@@ -21,6 +21,10 @@
   padding: 0 1rem;
 }
 
+/* .navContainer a:active {
+  font-weight: 700;
+} */
+
 .mobile {
   width: 100%;
   padding: 1rem 2rem;

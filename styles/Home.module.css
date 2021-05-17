@@ -17,12 +17,19 @@
 }
 
 /* .main section {
-  height: 90vh;
+  height: 80vh;
 } */
 
 .intro {
   width: 40%;
+  /* @media (max-width: 600px) {
+    width: 40%;
+  } */
 }
+
+/* .introContainer img {
+  display: none;
+} */
 
 .introContainer {
   display: flex;
@@ -30,10 +37,3 @@
   align-items: center;
   margin-top: 2rem;
 }
-
-/* @media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-} */

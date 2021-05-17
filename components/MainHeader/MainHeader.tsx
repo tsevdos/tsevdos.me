@@ -9,7 +9,7 @@ const MainHeader: FC = () => {
   const { lg } = useResponsive();
   // if (process.browser) {
   //   const [scroll] = useScroll(document);
-  //   console.log(scroll);
+  //   console.log(scroll.top);
   // }
 
   return (

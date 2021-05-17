@@ -1,0 +1,7 @@
+.card {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 1rem;
+}
