@@ -1,0 +1,7 @@
+.projectContainer {
+  display: flex;
+}
+
+.projectContainer img {
+  height: 400px;
+}

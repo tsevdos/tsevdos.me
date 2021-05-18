@@ -6,9 +6,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
+  padding: 0 2rem 0 4rem;
   /* box-shadow: 0px 3px 6px lightgray; */
-  background-color: white;
+  background-color: #f5f5f5;
   z-index: 1;
 }
 
@@ -19,6 +20,11 @@
 
 .navContainer li {
   padding: 0 1rem;
+}
+
+.navContainer li:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
 }
 
 /* .navContainer a:active {

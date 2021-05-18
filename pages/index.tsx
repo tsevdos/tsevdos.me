@@ -1,9 +1,11 @@
 import Head from "next/head";
 import React from "react";
-import { MainHeader, SocialButtons, VideoCard } from "../components";
+import { MainHeader, SocialButtons, VideoCard, Project } from "../components";
 import styles from "../styles/Home.module.css";
 import Link from "@material-ui/core/Link";
 import presentation from "../mocks/presentation";
+import projects from "../mocks/projects";
+import Button from "@material-ui/core/Button";
 
 const Home = () => {
   return (
@@ -20,10 +22,10 @@ const Home = () => {
 
       <MainHeader />
       <main className={styles.main}>
-        <section id="intro" className={styles.introContainer}>
+        <section id="home" className={styles.introContainer}>
           <div className={styles.intro}>
             <h1 style={{ fontSize: 32 }}>
-              Hi I'm John Tsevdos and I'm a lead front-end developer from Athens, Greece.
+              Hi, I'm John Tsevdos and I'm a lead front-end developer from Athens, Greece.
             </h1>
             <p style={{ fontSize: 18, lineHeight: 1.5, color: "darkslategray" }}>
               I am a huge fan of Jamstack. I'm working full-time at{" "}
@@ -53,36 +55,53 @@ const Home = () => {
             style={{ borderRadius: "50%", height: 420, marginBottom: "3rem" }}
           />
         </section>
-        {/* <section className="bio" id="bio">
-          <h1>About me</h1>
-          <div>
-            <p style={{ fontSize: 18 }}>
-              I'm a lead front-end developer that hand-crafts usable, elegant and effective web
-              applications. I'm currently working at Epignosis an eLearning solutions company with 3
-              products, TalentLMS, eFront and TalentCards. I have over 12 years of experience in
-              front-end technologies and love working with TypeScript and JavaScript.
-            </p>
-            <p style={{ fontSize: 18 }}>
-              The last 4 years, I've been enjoying building components with React using various
-              state management tools (such as redux, MobX, recoil and zustand) and of course react's
-              extensive ecosystem ( React Router, React Query, styled-components and emotion.js,
-              immer, recompose, redux-saga, reselect, reactstrap, material UI, Ant Design and many
-              more). I'm also trying to learn Rust and improve my knowledge in functional and
-              reactive programming by using / learning relevant languages and libraries such as Elm,
-              ramda.js and RxJS.
-            </p>
-            <p style={{ fontSize: 18 }}>
-              Finally, I have hands-on experience in many other JavaScript frameworks and libraries
-              such as Vue.js, Angular, svelte, backbone.js, jQuery, underscore and lodash, axios,
-              moment.js and many more. On the backend stack, I love working with node.js, Next.js
-              and express, but I also have decent knowledge in PHP, Ruby (and Rails) and of course
-              on various SQL and NoSQL databases such as MongoDB, PostgreSQL, MySQL and Fauna DB.
-              I'm also a huge fan of Linux OS (currently using Ubuntu), git, agile methodologies and
-              always trying to do as much of TDD (Test-Driven Development) as possible.
-            </p>
+        <section className="bio" id="about" style={{ marginBottom: "4rem" }}>
+          <h1>ABOUT ME</h1>
+
+          <div style={{ display: "flex" }}>
+            <div style={{ marginRight: "1rem" }}>
+              <p style={{ fontSize: 18, marginBottom: "2rem" }}>
+                I'm a lead front-end developer that hand-crafts usable, elegant and effective web
+                applications. I'm currently working at Epignosis an eLearning solutions company with
+                3 products, TalentLMS, eFront and TalentCards. I have over 12 years of experience in
+                front-end technologies and love working with TypeScript and JavaScript.
+              </p>
+              <p style={{ fontSize: 18 }}>
+                The last 4 years, I've been enjoying building components with React using various
+                state management tools (such as redux, MobX, recoil and zustand) and of course
+                react's extensive ecosystem ( React Router, React Query, styled-components and
+                emotion.js, immer, recompose, redux-saga, reselect, reactstrap, material UI, Ant
+                Design and many more). I'm also trying to learn Rust and improve my knowledge in
+                functional and reactive programming by using / learning relevant languages and
+                libraries such as Elm, ramda.js and RxJS.
+              </p>
+            </div>
+            <div>
+              <p style={{ fontSize: 18, marginBottom: "2rem" }}>
+                Finally, I have hands-on experience in many other JavaScript frameworks and
+                libraries such as Vue.js, Angular, svelte, backbone.js, jQuery, underscore and
+                lodash, axios, moment.js and many more. On the backend stack, I love working with
+                node.js, Next.js and express, but I also have decent knowledge in PHP, Ruby (and
+                Rails) and of course on various SQL and NoSQL databases such as MongoDB, PostgreSQL,
+                MySQL and Fauna DB. I'm also a huge fan of Linux OS (currently using Ubuntu), git,
+                agile methodologies and always trying to do as much of TDD (Test-Driven Development)
+                as possible.
+              </p>
+              <Button
+                href="http://www.tsevdos.com/wp-content/uploads/john_tsevdos_cv.pdf"
+                target="_blank"
+              >
+                View my full CV
+              </Button>
+            </div>
           </div>
-        </section> */}
-        <section id="presentations" style={{ display: "flex" }}>
+        </section>
+        <section id="projects" style={{ background: "#f5f5f5" }}>
+          {projects.map(({ name, description, img, github_url }) => (
+            <Project name={name} description={description} img={img} github_url={github_url} />
+          ))}
+        </section>
+        {/* <section id="presentations" style={{ display: "flex" }}>
           {presentation.map(({ name, description, video_url, slides_url }) => (
             <VideoCard
               name={name}
@@ -91,7 +110,7 @@ const Home = () => {
               slides_url={slides_url}
             />
           ))}
-        </section>
+        </section> */}
       </main>
     </>
   );

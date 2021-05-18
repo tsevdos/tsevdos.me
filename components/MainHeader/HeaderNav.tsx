@@ -5,25 +5,25 @@ const HeaderNav: FC = () => {
   return (
     <ul className={styles.navContainer}>
       <li>
-        <a href="#intro">Intro</a>
+        <a href="#home">HOME</a>
       </li>
       <li>
-        <a href="#bio">Bio</a>
+        <a href="#about">ABOUT</a>
       </li>
       <li>
-        <a href="#projects">Projects</a>
+        <a href="#projects">PROJECTS</a>
       </li>
-      <li>
+      {/* <li>
         <a href="#knowledge-sharing">Knowledge sharing</a>
       </li>
       <li>
         <a href="#blogs">Blogs</a>
+      </li> */}
+      <li>
+        <a href="#presentations">PRESENTATIONS</a>
       </li>
       <li>
-        <a href="#presentations">Public speaking</a>
-      </li>
-      <li>
-        <a href="#abandonware">Abandonware</a>
+        <a href="#abandonware">ABANDONWARE</a>
       </li>
     </ul>
   );
