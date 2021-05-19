@@ -1,44 +1,47 @@
 import React, { FC } from "react";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 import styles from "./styles.module.css";
+import Link from "@material-ui/core/Link";
 
-type VideoCardProps = {
+type CardProps = {
   name: string;
   description: string;
-  slides_url: string;
-  video_url: string;
+  img?: string;
+  github_url?: string;
+  homepage?: string;
+  slides_url?: string;
+  video_url?: string;
 };
 
-const VideoCard: FC<VideoCardProps> = (props) => {
-  const { name, description, slides_url, video_url } = props;
+const Card: FC<CardProps> = (props) => {
+  const { name, description, img, github_url, homepage, video_url, slides_url } = props;
 
   return (
-    <Card className={styles.card}>
-      <CardActionArea>
-        <CardMedia component="iframe" height="200" src={video_url} />
-
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+    <article className={styles.projectContainer}>
+      {img && <img src={img} />}
+      {video_url && <iframe src={video_url}></iframe>}
+      <div className={styles.details}>
+        <div>
+          <Link href={homepage} target="_blank">
             {name}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button color="primary" href={slides_url} target="_blank">
-          Slides
-        </Button>
-      </CardActions>
-    </Card>
+          </Link>
+          <p>{description}</p>
+        </div>
+        <div>
+          {github_url && (
+            <Button variant="outlined" href={github_url} target="_blank">
+              View on Github
+            </Button>
+          )}
+          {slides_url && (
+            <Button variant="outlined" href={slides_url} target="_blank">
+              Slides
+            </Button>
+          )}
+        </div>
+      </div>
+    </article>
   );
 };
 
-export default VideoCard;
+export default Card;

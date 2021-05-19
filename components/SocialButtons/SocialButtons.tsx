@@ -10,14 +10,6 @@ const SocialButtons: FC = () => {
   return (
     <ul className={styles.socialButtonsContainer}>
       <li>
-        <IconButton
-          href="https://www.linkedin.com/in/tsevdosjohn/?originalSubdomain=gr"
-          target="_blank"
-        >
-          <LinkedInIcon />
-        </IconButton>
-      </li>
-      <li>
         <IconButton href="https://github.com/tsevdos" target="_blank">
           <GitHubIcon />
         </IconButton>
@@ -25,6 +17,14 @@ const SocialButtons: FC = () => {
       <li>
         <IconButton href="https://twitter.com/tsevdos" target="_blank">
           <TwitterIcon />
+        </IconButton>
+      </li>
+      <li>
+        <IconButton
+          href="https://www.linkedin.com/in/tsevdosjohn/?originalSubdomain=gr"
+          target="_blank"
+        >
+          <LinkedInIcon />
         </IconButton>
       </li>
       <li>

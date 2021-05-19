@@ -1,7 +1,25 @@
-.card {
-  width: 400px;
+.projectContainer {
+  display: flex;
+  padding: 2rem 0;
+  /* border-bottom: 1px solid; */
+}
+
+.projectContainer img {
+  width: 500px;
+  height: 300px;
+  border-radius: 5px;
+}
+
+.projectContainer iframe {
+  width: 500px;
+  height: 300px;
+  border-radius: 5px;
+}
+
+.details {
+  margin-left: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0 1rem;
+  max-width: 40%;
 }

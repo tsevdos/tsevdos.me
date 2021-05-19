@@ -26,22 +26,16 @@ const MainMenuMobile: FC = () => {
         </div>
         <ul>
           <li>
-            <a href="#intro">Intro</a>
+            <a href="#intro">Home</a>
           </li>
           <li>
-            <a href="#bio">Bio</a>
+            <a href="#bio">About</a>
           </li>
           <li>
             <a href="#projects">Projects</a>
           </li>
           <li>
-            <a href="#knowledge-sharing">Knowledge sharing</a>
-          </li>
-          <li>
-            <a href="#blogs">Blogs</a>
-          </li>
-          <li>
-            <a href="#presentations">Public speaking</a>
+            <a href="#presentations">Presentations</a>
           </li>
           <li>
             <a href="#abandonware">Abandonware</a>

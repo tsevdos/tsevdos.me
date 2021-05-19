@@ -4,6 +4,7 @@ export default [
     description: "A simple to use and light-weight React validator component",
     img: "",
     github_url: "https://github.com/tsevdos/react-validatus",
+    homepage: "https://www.npmjs.com/package/react-validatus",
   },
   {
     name: "Greek in tech",
@@ -11,6 +12,7 @@ export default [
       "A single-page application (SPA) that displays greek words we use in technology. Check out how many they are!",
     img: "https://tsevdos.me/img/greekInTech.png",
     github_url: "https://github.com/tsevdos/greek-in-tech",
+    homepage: "https://greekintech.com/#entry/2/daemon",
   },
   {
     name: "RepoCompare",
@@ -18,5 +20,6 @@ export default [
       "With Repocompare you can quickly and easily search and compare Github repositories on stars, forks, issues and subscribers.",
     img: "https://tsevdos.me/img/repoCompare.png",
     github_url: "https://github.com/tsevdos/repocompare",
+    homepage: "https://repocompare.io/#/?repos=tsevdos/repocompare",
   },
 ];

@@ -1,10 +1,11 @@
 import Head from "next/head";
 import React from "react";
-import { MainHeader, SocialButtons, VideoCard, Project } from "../components";
+import { MainHeader, SocialButtons, Card } from "../components";
 import styles from "../styles/Home.module.css";
 import Link from "@material-ui/core/Link";
 import presentation from "../mocks/presentation";
 import projects from "../mocks/projects";
+import abandonware from "../mocks/abandonware";
 import Button from "@material-ui/core/Button";
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
       <Head>
         <title>John Tsevdos</title>
         <meta name="description" content="John Tsevdos personal site" />
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="shortcut icon" href="favicon.ico" /> */}
         <link
           href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;1,400&display=swap"
           rel="stylesheet"
@@ -25,7 +26,8 @@ const Home = () => {
         <section id="home" className={styles.introContainer}>
           <div className={styles.intro}>
             <h1 style={{ fontSize: 32 }}>
-              Hi, I'm John Tsevdos and I'm a lead front-end developer from Athens, Greece.
+              Hello, my name is John Tsevdos and I am a lead front-end developer from Athens,
+              Greece.
             </h1>
             <p style={{ fontSize: 18, lineHeight: 1.5, color: "darkslategray" }}>
               I am a huge fan of Jamstack. I'm working full-time at{" "}
@@ -42,7 +44,7 @@ const Home = () => {
                 Social Hackers Academy
               </Link>
               !{" "}
-              <Link href="mailto:tsevdosjohn@gmail.com" target="_blann">
+              <Link href="mailto:tsevdosjohn@gmail.com" target="_blank">
                 Say hello
               </Link>{" "}
               or keep scrolling!
@@ -97,20 +99,40 @@ const Home = () => {
           </div>
         </section>
         <section id="projects" style={{ background: "#f5f5f5" }}>
-          {projects.map(({ name, description, img, github_url }) => (
-            <Project name={name} description={description} img={img} github_url={github_url} />
+          <h1>PROJECTS</h1>
+          {projects.map(({ name, description, img, github_url, homepage }) => (
+            <Card
+              name={name}
+              description={description}
+              img={img}
+              github_url={github_url}
+              homepage={homepage}
+            />
           ))}
         </section>
-        {/* <section id="presentations" style={{ display: "flex" }}>
+        <section id="presentations">
+          <h1>PRESENTATIONS</h1>
           {presentation.map(({ name, description, video_url, slides_url }) => (
-            <VideoCard
+            <Card
               name={name}
               description={description}
               video_url={video_url}
               slides_url={slides_url}
             />
           ))}
-        </section> */}
+        </section>
+        <section id="abandonware" style={{ background: "#f5f5f5" }}>
+          <h1>ABANDONWARE</h1>
+          {abandonware.map(({ name, description, img, github_url, homepage }) => (
+            <Card
+              name={name}
+              description={description}
+              img={img}
+              github_url={github_url}
+              homepage={homepage}
+            />
+          ))}
+        </section>
       </main>
     </>
   );
