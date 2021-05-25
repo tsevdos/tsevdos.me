@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import { IconButton } from "@material-ui/core";
 import Drawer from "@material-ui/core/Drawer";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 import CloseIcon from "@material-ui/icons/Close";
 
 const MainMenuMobile: FC = () => {

@@ -2,7 +2,7 @@ import { useResponsive } from "@umijs/hooks";
 import React, { FC } from "react";
 import HeaderNav from "./HeaderNav";
 import MainMenuMobile from "./MainMenuMobile";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 // import { useScroll } from "@umijs/hooks";
 
 const MainHeader: FC = () => {

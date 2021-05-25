@@ -19,15 +19,15 @@
 .navContainer {
   display: flex;
   list-style-type: none;
-}
 
-.navContainer li {
-  padding: 0 1rem;
-}
+  li {
+    padding: 0 1rem;
+  }
 
-.navContainer li:hover {
-  text-decoration: underline;
-  text-underline-offset: 10px;
+  li:hover {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+  }
 }
 
 /* .navContainer a:active {
