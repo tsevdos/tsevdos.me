@@ -14,7 +14,7 @@ const Home = () => {
       <Head>
         <title>John Tsevdos</title>
         <meta name="description" content="John Tsevdos personal site" />
-        {/* <link rel="shortcut icon" href="favicon.ico" /> */}
+        <link rel="shortcut icon" href="favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;1,400&display=swap"
           rel="stylesheet"
@@ -57,18 +57,18 @@ const Home = () => {
             style={{ borderRadius: "50%", height: 420, marginBottom: "3rem" }}
           />
         </section>
-        <section className="bio" id="about" style={{ marginBottom: "4rem" }}>
+        <section className={styles.aboutContainer} id="about">
           <h1>ABOUT ME</h1>
 
           <div style={{ display: "flex" }}>
-            <div style={{ marginRight: "1rem" }}>
-              <p style={{ fontSize: 18, marginBottom: "2rem" }}>
+            <div style={{ marginRight: "1rem", width: "50%" }}>
+              <p>
                 I'm a lead front-end developer that hand-crafts usable, elegant and effective web
                 applications. I'm currently working at Epignosis an eLearning solutions company with
                 3 products, TalentLMS, eFront and TalentCards. I have over 12 years of experience in
                 front-end technologies and love working with TypeScript and JavaScript.
               </p>
-              <p style={{ fontSize: 18 }}>
+              <p>
                 The last 4 years, I've been enjoying building components with React using various
                 state management tools (such as redux, MobX, recoil and zustand) and of course
                 react's extensive ecosystem ( React Router, React Query, styled-components and
@@ -77,9 +77,7 @@ const Home = () => {
                 functional and reactive programming by using / learning relevant languages and
                 libraries such as Elm, ramda.js and RxJS.
               </p>
-            </div>
-            <div>
-              <p style={{ fontSize: 18, marginBottom: "2rem" }}>
+              <p>
                 Finally, I have hands-on experience in many other JavaScript frameworks and
                 libraries such as Vue.js, Angular, svelte, backbone.js, jQuery, underscore and
                 lodash, axios, moment.js and many more. On the backend stack, I love working with
@@ -92,6 +90,7 @@ const Home = () => {
               <Button
                 href="http://www.tsevdos.com/wp-content/uploads/john_tsevdos_cv.pdf"
                 target="_blank"
+                variant="outlined"
               >
                 View my full CV
               </Button>
@@ -100,6 +99,7 @@ const Home = () => {
         </section>
         <section id="projects" style={{ background: "#f5f5f5" }}>
           <h1>PROJECTS</h1>
+
           {projects.map(({ name, description, img, github_url, homepage }) => (
             <Card
               name={name}
@@ -112,6 +112,7 @@ const Home = () => {
         </section>
         <section id="presentations">
           <h1>PRESENTATIONS</h1>
+
           {presentation.map(({ name, description, video_url, slides_url }) => (
             <Card
               name={name}
@@ -123,6 +124,7 @@ const Home = () => {
         </section>
         <section id="abandonware" style={{ background: "#f5f5f5" }}>
           <h1>ABANDONWARE</h1>
+          <p>Projects I no longer support / maintain. Feel free to fork and update them!</p>
           {abandonware.map(({ name, description, img, github_url, homepage }) => (
             <Card
               name={name}
