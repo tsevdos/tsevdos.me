@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Button from "@material-ui/core/Button";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 import Link from "@material-ui/core/Link";
 
 type CardProps = {
@@ -17,7 +17,7 @@ const Card: FC<CardProps> = (props) => {
   const { name, description, img, github_url, homepage, video_url, slides_url } = props;
 
   return (
-    <article className={styles.projectContainer}>
+    <article className={styles.cardContainer}>
       {img && <img src={img} />}
       {video_url && <iframe src={video_url}></iframe>}
       <div className={styles.details}>

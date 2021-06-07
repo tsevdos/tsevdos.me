@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import { MainHeader, SocialButtons, Card } from "../components";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 import Link from "@material-ui/core/Link";
 import presentation from "../mocks/presentation";
 import projects from "../mocks/projects";
@@ -24,12 +24,13 @@ const Home = () => {
       <MainHeader />
       <main className={styles.main}>
         <section id="home" className={styles.introContainer}>
+          <img src="https://avatars.githubusercontent.com/u/175707?v=4" />
           <div className={styles.intro}>
-            <h1 style={{ fontSize: 32 }}>
+            <h1>
               Hello, my name is John Tsevdos and I am a lead front-end developer from Athens,
               Greece.
             </h1>
-            <p style={{ fontSize: 18, lineHeight: 1.5, color: "darkslategray" }}>
+            <p>
               I am a huge fan of Jamstack. I'm working full-time at{" "}
               <Link href="https://www.epignosishq.com/" target="_blank">
                 Epignosis
@@ -49,13 +50,9 @@ const Home = () => {
               </Link>{" "}
               or keep scrolling!
             </p>
-            <hr style={{ border: "1px solid black", margin: "2rem 0" }} />
+            <hr />
             <SocialButtons />
           </div>
-          <img
-            src="https://avatars.githubusercontent.com/u/175707?v=4"
-            style={{ borderRadius: "50%", height: 420, marginBottom: "3rem" }}
-          />
         </section>
         <section className={styles.aboutContainer} id="about">
           <h1>ABOUT ME</h1>
@@ -97,7 +94,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section id="projects" style={{ background: "#f5f5f5" }}>
+        <section id="projects" className={styles.projectContainer}>
           <h1>PROJECTS</h1>
 
           {projects.map(({ name, description, img, github_url, homepage }) => (
@@ -122,7 +119,7 @@ const Home = () => {
             />
           ))}
         </section>
-        <section id="abandonware" style={{ background: "#f5f5f5" }}>
+        <section id="abandonware" className={styles.abandonwareContainer}>
           <h1>ABANDONWARE</h1>
           <p>Projects I no longer support / maintain. Feel free to fork and update them!</p>
           {abandonware.map(({ name, description, img, github_url, homepage }) => (
