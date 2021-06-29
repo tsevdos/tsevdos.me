@@ -57,8 +57,8 @@ const Home = () => {
         <section className={styles.aboutContainer} id="about">
           <h1>ABOUT ME</h1>
 
-          <div style={{ display: "flex" }}>
-            <div style={{ marginRight: "1rem", width: "50%" }}>
+          <div className={styles.details}>
+            <div className={styles.about}>
               <p>
                 I'm a lead front-end developer that hand-crafts usable, elegant and effective web
                 applications. I'm currently working at Epignosis an eLearning solutions company with
@@ -92,6 +92,7 @@ const Home = () => {
                 View my full CV
               </Button>
             </div>
+            <div>something about my blog here</div>
           </div>
         </section>
         <section id="projects" className={styles.projectContainer}>
@@ -107,7 +108,7 @@ const Home = () => {
             />
           ))}
         </section>
-        <section id="presentations">
+        <section id="presentations" style={{ display: "none" }}>
           <h1>PRESENTATIONS</h1>
 
           {presentation.map(({ name, description, video_url, slides_url }) => (
