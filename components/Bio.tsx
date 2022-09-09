@@ -1,11 +1,11 @@
 const Bio = () => (
   <div className="bg-gray-800">
-    <div className="container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-8">
+    <div className="container xl:max-w-7xl mx-auto px-4 py-8 lg:px-8">
       <h2 className="text-3xl md:text-4xl font-extrabold mb-2 text-white">Bio</h2>
       <h3 className="text-base md:text-xl font-extrabold mb-4 text-blue-200">Learn more about me</h3>
       <hr className="h-0 w-full my-8 border-t-2 border-slate-300" />
 
-      <p className="text-xlg md:text-2xl md:leading-relaxed font-medium text-gray-300 my-16">
+      <p className="text-xl md:leading-relaxed font-medium text-gray-300 my-8">
         I&apos;m a lead front-end developer that hand-crafts usable, elegant and effective web applications. I&apos;m
         currently working at{" "}
         <a href="https://www.epignosishq.com" className="text-blue-300 underline" rel="noreferrer" target="_blank">
@@ -26,7 +26,7 @@ const Bio = () => (
         . I have over 15 years of experience in front-end technologies and love working with TypeScript and JavaScript.
       </p>
 
-      <p className="text-xlg md:text-2xl md:leading-relaxed font-medium text-gray-300 my-16">
+      <p className="text-xl md:leading-relaxed font-medium text-gray-300 my-8">
         The last 4 years, I&apos;ve been enjoying building components with
         <a
           href="https://facebook.github.io/react/"
@@ -187,7 +187,7 @@ const Bio = () => (
         and many more.
       </p>
 
-      <p className="text-xlg md:text-2xl md:leading-relaxed font-medium text-gray-300 my-16">
+      <p className="text-xl md:leading-relaxed font-medium text-gray-300 my-0">
         On the backend stack, I love working with{" "}
         <a href="https://nodejs.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
           node.js

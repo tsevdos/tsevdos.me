@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import paths from "../constants/paths";
 
 const Header = () => (
@@ -8,6 +9,13 @@ const Header = () => (
         <div>
           <Link href={paths.root}>
             <a className="inline-flex items-center space-x-2 font-bold text-3xl tracking-wide text-white hover:opacity-75">
+              <Image
+                src="https://secure.gravatar.com/avatar/aedf682258c2e2e822a9357ffa3e733f"
+                alt="John Tsevdos"
+                width={40}
+                height={40}
+                className="inline-block w-10 h-10 rounded-full"
+              />{" "}
               <span>Tsevdos.me</span>
             </a>
           </Link>

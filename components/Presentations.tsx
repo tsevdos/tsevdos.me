@@ -1,10 +1,9 @@
 const Presentations = () => (
   <div className="bg-gray-800">
-    <div className="container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-8">
+    <div className="container xl:max-w-7xl mx-auto px-4 py-8 lg:px-8 lg:py-16">
       <h2 className="text-3xl md:text-4xl font-extrabold mb-2 text-white">Public speaking</h2>
-      <h3 className="text-xl md:text-2xl font-extrabold mb-8 text-blue-200">Presentations and Talks</h3>
-      <hr className="h-0 w-full my-8 border-t-2 border-slate-300" />
-
+      <h3 className="text-xl md:text-2xl font-extrabold mb-2 lg:mb-8 text-blue-200">Presentations and Talks</h3>
+      <hr className="h-0 w-full mb-8 border-t-2 border-slate-300" />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-8">
         <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">
           <div>
@@ -243,13 +242,12 @@ const Presentations = () => (
           </div>
         </div>
       </div>
-
-      <div className="flex flex-col sm:flex-row sm:justify-end my-8">
+      <div className="flex flex-col sm:flex-row sm:justify-end mt-8">
         <a
           href="https://github.com/tsevdos/presentations"
           target="_blank"
           rel="noreferrer"
-          className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none px-6 py-4 leading-6 rounded border-indigo-700 bg-indigo-700 text-white hover:text-white hover:bg-indigo-800 hover:border-indigo-800 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-700 active:border-indigo-700"
+          className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none px-6 py-4 leading-6 rounded border-indigo-700 bg-indigo-700 text-white hover:text-white hover:bg-indigo-800 hover:border-indigo-800 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-700 active:border-indigo-700 truncate"
         >
           <svg
             className="hi-solid hi-document-report inline-block w-5 h-5"

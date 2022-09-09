@@ -2,10 +2,10 @@ import Image from "next/image";
 
 const Projects = () => (
   <div className="bg-gray-800">
-    <div className="container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-8">
+    <div className="container xl:max-w-7xl mx-auto px-4 py-8 lg:px-8 lg:py-16">
       <h2 className="text-3xl md:text-4xl font-extrabold mb-2 text-white">Projects</h2>
-      <h3 className="text-xl md:text-2xl font-extrabold mb-8 text-blue-200">I code stuff</h3>
-      <hr className="h-0 w-full my-8 border-t-2 border-slate-300" />
+      <h3 className="text-xl md:text-2xl font-extrabold mb-2 lg:mb-8 text-blue-200">I code stuff</h3>
+      <hr className="h-0 w-full mb-8 border-t-2 border-slate-300" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
         <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">
@@ -147,7 +147,7 @@ const Projects = () => (
         </div>
       </div>
 
-      <p className="text-xlg md:text-2xl md:leading-relaxed font-medium text-gray-300 my-16">
+      <p className="text-xl md:text-2xl md:leading-relaxed font-medium text-gray-300 mt-8">
         Don&apos;t forget to have a look on my{" "}
         <a
           className="text-blue-300 underline font-bold"

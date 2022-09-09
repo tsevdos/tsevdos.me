@@ -1,11 +1,11 @@
 const KnowledgeSharing = () => (
   <div className="bg-gray-800">
-    <div className="container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-8">
+    <div className="container xl:max-w-7xl mx-auto px-4 py-8 lg:px-8 lg:py-16">
       <h2 className="text-3xl md:text-4xl font-extrabold mb-2 text-white">Knowledge sharing</h2>
-      <h3 className="text-xl md:text-2xl font-extrabold mb-8 text-blue-200">
+      <h3 className="text-xl md:text-2xl font-extrabold mb-2 lg:mb-8 text-blue-200">
         I ️️❤️ being a mentor, teacher and of course student
       </h3>
-      <hr className="h-0 w-full my-8 border-t-2 border-slate-300" />
+      <hr className="h-0 w-full mb-8 border-t-2 border-slate-300" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-8">
         <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">

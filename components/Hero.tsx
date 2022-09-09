@@ -5,7 +5,7 @@ const Hero = () => (
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-white">
           Hello there, <span className="text-blue-200">how can I help?</span>
         </h2>
-        <p className="text-lg md:text-2xl md:leading-relaxed font-medium text-gray-300 lg:w-2/3 mx-auto">
+        <p className="text-xl md:text-2xl md:leading-relaxed font-medium text-gray-300 lg:w-2/3 mx-auto">
           Hi, I&apos;m John Tsevdos, a software engineer from Athens, Greece (🇬🇷), and huge fan of full-stack{" "}
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
@@ -54,7 +54,7 @@ const Hero = () => (
           .
         </p>
       </div>
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center space-y-2 sm:space-y-0 sm:space-x-2 pt-10 pb-16">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center space-y-2 sm:space-y-0 sm:space-x-2 pt-10 md:pb-16">
         <a
           href="https://www.linkedin.com/in/tsevdosjohn"
           target="_blank"
@@ -94,8 +94,7 @@ const Hero = () => (
           </svg>
           <span>npm</span>
         </a>
-
-        <a
+        {/* <a
           href="https://twitter.com/tsevdos"
           target="_blank"
           rel="noreferrer"
@@ -105,12 +104,12 @@ const Hero = () => (
             <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
           </svg>
           <span>Twitter</span>
-        </a>
+        </a> */}
         <a
           href="/john_tsevdos_cv.pdf"
           target="_blank"
           rel="noreferrer"
-          className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none px-6 py-4 leading-6 rounded border-indigo-700 bg-indigo-700 text-white hover:text-white hover:bg-indigo-800 hover:border-indigo-800 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-700 active:border-indigo-700"
+          className="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none px-6 py-4 leading-6 rounded border-indigo-700 bg-indigo-700 text-white hover:text-white hover:bg-indigo-800 hover:border-indigo-800 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-700 active:border-indigo-700 whitespace-nowrap"
         >
           <svg
             className="hi-solid hi-document-download inline-block w-5 h-5"
