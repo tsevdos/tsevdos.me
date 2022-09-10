@@ -8,6 +8,7 @@ const Presentations = () => (
         <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">
           <div>
             <iframe
+              title="Cypress in 10 minutes"
               src="https://www.youtube.com/embed/SgPen5ZORFY"
               frameBorder="0"
               allow="autoplay; encrypted-media"
@@ -61,6 +62,7 @@ const Presentations = () => (
         <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">
           <div>
             <iframe
+              title="Responsive Web Design and touch devices"
               src="https://www.youtube.com/embed/vIkPa3LUudQ"
               frameBorder="0"
               allow="autoplay; encrypted-media"
@@ -110,6 +112,7 @@ const Presentations = () => (
         <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">
           <div>
             <iframe
+              title="Pragmatic Responsive Web Design"
               src="https://www.youtube.com/embed/gNm8lu39TD0"
               frameBorder="0"
               allow="autoplay; encrypted-media"
@@ -155,6 +158,7 @@ const Presentations = () => (
         <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">
           <div>
             <iframe
+              title="Pragmatic Responsive Web Design"
               src="https://www.youtube.com/embed/d8IbJ1QXFlI"
               frameBorder="0"
               allow="autoplay; encrypted-media"
@@ -200,6 +204,7 @@ const Presentations = () => (
         <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">
           <div>
             <iframe
+              title="Drupal Tips 'n Tricks"
               src="https://www.youtube.com/embed/5w2K3Mx7PaU"
               frameBorder="0"
               allow="autoplay; encrypted-media"
