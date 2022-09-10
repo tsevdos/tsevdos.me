@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import avatar from "../public/avatar.jpeg";
 import paths from "../constants/paths";
 
 const Header = () => (
@@ -10,7 +11,7 @@ const Header = () => (
           <Link href={paths.root}>
             <a className="inline-flex items-center space-x-2 font-bold text-3xl tracking-wide text-white hover:opacity-75">
               <Image
-                src="https://secure.gravatar.com/avatar/aedf682258c2e2e822a9357ffa3e733f"
+                src={avatar}
                 alt="John Tsevdos"
                 width={40}
                 height={40}

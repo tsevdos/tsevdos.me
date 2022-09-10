@@ -1,4 +1,7 @@
 import Image from "next/image";
+import reactValidatusPic from "../public/npm.webp";
+import repocomparePic from "../public/repocompare.png";
+import greekintechPic from "../public/greekintech.png";
 
 const Projects = () => (
   <div className="bg-gray-800">
@@ -10,7 +13,7 @@ const Projects = () => (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
         <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">
           <div>
-            <Image src="/npm.webp" alt="React validatus" width="1085" height="550" />
+            <Image src={reactValidatusPic} alt="React validatus" width="1085" height="550" />
           </div>
           <div className="p-5 lg:p-6 grow w-full">
             <h3 className="font-semibold text-2xl mb-2">React-validatus</h3>
@@ -54,7 +57,7 @@ const Projects = () => (
 
         <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">
           <div>
-            <Image src="/repocompare.png" alt="RepoCompare" width="1085" height="550" />
+            <Image src={repocomparePic} alt="RepoCompare" width="1085" height="550" />
           </div>
           <div className="p-5 lg:p-6 grow w-full">
             <h3 className="font-semibold text-2xl mb-2">RepoCompare</h3>
@@ -101,7 +104,7 @@ const Projects = () => (
 
         <div className="flex flex-col rounded shadow-sm bg-white overflow-hidden">
           <div>
-            <Image src="/greekintech.png" alt="Greek in Tech" width="1085" height="550" />
+            <Image src={greekintechPic} alt="Greek in Tech" width="1085" height="550" />
           </div>
           <div className="p-5 lg:p-6 grow w-full">
             <h3 className="font-semibold text-2xl mb-2"> Greek in Tech</h3>
