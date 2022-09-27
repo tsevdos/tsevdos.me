@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Head from "next/head";
-import { Header, Hero, Bio, Projects, KnowledgeSharing, Presentations, Footer } from "../components/";
+import { Header, Hero, Bio, Projects, KnowledgeSharing, Presentations, Footer } from "../components";
 
 const Home: FC = () => {
   return (
