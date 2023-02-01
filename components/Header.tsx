@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/future/image";
+import Image from "next/image";
 import avatar from "../public/avatar.jpeg";
 import paths from "../constants/paths";
 
@@ -8,17 +8,18 @@ const Header = () => (
     <header className="flex flex-none items-center py-8">
       <div className="flex flex-col text-center sm:flex-row sm:items-center sm:justify-between space-y-6 sm:space-y-0 container xl:max-w-7xl mx-auto px-4 lg:px-10">
         <div>
-          <Link href={paths.root}>
-            <a className="inline-flex items-center space-x-2 font-bold text-3xl tracking-wide text-white hover:opacity-75">
-              <Image
-                src={avatar}
-                alt="John Tsevdos"
-                width={40}
-                height={40}
-                className="inline-block w-10 h-10 rounded-full"
-              />{" "}
-              <span>Tsevdos.me</span>
-            </a>
+          <Link
+            href={paths.root}
+            className="inline-flex items-center space-x-2 font-bold text-3xl tracking-wide text-white hover:opacity-75"
+          >
+            <Image
+              src={avatar}
+              alt="John Tsevdos"
+              width={40}
+              height={40}
+              className="inline-block w-10 h-10 rounded-full"
+            />{" "}
+            <span>Tsevdos.me</span>
           </Link>
         </div>
         {/* <nav className="space-x-4 sm:space-x-6">
