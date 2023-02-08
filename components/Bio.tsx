@@ -4,30 +4,18 @@ const Bio = () => (
       <h2 className="text-3xl md:text-4xl font-extrabold mb-2 text-white">Bio</h2>
       <h3 className="text-base md:text-xl font-extrabold mb-4 text-blue-200">Learn more about me</h3>
       <hr className="h-0 w-full my-8 border-t-2 border-slate-300" />
-
       <p className="text-xl md:leading-relaxed font-medium text-gray-300 my-8">
-        I&apos;m a lead front-end developer that hand-crafts usable, elegant and effective web applications. I&apos;m
-        currently working at{" "}
-        <a href="https://www.epignosishq.com" className="text-blue-300 underline" rel="noreferrer" target="_blank">
-          epignosis
-        </a>{" "}
-        an eLearning solutions company with 3 products,{" "}
-        <a href="https://www.talentlms.com" className="text-blue-300 underline" rel="noreferrer" target="_blank">
-          TalentLMS
+        I am a senior software engineer (front end) who creates usable, elegant and effective web applications.
+        Currently, I am employed at{" "}
+        <a href="https://orfium.com" className="text-blue-300 underline" rel="noreferrer" target="_blank">
+          Orfium
         </a>
-        ,{" "}
-        <a href="https://www.efrontlearning.com" className="text-blue-300 underline" rel="noreferrer" target="_blank">
-          eFront
-        </a>{" "}
-        and{" "}
-        <a href="https://www.talentcards.io" className="text-blue-300 underline" rel="noreferrer" target="_blank">
-          TalentCards
-        </a>
-        . I have over 15 years of experience in front-end technologies and love working with TypeScript and JavaScript.
+        , a company specializing in music rights management and monetization solutions. I have over 15 years of
+        experience in front-end technologies and love working with TypeScript and JavaScript.
       </p>
 
       <p className="text-xl md:leading-relaxed font-medium text-gray-300 my-8">
-        The last 4 years, I&apos;ve been enjoying building components with
+        For the past 7 years, I have been building web applications using{" "}
         <a
           href="https://facebook.github.io/react/"
           className="text-blue-300 underline"
@@ -36,23 +24,27 @@ const Bio = () => (
         >
           React
         </a>{" "}
-        using various state management tools (such as{" "}
-        <a href="https://redux.js.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          redux
+        and a variety of frameworks including{" "}
+        <a href="https://nextjs.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
+          Next.js
+        </a>{" "}
+        and{" "}
+        <a href="https://astro.build/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
+          Astro
         </a>
-        ,{" "}
-        <a href="https://mobx.js.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          MobX
+        , as well as state management tools such as{" "}
+        <a href="https://redux.js.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
+          Redux
         </a>
         ,{" "}
         <a href="https://recoiljs.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          recoil
+          Recoil
         </a>{" "}
         and{" "}
         <a href="https://zustand.surge.sh" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          zustand
+          Zustand
         </a>
-        ) and of course react&apos;s extensive ecosystem (
+        . I have also utilized many libraries from the React ecosystem, including{" "}
         <a
           href="https://github.com/ReactTraining/react-router"
           className="text-blue-300 underline"
@@ -77,73 +69,49 @@ const Bio = () => (
           target="_blank"
           rel="noreferrer"
         >
-          styled-components
+          Styled-Components
         </a>{" "}
         and{" "}
         <a href="https://emotion.sh" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          emotion.js
+          Emotion.js
         </a>
         ,{" "}
-        <a
-          href="https://github.com/mweststrate/immer"
-          className="text-blue-300 underline"
-          target="_blank"
-          rel="noreferrer"
-        >
-          immer
+        <a href="https://react-hook-form.com/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
+          React Hook Form
         </a>
         ,{" "}
-        <a
-          href="https://github.com/acdlite/recompose"
-          className="text-blue-300 underline"
-          target="_blank"
-          rel="noreferrer"
-        >
-          recompose
-        </a>
-        ,{" "}
-        <a href="https://redux-saga.js.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          redux-saga
-        </a>
-        ,{" "}
-        <a
-          href="https://github.com/reduxjs/reselect"
-          className="text-blue-300 underline"
-          target="_blank"
-          rel="noreferrer"
-        >
-          reselect
-        </a>
-        ,{" "}
-        <a href="https://reactstrap.github.io/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          reactstrap
-        </a>
-        ,{" "}
-        <a href="https://material-ui.com/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          material UI
+        <a href="https://formatjs.io/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
+          React i18n
         </a>
         ,{" "}
         <a href="https://ant.design/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
           Ant Design
-        </a>{" "}
-        and many more). I&apos;m also trying to learn{" "}
+        </a>
+        ,{" "}
+        <a href="https://material-ui.com/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
+          Material UI
+        </a>
+        ,{" "}
+        <a href="https://reactstrap.github.io/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
+          Reactstrap
+        </a>
+        , and many more. I am constantly striving to improve my knowledge and skills by learning{" "}
         <a href="https://www.rust-lang.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
           Rust
         </a>{" "}
-        and improve my knowledge in functional and reactive programming by using / learning relevant languages and
-        libraries such as{" "}
+        and exploring functional and reactive programming with languages and libraries like{" "}
         <a href="https://elm-lang.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
           Elm
         </a>
         ,{" "}
         <a href="http://ramdajs.com/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          ramda.js
-        </a>{" "}
-        and{" "}
+          Ramda.js
+        </a>
+        , and{" "}
         <a href="http://reactivex.io/rxjs/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
           RxJS
         </a>
-        . Finally, I have hands-on experience in many other JavaScript frameworks and libraries such as
+        . Finally, I also have hands-on experience with several other JavaScript frameworks and libraries, including{" "}
         <a href="https://vuejs.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
           Vue.js
         </a>
@@ -153,11 +121,11 @@ const Bio = () => (
         </a>
         ,{" "}
         <a href="https://svelte.dev" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          svelte
+          Svelte
         </a>
         ,{" "}
         <a href="http://backbonejs.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          backbone.js
+          Backbone.js
         </a>
         ,{" "}
         <a href="https://jquery.com/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
@@ -165,11 +133,11 @@ const Bio = () => (
         </a>
         ,{" "}
         <a href="http://underscorejs.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          underscore
+          Underscore
         </a>{" "}
         and{" "}
         <a href="https://lodash.com/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          lodash
+          Lodash
         </a>
         ,{" "}
         <a
@@ -181,26 +149,26 @@ const Bio = () => (
           axios
         </a>
         ,{" "}
-        <a href="https://momentjs.com/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          moment.js
-        </a>{" "}
-        and many more.
+        <a href="https://date-fns.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
+          date-fns
+        </a>
+        , and more.
       </p>
 
       <p className="text-xl md:leading-relaxed font-medium text-gray-300 my-0">
-        On the backend stack, I love working with{" "}
+        In the backend stack, I love working with{" "}
         <a href="https://nodejs.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          node.js
+          Node.js
         </a>
         ,{" "}
         <a href="https://nextjs.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
           Next.js
-        </a>{" "}
-        and{" "}
+        </a>
+        ,{" "}
         <a href="https://expressjs.com/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
           express
         </a>{" "}
-        , but I also have decent knowledge in
+        , and express-like frameworks. I also have a decent understanding of{" "}
         <a href="https://www.php.net/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
           PHP
         </a>
@@ -212,7 +180,7 @@ const Bio = () => (
         <a href="http://rubyonrails.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
           Rails
         </a>
-        ) and of course on various SQL and NoSQL databases such as{" "}
+        ) as well as several SQL and NoSQL databases such as{" "}
         <a href="https://www.mongodb.com/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
           MongoDB
         </a>
@@ -224,11 +192,7 @@ const Bio = () => (
         <a href="https://www.mysql.com/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
           MySQL
         </a>{" "}
-        and{" "}
-        <a href="https://fauna.com/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          Fauna DB
-        </a>
-        . I&apos;m also a huge fan of{" "}
+        and more. Additionally, I am a big fan of{" "}
         <a href="https://www.linux.org/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
           Linux OS
         </a>{" "}
@@ -238,7 +202,7 @@ const Bio = () => (
         </a>
         ),{" "}
         <a href="https://git-scm.com/" className="text-blue-300 underline" target="_blank" rel="noreferrer">
-          git
+          Git
         </a>
         ,{" "}
         <a
