@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Bio from "../components/Bio.astro";
+import Projects from "../components/Projects.astro";
+import KnowledgeSharing from "../components/KnowledgeSharing.astro";
+import Presentations from "../components/Presentations.astro";
+import Footer from "../components/Footer.astro";
+
+const { href } = Astro.url;
+---
+
+<Layout title="John Tsevdos" description="John Tsevdos personal site" url={href}>
+  <Header />
+  <Hero />
+  <Bio />
+  <Projects />
+  <KnowledgeSharing />
+  <Presentations />
+  <Footer />
+</Layout>
