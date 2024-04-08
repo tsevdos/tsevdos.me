@@ -135,12 +135,11 @@ export default function Header() {
           leaveTo="opacity-50 translate-x-full"
         >
           <nav
-            id="tkMobileNav"
+            id="mobile navigation"
             className="fixed bottom-0 right-0 top-0 z-50 w-72 overflow-auto bg-white/95 shadow-lg dark:bg-gray-800/95 lg:hidden"
             tabIndex={-1}
-            aria-labelledby="tkMobileNavLabel"
+            aria-labelledby="mobile navigation"
             aria-modal="true"
-            role="dialog"
           >
             <div className="flex items-center justify-between p-6">
               <a
@@ -171,6 +170,7 @@ export default function Header() {
 
               <button
                 onClick={toggleTheme}
+                role="button"
                 className="h-10 w-10 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <svg className="fill-violet-700 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
