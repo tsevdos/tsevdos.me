@@ -135,11 +135,12 @@ export default function Header() {
           leaveTo="opacity-50 translate-x-full"
         >
           <nav
-            id="mobile navigation"
+            id="tkMobileNav"
             className="fixed bottom-0 right-0 top-0 z-50 w-72 overflow-auto bg-white/95 shadow-lg dark:bg-gray-800/95 lg:hidden"
             tabIndex={-1}
-            aria-labelledby="mobile navigation"
+            aria-labelledby="tkMobileNavLabel"
             aria-modal="true"
+            role="dialog"
           >
             <div className="flex items-center justify-between p-6">
               <a
@@ -170,7 +171,7 @@ export default function Header() {
 
               <button
                 onClick={toggleTheme}
-                role="button"
+                type="button"
                 className="h-10 w-10 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <svg className="fill-violet-700 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
@@ -229,6 +230,7 @@ export default function Header() {
         >
           <div
             onClick={() => setMobileNavOpen(false)}
+            role="button"
             className="fixed inset-0 z-40 bg-gray-900 bg-opacity-20 backdrop-blur-sm will-change-auto dark:bg-opacity-80 lg:hidden"
           />
         </Transition>
