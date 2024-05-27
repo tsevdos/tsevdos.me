@@ -39,15 +39,18 @@ export default {
       },
       typography: {
         DEFAULT: {
+          // this is for prose class
           css: {
+            lineHeight: defaultTheme.lineHeight.relaxed,
             a: {
-              textDecoration: "none",
+              textDecoration: "underline",
               "&:hover": {
-                opacity: ".75",
+                opacity: ".85",
+                // textDecorationStyle: "dashed",
               },
             },
             img: {
-              borderRadius: defaultTheme.borderRadius.lg,
+              borderRadius: defaultTheme.borderRadius.md,
             },
           },
         },
