@@ -31,10 +31,10 @@ export default function Header() {
       name: "About",
       url: "/about",
     },
-    // {
-    //   name: "OSS",
-    //   url: "#",
-    // },
+    {
+      name: "OSS",
+      url: "/open-source-sofware",
+    },
     // {
     //   name: "Blog",
     //   url: "#",
