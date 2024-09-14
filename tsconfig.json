@@ -14,7 +14,9 @@
     "importHelpers": true,
     "noUnusedLocals": true,
     "incremental": true,
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   },
   "exclude": ["node_modules"]
 }
