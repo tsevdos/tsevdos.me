@@ -6,7 +6,6 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
@@ -18,5 +17,5 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", ".astro", "dist"]
 }
