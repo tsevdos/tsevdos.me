@@ -1,28 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro";
-// import Bio from "../components/Bio.astro";
-// import Projects from "../components/Projects.astro";
-// import KnowledgeSharing from "../components/KnowledgeSharing.astro";
-// import Presentations from "../components/Presentations.astro";
 import Header from "../components/Header.tsx";
 import Hero from "../components/Hero.astro";
 import Social from "../components/Social.astro";
 import WorkingOn from "../components/WorkingOn.astro";
-// import LatestPosts from "../components/LatestPosts.astro";
-import Features from "../components/Features.astro";
-// import CTASection from "../components/CTASection.astro";
+import Facts from "../components/Facts.astro";
 import Footer from "../components/Footer.astro";
+// import Presentations from "../components/Presentations.astro";
+// import KnowledgeSharing from "../components/KnowledgeSharing.astro";
+// import LatestPosts from "../components/LatestPosts.astro";
+// import CTASection from "../components/CTASection.astro";
 
 const { href } = Astro.url;
 ---
 
 <Layout title="John Tsevdos" description="John Tsevdos personal site" url={href}>
   <Header client:load />
+  <!-- <Presentations /> -->
   <Hero />
   <Social />
   <WorkingOn />
   <!-- <LatestPosts /> -->
-  <Features />
+  <Facts />
   <!-- <CTASection /> -->
   <Footer />
 </Layout>
