@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+// import Bio from "../components/Bio.astro";
+// import Projects from "../components/Projects.astro";
+// import KnowledgeSharing from "../components/KnowledgeSharing.astro";
 import Header from "../components/Header.tsx";
 import Hero from "../components/Hero.astro";
 import Social from "../components/Social.astro";
@@ -16,7 +19,6 @@ const { href } = Astro.url;
 
 <Layout title="John Tsevdos" description="John Tsevdos personal site" url={href}>
   <Header client:load />
-  <!-- <Presentations /> -->
   <Hero />
   <Social />
   <WorkingOn />
