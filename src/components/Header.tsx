@@ -35,14 +35,14 @@ export default function Header() {
       name: "OSS",
       url: "/open-source-sofware",
     },
-    // {
-    //   name: "Blog",
-    //   url: "#",
-    // },
+    {
+      name: "Public speaking",
+      url: "/public-speaking",
+    },
   ];
 
   return (
-    <div className="relative overflow-hidden bg-white dark:bg-gray-900 dark:text-gray-100">
+    <div className="relative overflow-hidden bg-gray-100 dark:bg-gray-900 dark:text-gray-100">
       <header id="page-header" className="relative flex flex-none items-center py-8">
         <div className="container mx-auto flex items-center justify-between px-4 text-center lg:px-8 xl:max-w-7xl">
           <div className="flex items-center">
