@@ -104,7 +104,7 @@ export default function Header() {
               <button
                 onClick={() => setMobileNavOpen(true)}
                 type="button"
-                className="inline-flex items-center justify-center space-x-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-semibold leading-5 text-gray-800 hover:border-gray-300 hover:text-gray-900 hover:shadow-sm focus:ring focus:ring-gray-300 focus:ring-opacity-25 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:bg-transparent dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600 dark:focus:ring-opacity-40 dark:active:border-gray-700"
+                className="inline-flex items-center justify-center space-x-2 rounded-lg border border-gray-200 bg-gray-100 px-3 py-2 text-sm font-semibold leading-5 text-gray-800 hover:border-gray-300 hover:text-gray-900 hover:shadow-sm focus:ring focus:ring-gray-300 focus:ring-opacity-25 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:bg-transparent dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600 dark:focus:ring-opacity-40 dark:active:border-gray-700"
                 aria-controls="mobile-nav"
                 aria-label="Open mobile navigation"
                 aria-expanded={mobileNavOpen}
@@ -138,7 +138,7 @@ export default function Header() {
         >
           <nav
             id="mobile-nav"
-            className="fixed bottom-0 right-0 top-0 z-50 w-72 overflow-auto bg-white/95 shadow-lg dark:bg-gray-800/95 lg:hidden"
+            className="fixed bottom-0 right-0 top-0 z-50 w-72 overflow-auto bg-gray-100/95 shadow-lg dark:bg-gray-800/95 lg:hidden"
             tabIndex={-1}
             aria-labelledby="mobile-nav-label"
             // aria-modal="true"
@@ -204,7 +204,7 @@ export default function Header() {
                 aria-label="Close mobile navigation"
                 onClick={() => setMobileNavOpen(false)}
                 type="button"
-                className="inline-flex items-center justify-center space-x-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-semibold leading-5 text-gray-800 hover:border-gray-300 hover:text-gray-900 hover:shadow-sm focus:ring focus:ring-gray-300 focus:ring-opacity-25 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600 dark:focus:ring-opacity-40 dark:active:border-gray-700"
+                className="inline-flex items-center justify-center space-x-2 rounded-lg border border-gray-200 bg-gray-100 px-3 py-2 text-sm font-semibold leading-5 text-gray-800 hover:border-gray-300 hover:text-gray-900 hover:shadow-sm focus:ring focus:ring-gray-300 focus:ring-opacity-25 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600 dark:focus:ring-opacity-40 dark:active:border-gray-700"
               >
                 <svg
                   className="hi-mini hi-x-mark -mx-0.5 inline-block size-5"
