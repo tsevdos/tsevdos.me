@@ -1,11 +1,7 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
-type Props = {
-  title: string;
-  description: string;
-  url: string;
-};
+type Props = { title: string; description: string; url: string };
 
 const { title, description, url } = Astro.props;
 const { origin } = Astro.url;
@@ -56,7 +52,7 @@ const { origin } = Astro.url;
       rel="stylesheet"
     />
 
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body>
     <slot />
