@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
+import { menuItems } from "../lib/constants";
 
 export default function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -24,22 +25,6 @@ export default function Header() {
       document.documentElement.classList.add("dark");
     }
   };
-
-  // Menu items array to populate both desktop and mobile links
-  const menuItems = [
-    {
-      name: "About",
-      url: "/about",
-    },
-    {
-      name: "OSS",
-      url: "/open-source-sofware",
-    },
-    {
-      name: "Public speaking",
-      url: "/public-speaking",
-    },
-  ];
 
   return (
     <div className="relative overflow-hidden bg-gray-100 dark:bg-gray-900 dark:text-gray-100">
@@ -85,7 +70,7 @@ export default function Header() {
               ))}
               <button
                 onClick={toggleTheme}
-                className="h-10 w-10 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="h-10 w-10 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
                 aria-label="Toggle theme"
               >
                 <svg className="fill-violet-700 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
