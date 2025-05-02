@@ -1,0 +1,54 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, getEntry, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer.astro";
+import { convertHTMLToPlainText, getFormattedDate, getReadingTime } from "../../lib/helpers";
+
+export const getStaticPaths = (async () => {
+  const posts = await getCollection("posts");
+
+  return posts.map(({ id }) => ({ params: { slug: id } }));
+}) satisfies GetStaticPaths;
+
+const { slug }: { slug: string } = Astro.params;
+const post = await getEntry("posts", slug);
+
+if (!post) {
+  return Astro.redirect("/404");
+}
+
+const { Content } = await render(post);
+const plainText = convertHTMLToPlainText(post.rendered?.html ?? "");
+const readingTime = getReadingTime(plainText);
+const { title, date, categories } = post.data;
+const categoriesStr = categories.map((category: string) => `${category} · `).join("");
+const { href } = Astro.url;
+---
+
+<Layout title={`John Tsevdos Blog - ${title}`} description={`John Tsevdos Blog - ${title}`} url={href}>
+  <Header client:load />
+
+  <div class="container mx-auto px-4 py-16 lg:px-8 xl:max-w-7xl">
+    <header>
+      <h4 class="mb-1 text-sm font-bold tracking-wider text-blue-600 uppercase dark:text-blue-500">
+        {categoriesStr.substring(0, categoriesStr.length - 2)}
+      </h4>
+      <h1 class="mb-4 text-4xl font-black text-black dark:text-white">{title}</h1>
+      <p class="pb-3 text-l leading-relaxed font-medium text-gray-700 dark:text-gray-300">
+        <span class="bold">{getFormattedDate(date)}</span> · {readingTime} min read
+      </p>
+    </header>
+
+    <article
+      class="max-w-full prose prose-lg md:prose-2xl dark:prose-invert prose-a:text-blue-600 prose-a:no-underline prose-a:hover:text-blue-400 prose-a:hover:opacity-75 dark:prose-a:text-blue-400 dark:prose-a:hover:text-blue-300 prose-img:rounded-lg"
+    >
+      <!-- prose-a:text-blue-700 dark:prose-invert dark:prose-a:text-blue-400 -->
+
+      <Content />
+    </article>
+  </div>
+
+  <Footer />
+</Layout>
