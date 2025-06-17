@@ -1,5 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.tsx";
@@ -53,7 +54,7 @@ const { href } = Astro.url;
   <div class="container mx-auto px-4 py-16 lg:px-8 xl:max-w-7xl">
     <!-- Heading -->
     <header>
-      <h1 class="mb-2 text-4xl font-black text-black dark:text-white">Latest Posts 📔</h1>
+      <h1 class="mb-2 text-4xl font-black text-black dark:text-white">My Posts 📔</h1>
       <h2 class="text-2xl font-medium leading-relaxed mb-8 text-gray-700 dark:text-gray-300">
         Sharing code and ideas that inspire
       </h2>
@@ -84,11 +85,7 @@ const { href } = Astro.url;
                     />
                   </svg>
                 </div>
-                <img
-                  src="https://cdn.tailkit.com/media/placeholders/photo-73F4pKoUkM0-800x600.jpg"
-                  class="h-full w-full object-cover object-center"
-                  alt="Featured blog post"
-                />
+                <Image src="https://public.tsevdos.me/ph-800-600.png" alt="test" inferSize={true} />
               </a>
               <div class="w-full p-6 lg:w-3/5 lg:self-center lg:px-10 lg:py-8 xl:w-2/3">
                 {/* <div class="mb-3 inline-flex flex-wrap items-center gap-1">
