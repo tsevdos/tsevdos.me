@@ -30,15 +30,14 @@ export const getFormattedDate = (dateStr: string) =>
     day: "numeric",
   });
 
-export const convertHTMLToPlainText = (html = "") => {
-  return convert(html, {
+export const convertHTMLToPlainText = (html = "") =>
+  convert(html, {
     selectors: [
       { selector: "a", options: { ignoreHref: true } },
       { selector: "img", format: "skip" },
       { selector: "figure", format: "skip" },
     ],
   });
-};
 
 export const getReadingTime = (text = "") => {
   const regex = /\w+/g;
