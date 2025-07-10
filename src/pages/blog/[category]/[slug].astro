@@ -1,18 +1,25 @@
 ---
 import type { GetStaticPaths } from "astro";
-import { getCollection, getEntry, render } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer.astro";
-import { convertHTMLToPlainText, getFormattedDate, getReadingTime } from "../../lib/helpers";
+import { getEntry, render } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer.astro";
+import { getAllPostsSorted, convertHTMLToPlainText, getFormattedDate, getReadingTime } from "../../../lib/helpers";
 
 export const getStaticPaths = (async () => {
-  const posts = await getCollection("posts");
+  const sortedPosts = await getAllPostsSorted();
 
-  return posts.map(({ id }) => ({ params: { slug: id } }));
+  return sortedPosts.map(({ id, data }) => ({
+    params: {
+      category: data.categories[0], // Use the first category
+      slug: id,
+    },
+  }));
 }) satisfies GetStaticPaths;
 
 const { slug }: { slug: string } = Astro.params;
+const { href } = Astro.url;
+
 const post = await getEntry("posts", slug);
 
 if (!post) {
@@ -24,7 +31,6 @@ const plainText = convertHTMLToPlainText(post.rendered?.html ?? "");
 const readingTime = getReadingTime(plainText);
 const { title, date, categories } = post.data;
 const categoriesStr = categories.map((category: string) => `${category} · `).join("");
-const { href } = Astro.url;
 ---
 
 <Layout title={`John Tsevdos Blog - ${title}`} description={`John Tsevdos Blog - ${title}`} url={href}>

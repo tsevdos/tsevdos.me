@@ -1,13 +1,15 @@
 ---
 import { POSTS_PER_PAGE } from "../lib/constants";
+import { getPageUrl } from "../lib/helpers";
 
 type Props = {
   currentPage: number;
   noOfPages: number;
   totalPosts: number;
+  category?: string;
 };
 
-const { currentPage, noOfPages, totalPosts } = Astro.props;
+const { currentPage, noOfPages, totalPosts, category } = Astro.props;
 const isFirstPage = currentPage === 1;
 const isLastPage = totalPosts <= POSTS_PER_PAGE || Math.floor(totalPosts / POSTS_PER_PAGE) + 1 === currentPage;
 ---
@@ -16,7 +18,7 @@ const isLastPage = totalPosts <= POSTS_PER_PAGE || Math.floor(totalPosts / POSTS
   {
     !isFirstPage && (
       <a
-        href={`/blog/page/${currentPage - 1}`}
+        href={getPageUrl(currentPage - 1, category)}
         class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 leading-6 font-semibold text-gray-800 hover:z-1 hover:border-gray-300 hover:text-gray-900 hover:shadow-xs focus:z-1 focus:ring-3 focus:ring-gray-300/25 active:z-1 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600/40 dark:active:border-gray-700"
       >
         <svg
@@ -46,7 +48,7 @@ const isLastPage = totalPosts <= POSTS_PER_PAGE || Math.floor(totalPosts / POSTS
   {
     !isLastPage && (
       <a
-        href={`/blog/page/${currentPage + 1}`}
+        href={getPageUrl(currentPage + 1, category)}
         class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 leading-6 font-semibold text-gray-800 hover:z-1 hover:border-gray-300 hover:text-gray-900 hover:shadow-xs focus:z-1 focus:ring-3 focus:ring-gray-300/25 active:z-1 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600/40 dark:active:border-gray-700"
       >
         <svg

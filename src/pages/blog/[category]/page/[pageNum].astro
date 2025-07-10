@@ -1,39 +1,55 @@
 ---
 import type { GetStaticPaths } from "astro";
-import { Image } from "astro:assets";
-import Layout from "../../../layouts/Layout.astro";
-import Header from "../../../components/Header.tsx";
-import Footer from "../../../components/Footer.astro";
-import MobilePagination from "../../../components/MobilePagination.astro";
-import DesktopPagination from "../../../components/DesktopPagination.astro";
+import { Image } from "astro:assets"; 
+import Layout from "../../../../layouts/Layout.astro";
+import Header from "../../../../components/Header";
+import Footer from "../../../../components/Footer.astro";
+import MobilePagination from "../../../../components/MobilePagination.astro";
+import DesktopPagination from "../../../../components/DesktopPagination.astro";
 import {
-  getAllPostsSorted,
+getAllPostsFromCategory, 
+getAllCategories, 
   convertHTMLToPlainText,
   getFormattedDate,
   getPageOfPosts,
   getPagesStaticPaths,
   getPagination,
-  getReadingTime,
-} from "../../../lib/helpers";
-import { NO_OF_WORDS_IN_EXCERT } from "../../../lib/constants";
+  getReadingTime, 
+} from "../../../../lib/helpers";
+import { NO_OF_WORDS_IN_EXCERT } from "../../../../lib/constants";
 
-export const getStaticPaths = (async () => {
-  const sortedPosts = await getAllPostsSorted();
-  const paths = getPagesStaticPaths(sortedPosts.length);
 
-  return paths.map((pageNum) => ({
-    params: { pageNum },
-    props: { sortedPosts },
-  }));
+
+
+
+
+export const getStaticPaths = (async () => { 
+  const categories = await getAllCategories();  
+
+  const paths = [];
+  
+  for (const category of categories) {
+    const categoryPosts = await getAllPostsFromCategory(category);
+    const pageNumbers = getPagesStaticPaths(categoryPosts.length); 
+    
+    const categoryPaths = pageNumbers
+      .filter(pageNum => pageNum !== "1") // Skip page 1 since it's handled by the main category index
+      .map(pageNum => ({ params: { category, pageNum }, props: { categoryPosts } })); 
+    
+    paths.push(...categoryPaths);
+  }
+  
+  return paths;
 }) satisfies GetStaticPaths;
 
-const { pageNum }: { pageNum: string } = Astro.params;
-const { sortedPosts } = Astro.props;
-const { href } = Astro.url;
 
+const { category, pageNum }: { category: string; pageNum: string } = Astro.params;
+const { href } = Astro.url;
+const { categoryPosts } = Astro.props; 
 const pageNumInt = parseInt(pageNum ?? "1", 10);
-const totalPosts = sortedPosts.length;
-const pagePosts = getPageOfPosts(sortedPosts, pageNumInt);
+const totalPosts = categoryPosts.length;
+const pagePosts = getPageOfPosts(categoryPosts, pageNumInt); 
+
 const postsWithExtras = pagePosts.map((post) => {
   const plainText = convertHTMLToPlainText(post.rendered?.html ?? "");
   const excerpt = plainText.split(" ").slice(0, NO_OF_WORDS_IN_EXCERT).join(" ");
@@ -45,18 +61,26 @@ const postsWithExtras = pagePosts.map((post) => {
     ...post,
   };
 });
+
 const { currentPage, noOfPages } = getPagination(pageNumInt, totalPosts);
+
+
+// Capitalize first letter of category for display
+const categoryTitle = category.charAt(0).toUpperCase() + category.slice(1);
 ---
 
-<Layout title="About John Tsevdos" description="Blog" url={href}>
+<Layout title={`John Tsevdos Blog - ${categoryTitle} (Page ${currentPage})`} description={`${categoryTitle} posts by John Tsevdos - Page ${currentPage}`} url={href}>
   <Header client:load />
 
   <div class="container mx-auto px-4 py-16 lg:px-8 xl:max-w-7xl">
     <!-- Heading -->
     <header>
-      <h1 class="mb-2 text-4xl font-black text-black dark:text-white">My Posts 📔</h1>
+      <h4 class="mb-1 text-sm font-bold tracking-wider text-blue-600 uppercase dark:text-blue-500">
+        Category
+      </h4>
+      <h1 class="mb-2 text-4xl font-black text-black dark:text-white">{categoryTitle} Posts 📔</h1>
       <h2 class="text-2xl font-medium leading-relaxed mb-8 text-gray-700 dark:text-gray-300">
-        Sharing code and ideas that inspire
+        Page {currentPage} of {noOfPages} · {totalPosts} {totalPosts === 1 ? 'post' : 'posts'} in {categoryTitle}
       </h2>
     </header>
     <!-- END Heading -->
@@ -91,17 +115,6 @@ const { currentPage, noOfPages } = getPagination(pageNumInt, totalPosts);
                 <Image src="https://public.tsevdos.me/ph-800-600.png" alt="test" inferSize={true} />
               </a>
               <div class="w-full p-6 lg:w-3/5 lg:self-center lg:px-10 lg:py-8 xl:w-2/3">
-                {/* <div class="mb-3 inline-flex flex-wrap items-center gap-1">
-                    {tags.map((tag) => {
-                      return (
-                        <div class="inline-flex rounded-full bg-blue-100 px-1 py-0.5 text-xs leading-4 font-semibold text-blue-800 dark:bg-blue-900/75 dark:text-blue-200">
-                          <div class="inline-flex rounded-full bg-blue-100 px-1 py-0.5 text-xs leading-4 font-semibold text-blue-800 dark:bg-blue-900/75 dark:text-blue-200">
-                            {tag}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div> */}
                 <div class="mb-3 inline-flex flex-wrap items-center gap-1">
                   {categories.map((tag) => {
                     return (
@@ -134,14 +147,16 @@ const { currentPage, noOfPages } = getPagination(pageNumInt, totalPosts);
     <!-- END Blog Posts -->
 
     <!-- Card Footer -->
-    <div class="grow border-t border-gray-200 py-5 dark:border-gray-700">
-      <!-- Pagination -->
-      <div class="text-center dark:text-gray-100">
-        <MobilePagination currentPage={currentPage} noOfPages={noOfPages} totalPosts={totalPosts} />
-        <DesktopPagination currentPage={currentPage} noOfPages={noOfPages} totalPosts={totalPosts} />
+    {noOfPages > 1 && (
+      <div class="grow border-t border-gray-200 py-5 dark:border-gray-700">
+        <!-- Pagination -->
+        <div class="text-center dark:text-gray-100">
+          <MobilePagination currentPage={currentPage} noOfPages={noOfPages} totalPosts={totalPosts} category={category} />
+          <DesktopPagination currentPage={currentPage} noOfPages={noOfPages} totalPosts={totalPosts} category={category} />
+        </div>
+        <!-- END Pagination -->
       </div>
-      <!-- END Pagination -->
-    </div>
+    )}
     <!-- END Card Footer -->
   </div>
   <!-- END Blog List Section: Full Width -->

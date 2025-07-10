@@ -5,7 +5,7 @@ export const menuItems = [
   },
   {
     name: "Blog",
-    url: "/blog/page/1",
+    url: "/blog",
   },
   {
     name: "OSS",

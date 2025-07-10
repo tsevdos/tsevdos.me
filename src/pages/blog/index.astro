@@ -1,11 +1,11 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { Image } from "astro:assets";
-import Layout from "../../../layouts/Layout.astro";
-import Header from "../../../components/Header.tsx";
-import Footer from "../../../components/Footer.astro";
-import MobilePagination from "../../../components/MobilePagination.astro";
-import DesktopPagination from "../../../components/DesktopPagination.astro";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.tsx";
+import Footer from "../../components/Footer.astro";
+import MobilePagination from "../../components/MobilePagination.astro";
+import DesktopPagination from "../../components/DesktopPagination.astro";
 import {
   getAllPostsSorted,
   convertHTMLToPlainText,
@@ -14,25 +14,20 @@ import {
   getPagesStaticPaths,
   getPagination,
   getReadingTime,
-} from "../../../lib/helpers";
-import { NO_OF_WORDS_IN_EXCERT } from "../../../lib/constants";
+} from "../../lib/helpers";
+import { NO_OF_WORDS_IN_EXCERT } from "../../lib/constants";
+
+const sortedPosts = await getAllPostsSorted();
+const totalPosts = sortedPosts.length;
 
 export const getStaticPaths = (async () => {
-  const sortedPosts = await getAllPostsSorted();
-  const paths = getPagesStaticPaths(sortedPosts.length);
+  const paths = getPagesStaticPaths(totalPosts);
 
-  return paths.map((pageNum) => ({
-    params: { pageNum },
-    props: { sortedPosts },
-  }));
+  return paths.map((pageNum) => ({ params: { pageNum } }));
 }) satisfies GetStaticPaths;
 
 const { pageNum }: { pageNum: string } = Astro.params;
-const { sortedPosts } = Astro.props;
-const { href } = Astro.url;
-
 const pageNumInt = parseInt(pageNum ?? "1", 10);
-const totalPosts = sortedPosts.length;
 const pagePosts = getPageOfPosts(sortedPosts, pageNumInt);
 const postsWithExtras = pagePosts.map((post) => {
   const plainText = convertHTMLToPlainText(post.rendered?.html ?? "");
@@ -46,6 +41,7 @@ const postsWithExtras = pagePosts.map((post) => {
   };
 });
 const { currentPage, noOfPages } = getPagination(pageNumInt, totalPosts);
+const { href } = Astro.url;
 ---
 
 <Layout title="About John Tsevdos" description="Blog" url={href}>
@@ -54,10 +50,8 @@ const { currentPage, noOfPages } = getPagination(pageNumInt, totalPosts);
   <div class="container mx-auto px-4 py-16 lg:px-8 xl:max-w-7xl">
     <!-- Heading -->
     <header>
-      <h1 class="mb-2 text-4xl font-black text-black dark:text-white">My Posts 📔</h1>
-      <h2 class="text-2xl font-medium leading-relaxed mb-8 text-gray-700 dark:text-gray-300">
-        Sharing code and ideas that inspire
-      </h2>
+      <h1 class="mb-2 text-4xl font-black text-black dark:text-white">Latest Posts ✍</h1>
+      <h2 class="text-2xl font-medium leading-relaxed mb-8 text-gray-700 dark:text-gray-300">Sharing ideas and code</h2>
     </header>
     <!-- END Heading -->
 
