@@ -1,10 +1,9 @@
 ---
-title: "Conditional styles for IE10"
+title: Conditional styles for IE10
 date: "2013-07-10"
-permalink: /css/conditional-styles-for-ie10/
-categories:
-  - css
+category: css
 tags:
+  - css
   - conditional comments
   - ie
   - IE10

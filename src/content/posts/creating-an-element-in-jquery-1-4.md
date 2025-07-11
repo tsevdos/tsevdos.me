@@ -1,10 +1,9 @@
 ---
-title: "Creating an element in jQuery 1.4"
+title: Creating an element in jQuery 1.4
 date: "2010-06-09"
-permalink: /javascript/creating-an-element-in-jquery-1-4/
-categories:
-  - javascript
+category: javascript
 tags:
+  - javascript
   - jquery
 ---
 

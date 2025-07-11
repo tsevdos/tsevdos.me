@@ -1,10 +1,9 @@
 ---
-title: "Convert a jQuery object to raw DOM object"
+title: Convert a jQuery object to raw DOM object
 date: "2010-07-06"
-permalink: /javascript/convert-a-jquery-object-to-raw-dom-object/
-categories:
-  - javascript
+category: javascript
 tags:
+  - javascript
   - jquery
 ---
 

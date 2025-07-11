@@ -1,10 +1,9 @@
 ---
-title: "Ruby tips"
+title: Ruby tips
 date: "2015-09-14"
-permalink: /ruby/ruby-tips/
-categories:
-  - ruby
+category: ruby
 tags:
+  - ruby
   - arguments
   - block_given?
   - case statement
@@ -13,7 +12,6 @@ tags:
   - methods
   - object instance
   - ranges
-  - ruby
   - tips
   - variables
   - yields

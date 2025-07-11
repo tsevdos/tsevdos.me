@@ -1,10 +1,9 @@
 ---
-title: "jQuery element's tag name"
+title: jQuery element's tag name
 date: "2013-05-22"
-permalink: /javascript/jquery-elements-tag-name/
-categories:
-  - javascript
+category: javascript
 tags:
+  - javascript
   - element
   - jquery
   - prop()

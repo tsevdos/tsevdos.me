@@ -1,9 +1,7 @@
 ---
-title: "Moved all my code to CodPen"
+title: Moved all my code to CodPen
 date: "2013-08-30"
-permalink: /misc/moved-all-my-code-to-codpen/
-categories:
-  - misc
+category: misc
 tags:
   - code
   - codepen

@@ -1,10 +1,9 @@
 ---
-title: "4 convenient jQuery tips"
+title: 4 convenient jQuery tips
 date: "2010-06-05"
-permalink: /javascript/4-convenient-jquery-tips/
-categories:
-  - javascript
+category: javascript
 tags:
+  - javascript
   - jquery
 ---
 

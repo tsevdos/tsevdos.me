@@ -1,9 +1,7 @@
 ---
-title: "Ambrosia 'speaks' French, Serbian and Romanian"
+title: Ambrosia 'speaks' French, Serbian and Romanian
 date: "2013-09-11"
-permalink: /misc/ambrosia-speaks-serbian-french-and-romanian/
-categories:
-  - misc
+category: misc
 tags:
   - ambrosia
   - theme

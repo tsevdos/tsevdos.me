@@ -1,11 +1,10 @@
 ---
-title: "Mobile Webkit form tips"
+title: Mobile Webkit form tips
 date: "2012-04-19"
-permalink: /markup/mobile-webkit-form-tips/
-categories:
+category: markup
+tags:
   - markup
   - mobile
-tags:
   - android
   - attributes
   - autocapitalization
@@ -16,7 +15,6 @@ tags:
   - iphone
   - keyboard
   - layout
-  - mobile
   - webforms
   - webkit
 ---

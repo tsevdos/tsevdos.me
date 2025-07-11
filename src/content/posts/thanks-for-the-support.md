@@ -1,13 +1,11 @@
 ---
-title: "Thanks for the support!"
+title: Thanks for the support!
 date: "2011-07-25"
-permalink: /wordpress/thanks-for-the-support/
-categories:
-  - wordpress
+category: wordpress
 tags:
+  - wordpress
   - ambrosia
   - theme
-  - wordpress
 ---
 
 I’d like to say thanks to the below sites for promoting/mentioning my [theme](http://wordpress.org/extend/themes/ambrosia "Ambrosia WordPress theme"). Thank you all!

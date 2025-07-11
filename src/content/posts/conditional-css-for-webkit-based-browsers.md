@@ -1,12 +1,10 @@
 ---
-title: "Conditional CSS for Webkit-based browsers"
+title: Conditional CSS for Webkit-based browsers
 date: "2011-04-04"
-permalink: /css/conditional-css-for-webkit-based-browsers/
-categories:
-  - css
+category: css
 tags:
-  - conditional
   - css
+  - conditional
   - media queries
   - webkit
 ---

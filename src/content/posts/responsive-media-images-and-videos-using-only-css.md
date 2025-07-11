@@ -1,9 +1,7 @@
 ---
-title: "Responsive media (images and videos) using only CSS"
+title: Responsive media (images and videos) using only CSS
 date: "2012-07-04"
-permalink: /css/responsive-media-images-and-videos-using-only-css/
-categories:
-  - css
+category: css
 tags:
   - css
   - design

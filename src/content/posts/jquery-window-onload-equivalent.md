@@ -1,9 +1,7 @@
 ---
-title: "jQuery window.onload equivalent"
+title: jQuery window.onload equivalent
 date: "2011-08-01"
-permalink: /javascript/jquery-window-onload-equivalent/
-categories:
-  - javascript
+category: javascript
 tags:
   - javascript
   - jquery

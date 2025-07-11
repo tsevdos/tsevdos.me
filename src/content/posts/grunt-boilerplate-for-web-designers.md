@@ -1,10 +1,9 @@
 ---
-title: "Grunt boilerplate for web designers"
+title: Grunt boilerplate for web designers
 date: "2014-01-29"
-permalink: /javascript/grunt-boilerplate-for-web-designers/
-categories:
-  - javascript
+category: javascript
 tags:
+  - javascript
   - grunt
 ---
 

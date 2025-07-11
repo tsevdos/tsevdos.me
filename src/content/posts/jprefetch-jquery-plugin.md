@@ -1,10 +1,9 @@
 ---
-title: "jPrefetch jQuery plugin"
+title: jPrefetch jQuery plugin
 date: "2013-05-14"
-permalink: /javascript/jprefetch-jquery-plugin/
-categories:
-  - javascript
+category: javascript
 tags:
+  - javascript
   - html5
   - jPrefetch
   - jquery

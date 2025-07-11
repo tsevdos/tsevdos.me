@@ -1,16 +1,15 @@
 ---
-title: "Not so popular HTML5 attributes"
+title: Not so popular HTML5 attributes
 date: "2013-04-08"
-permalink: /markup/not-so-popular-html5-attributes/
-categories:
-  - markup
+category: markup
 tags:
+  - markup
+  - html5
   - attribute
   - attributes
   - autofocus
   - download
   - hidden
-  - html5
 ---
 
 HTML5 offers many new attributes that make our lives easier and our code more semantic. In many cases they even provide functionality that we used to implement with javascript, like the [placeholder attribute](http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute "The placeholder attribute"). I'm pretty sure you all know the placeholder attribute, but what about the following ones?

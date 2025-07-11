@@ -1,12 +1,10 @@
 ---
-title: "How to style placeholder text"
+title: How to style placeholder text
 date: "2012-08-28"
-permalink: /css/how-to-style-placeholder-text/
-categories:
-  - css
+category: css
 tags:
-  - attribute
   - css
+  - attribute
   - gecko
   - html5
   - placeholder

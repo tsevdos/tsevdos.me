@@ -1,14 +1,12 @@
 ---
 title: "Complete UX tool lists"
 date: "2013-07-23"
-permalink: /ux/complete-ux-tool-lists/
-categories:
-  - ux
+category: ux
 tags:
+  - ux
   - lists
   - tools
   - user experience
-  - ux
 ---
 
 Lately I have become a heavy reader of various **UX** related books. Below I summarize lists of useful UX tools for every UX process. Some of them overlap categories (for example the prototyping tools usually provide wireframing tools as well, or some of the feedback tools provide a ticketing system as well), although I tried as hard as I could to separate them. Enjoy...

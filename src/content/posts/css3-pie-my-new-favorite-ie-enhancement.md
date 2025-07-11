@@ -1,9 +1,7 @@
 ---
 title: "CSS3 PIE: My new favorite IE enhancement"
 date: "2010-09-23"
-permalink: /css/css3-pie-my-new-favorite-ie-enhancement/
-categories:
-  - css
+category: css
 tags:
   - css
   - css3

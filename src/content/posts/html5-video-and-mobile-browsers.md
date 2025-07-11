@@ -1,11 +1,10 @@
 ---
-title: "HTML5 video and mobile browsers"
+title: HTML5 video and mobile browsers
 date: "2012-04-30"
-permalink: /markup/html5-video-and-mobile-browsers/
-categories:
+category: markup
+tags:
   - markup
   - mobile
-tags:
   - element
   - html5
   - media queries

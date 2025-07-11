@@ -1,10 +1,9 @@
 ---
-title: "Gulp boilerplate for web designers"
+title: Gulp boilerplate for web designers
 date: "2014-02-17"
-permalink: /javascript/gulp-boilerplate-for-web-designers/
-categories:
-  - javascript
+category: javascript
 tags:
+  - javascript
   - gulp
 ---
 

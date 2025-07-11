@@ -1,13 +1,11 @@
 ---
 title: "CoffeeScript gotchas (part 1): Comments, strings, booleans, arrays and functions"
 date: "2014-06-25"
-permalink: /coffeescript/coffeescript-gotchas-part-1-comments-strings-booleans-arrays-and-functions/
-categories:
-  - coffeescript
+category: coffeescript
 tags:
   - arrays
   - booleans
-  - coffescript
+  - coffeescript
   - comments
   - functions
   - heredocs

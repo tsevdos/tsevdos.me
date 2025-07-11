@@ -1,13 +1,11 @@
 ---
-title: "Remove rounded corners from input elements on mobile webkit browsers"
+title: Remove rounded corners from input elements on mobile webkit browsers
 date: "2012-09-05"
-permalink: /css/remove-rounded-corners-from-input-elements-on-mobile-webkit-browsers/
-categories:
-  - css
+category: css
 tags:
+  - css
   - browser
   - corners
-  - css
   - element
   - form
   - input

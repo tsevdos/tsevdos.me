@@ -1,10 +1,9 @@
 ---
-title: "Responsive web design and touch devices"
+title: Responsive web design and touch devices
 date: "2013-06-19"
-permalink: /articles/responsive-web-design-and-touch-devices/
-categories:
-  - articles
+category: articles
 tags:
+  - articles
   - design
   - development
   - devices

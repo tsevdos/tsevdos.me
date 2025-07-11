@@ -1,12 +1,10 @@
 ---
-title: "jQuery lights off effect"
+title: jQuery lights off effect
 date: "2011-09-12"
-permalink: /javascript/jquery-lights-off-effect/
-categories:
-  - javascript
+category: javascript
 tags:
-  - code
   - javascript
+  - code
   - jquery
   - lights_off
   - plugin

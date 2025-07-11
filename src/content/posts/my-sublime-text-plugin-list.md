@@ -1,9 +1,7 @@
 ---
-title: "My sublime text plugin list"
+title: My sublime text plugin list
 date: "2013-12-23"
-permalink: /misc/my-sublime-text-plugin-list/
-categories:
-  - misc
+category: misc
 tags:
   - packages
   - plugins

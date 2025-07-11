@@ -1,9 +1,7 @@
 ---
-title: "Hello world!"
+title: Hello world!
 date: "2010-06-02"
-permalink: /uncategorized/hello-world/
-categories:
-  - misc
+category: misc
 tags:
   - misc
 ---

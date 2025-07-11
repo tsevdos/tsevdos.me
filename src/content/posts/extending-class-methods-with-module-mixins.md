@@ -1,13 +1,11 @@
 ---
 title: "Extending Class methods with Module Mixins"
 date: "2016-02-01"
-permalink: /ruby/extending-class-methods-with-module-mixins/
-categories:
-  - ruby
+category: ruby
 tags:
+  - ruby
   - class
   - module
-  - ruby
   - singleton
 ---
 

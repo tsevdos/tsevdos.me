@@ -1,11 +1,9 @@
 ---
 title: "elUtils: my latest npm package"
 date: "2024-03-18"
-permalink: /javascript/el-utils/
-categories:
-  - projects
-  - javascript
+category: projects
 tags:
+  - javascript
   - npm
   - ES2015
   - es6
@@ -14,8 +12,7 @@ tags:
   - deno
   - bun
   - project
-  - TypeScript
-  - JavaScript
+  - typescript
 ---
 
 I'm extremely proud and happy to announce my latest npm package [**elUtils**](https://www.npmjs.com/package/@tsevdos/el-utils)! The specific package is a must-have for all developers who build **greek applications** in [TypeScript](https://www.typescriptlang.org/) and [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_overview)! The package has zero dependencies and works in all runtimes, including **browser**, [Node.js](https://nodejs.org), [bun](https://bun.sh/) and soon [deno](https://deno.com/). For a more technical look at the implementation, it's written in **TypeScript**, its test coverage is 100% and is strongly-typed.

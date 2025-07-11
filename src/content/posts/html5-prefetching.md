@@ -1,10 +1,9 @@
 ---
-title: "HTML5 Prefetching"
+title: HTML5 Prefetching
 date: "2013-04-16"
-permalink: /markup/html5-prefetching/
-categories:
-  - markup
+category: markup
 tags:
+  - markup
   - attribute
   - html5
   - prefetch

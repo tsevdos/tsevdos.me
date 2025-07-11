@@ -1,12 +1,10 @@
 ---
-title: "Organizing jQuery Code"
+title: Organizing jQuery Code
 date: "2011-05-09"
-permalink: /javascript/organizing-jquery-code/
-categories:
-  - javascript
+category: javascript
 tags:
-  - code
   - javascript
+  - code
   - jquery
 ---
 

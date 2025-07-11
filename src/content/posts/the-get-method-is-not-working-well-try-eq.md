@@ -1,9 +1,9 @@
 ---
-title: "The get() method is not working! Well try eq()..."
+title: The get() method is not working! Well try eq()...
 date: "2012-04-02"
-categories:
-  - javascript
+category: javascript
 tags:
+  - javascript
   - DOM
   - eq()
   - get()

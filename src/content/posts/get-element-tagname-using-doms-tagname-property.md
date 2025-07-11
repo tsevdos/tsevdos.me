@@ -1,10 +1,9 @@
 ---
-title: "Get element's tagname using DOM's tagName property"
+title: Get element's tagname using DOM's tagName property
 date: "2013-09-03"
-permalink: /javascript/get-element-tagname-using-doms-tagname-property/
-categories:
-  - javascript
+category: javascript
 tags:
+  - javascript
   - DOM
   - element
   - get()

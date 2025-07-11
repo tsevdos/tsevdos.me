@@ -1,13 +1,11 @@
 ---
-title: "Conditional CSS for Firefox/Gecko browsers"
+title: Conditional CSS for Firefox / Gecko browsers
 date: "2012-08-20"
-permalink: /css/conditional-css-for-firefox-gecko-browsers/
-categories:
-  - css
+category: css
 tags:
+  - css
   - browsers
   - conditional
-  - css
   - firefox
   - gecko
 ---

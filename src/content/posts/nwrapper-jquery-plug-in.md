@@ -1,10 +1,9 @@
 ---
-title: "Nwrapper jQuery plug in"
+title: Nwrapper jQuery plug in
 date: "2011-03-28"
-permalink: /javascript/nwrapper-jquery-plug-in/
-categories:
-  - javascript
+category: javascript
 tags:
+  - javascript
   - jquery
   - nwrapper
   - plugin

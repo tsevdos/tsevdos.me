@@ -1,11 +1,10 @@
 ---
-title: "Responsive web design and how to be nice to IE"
+title: Responsive web design and how to be nice to IE
 date: "2013-01-15"
-permalink: /javascript/responsive-web-design-and-how-to-be-nice-to-ie/
-categories:
+category: javascript
+tags:
   - javascript
   - markup
-tags:
   - html5
   - internet explorer
   - media queries

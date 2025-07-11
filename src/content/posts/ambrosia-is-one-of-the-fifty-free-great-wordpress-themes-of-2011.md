@@ -1,9 +1,7 @@
 ---
-title: "Ambrosia is one of the fifty free, great WordPress themes of 2011!"
+title: Ambrosia is one of the fifty free, great WordPress themes of 2011!
 date: "2011-11-01"
-permalink: /wordpress/ambrosia-is-one-of-the-fifty-free-great-wordpress-themes-of-2011/
-categories:
-  - wordpress
+category: wordpress
 tags:
   - wordpress
   - ambrosia

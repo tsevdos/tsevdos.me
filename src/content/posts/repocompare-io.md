@@ -1,11 +1,9 @@
 ---
-title: "Repocompare.io"
+title: Repocompare.io
 date: "2017-01-22"
-permalink: /javascript/repocompare-io/
-categories:
-  - projects
-  - javascript
+category: projects
 tags:
+  - javascript
   - babel
   - compare
   - css

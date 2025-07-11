@@ -1,10 +1,9 @@
 ---
-title: "React Boilerplate"
+title: React Boilerplate
 date: "2016-07-27"
-permalink: /javascript/react-boilerplate/
-categories:
-  - javascript
+category: javascript
 tags:
+  - javascript
   - es6
   - eslint
   - reactjs

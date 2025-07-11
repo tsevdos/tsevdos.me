@@ -1,18 +1,15 @@
 ---
-title: "Call or text from a mobile device using very simple markup"
+title: Call or text from a mobile device using very simple markup
 date: "2013-01-07"
-permalink: /markup/call-or-text-from-a-mobile-device-using-very-simple-markup/
-categories:
+category: markup
+tags:
   - markup
   - mobile
-tags:
   - call
   - html
   - ios
   - ipad
   - iphone
-  - markup
-  - mobile
   - smartphones
   - sms
 ---

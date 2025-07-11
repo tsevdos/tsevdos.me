@@ -1,13 +1,11 @@
 ---
-title: "Beginning HTML ordered lists with numbers other than 1"
+title: Beginning HTML ordered lists with numbers other than 1
 date: "2010-08-04"
-permalink: /markup/beginning-html-ordered-lists-with-numbers-other-than-1/
-categories:
-  - markup
+category: markup
 tags:
   - html
+  - markup
   - ordered list
-  - xhtml
 ---
 
 Yes it is possible and easy! You only have to use the (rare/unknown?) `start` attribute at your ordered list element (see example below).

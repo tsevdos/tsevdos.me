@@ -1,21 +1,10 @@
 ---
-import { getAllPostsSorted, convertHTMLToPlainText, getPageOfPosts, getReadingTime } from "../lib/helpers";
-import { NO_OF_WORDS_IN_EXCERT } from "../lib/constants";
+import { getAllPostsSorted, getPageOfPosts, getPostWithExtras } from "../lib/helpers";
 
 const NO_OF_POSTS = 4;
 const sortedPosts = await getAllPostsSorted();
 const pagePosts = getPageOfPosts(sortedPosts, 1);
-const postsWithExtras = pagePosts.map((post) => {
-  const plainText = convertHTMLToPlainText(post.rendered?.html ?? "");
-  const excerpt = plainText.split(" ").slice(0, NO_OF_WORDS_IN_EXCERT).join(" ");
-  const readingTime = getReadingTime(plainText);
-
-  return {
-    excerpt,
-    readingTime,
-    ...post,
-  };
-});
+const postsWithExtras = getPostWithExtras(pagePosts);
 ---
 
 <div class="bg-gray-100 dark:bg-gray-900 dark:text-gray-100">
@@ -39,7 +28,7 @@ const postsWithExtras = pagePosts.map((post) => {
             </p>
             <h4 class="mb-2 text-lg font-bold sm:text-xl">
               <a
-                href={`/blog/${post.data.categories[0]}/${post.id}`}
+                href={`/blog/${post.data.category}/${post.id}`}
                 class="leading-7 text-gray-800 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-400"
               >
                 {post.data.title}
@@ -47,7 +36,7 @@ const postsWithExtras = pagePosts.map((post) => {
             </h4>
             <p class="mb-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{post.excerpt}...</p>
             <a
-              href={`/blog/${post.data.categories[0]}/${post.id}`}
+              href={`/blog/${post.data.category}/${post.id}`}
               class="text-sm font-medium text-blue-600 hover:text-blue-400 dark:text-blue-400 dark:hover:text-blue-300"
             >
               Read More

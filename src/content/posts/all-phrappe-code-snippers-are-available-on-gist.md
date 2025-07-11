@@ -1,9 +1,7 @@
 ---
-title: "All Phrappe code/snippets are available on Gist"
+title: All Phrappe code / snippets are available on Gist
 date: "2012-03-30"
-permalink: /misc/all-phrappe-code-snippers-are-available-on-gist/
-categories:
-  - misc
+category: misc
 tags:
   - code
   - gist

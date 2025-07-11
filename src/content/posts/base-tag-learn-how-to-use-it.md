@@ -1,12 +1,10 @@
 ---
 title: "Base tag: Learn how to use it"
 date: "2013-05-08"
-permalink: /markup/base-tag-learn-how-to-use-it/
-categories:
-  - markup
+category: markup
 tags:
-  - base
   - markup
+  - base
   - tag
 ---
 

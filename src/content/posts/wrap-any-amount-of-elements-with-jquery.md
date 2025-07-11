@@ -1,10 +1,9 @@
 ---
-title: "Wrap any amount of elements with jQuery"
+title: Wrap any amount of elements with jQuery
 date: "2011-02-24"
-permalink: /javascript/wrap-any-amount-of-elements-with-jquery/
-categories:
-  - javascript
+category: javascript
 tags:
+  - javascript
   - jQuery
 ---
 

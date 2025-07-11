@@ -1,13 +1,12 @@
 ---
-title: "Autocompletion with HTML5 datalists"
+title: Autocompletion with HTML5 datalists
 date: "2013-04-23"
-permalink: /markup/autocompletion-with-html5-datalists/
-categories:
-  - markup
+category: markup
 tags:
-  - autocomplete
-  - datalist
+  - markup
   - html5
+  - datalist
+  - autocomplete
   - input
 ---
 

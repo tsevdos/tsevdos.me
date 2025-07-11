@@ -1,13 +1,10 @@
 ---
-title: "Greek in Tech"
+title: Greek in Tech
 date: "2015-12-14"
-permalink: /javascript/greek-in-tech/
-categories:
-  - projects
-  - javascript
+category: projects
 tags:
-  - backbone.js
   - javascript
+  - backbone.js
   - require.js
   - spa
 ---

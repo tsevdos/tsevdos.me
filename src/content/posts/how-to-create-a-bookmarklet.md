@@ -1,10 +1,9 @@
 ---
-title: "How to create a bookmarklet"
+title: How to create a bookmarklet
 date: "2010-11-17"
-permalink: /javascript/how-to-create-a-bookmarklet/
-categories:
-  - javascript
+category: javascript
 tags:
+  - javascript
   - browser
   - bookmarklet
 ---

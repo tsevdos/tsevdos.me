@@ -1,11 +1,10 @@
 ---
-title: "How to style a file input element in Firefox"
+title: How to style a file input element in Firefox
 date: "2013-02-05"
-permalink: /markup/how-to-style-a-file-input-element-in-firefox/
-categories:
+category: css
+tags:
   - css
   - markup
-tags:
   - element
   - field
   - file

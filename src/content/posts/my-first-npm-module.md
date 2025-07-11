@@ -1,14 +1,11 @@
 ---
-title: "My first npm module"
+title: My first npm module
 date: "2016-09-19"
-permalink: /javascript/my-first-npm-module/
-categories:
-  - projects
-  - javascript
+category: projects
 tags:
+  - javascript
   - backbone.js
   - greek
-  - javascript
   - module
   - names
   - npm

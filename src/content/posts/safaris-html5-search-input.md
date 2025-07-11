@@ -1,17 +1,14 @@
 ---
-title: "Safari's HTML5 search input"
+title: Safari's HTML5 search input
 date: "2011-07-08"
-permalink: /markup/safaris-html5-search-input/
-categories:
+category: markup
+tags:
   - css
   - markup
-tags:
   - ambrosia
-  - css
   - field
   - html5
   - input
-  - markup
   - safari
   - search
   - theme

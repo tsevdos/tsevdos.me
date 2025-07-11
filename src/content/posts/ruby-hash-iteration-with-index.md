@@ -1,17 +1,15 @@
 ---
-title: "Ruby Hash iteration with index"
+title: Ruby Hash iteration with index
 date: "2015-12-12"
-permalink: /ruby/ruby-hash-iteration-with-index/
-categories:
-  - ruby
+category: ruby
 tags:
+  - ruby
   - enumerable
   - hash
   - index
   - iteration
   - mixin
   - module
-  - ruby
 ---
 
 [Ruby Hash](http://ruby-doc.org/core-2.2.3/Hash.html) (and [Array](http://ruby-doc.org/core-2.2.3/Array.html)) includes the [Enumerable module (mixin)](http://ruby-doc.org/core-2.2.3/Enumerable.html), which provides a lot of neat, but also slightly hidden in the documentation, methods. This means that despite the poor advertising you can iterate not only each key and value, but the index as well:

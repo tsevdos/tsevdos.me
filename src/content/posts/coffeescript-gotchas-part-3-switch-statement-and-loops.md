@@ -1,9 +1,7 @@
 ---
 title: "Coffeescript gotchas (part 3): Switch statement and loops"
 date: "2015-05-23"
-permalink: /coffeescript/coffeescript-gotchas-part-3-switch-statement-and-loops/
-categories:
-  - coffeescript
+category: coffeescript
 tags:
   - coffeescript
   - for

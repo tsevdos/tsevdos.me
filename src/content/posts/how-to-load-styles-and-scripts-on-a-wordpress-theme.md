@@ -1,17 +1,15 @@
 ---
-title: "How to load styles and scripts on a WordPress theme"
+title: How to load styles and scripts on a WordPress theme
 date: "2011-07-21"
-permalink: /wordpress/how-to-load-styles-and-scripts-on-a-wordpress-theme/
-categories:
-  - wordpress
+category: wordpress
 tags:
+  - wordpress
   - ambrosia
   - css
   - functions.php
   - javascript
   - styles
   - theme
-  - wordpress
 ---
 
 WordPress provides two useful functions to help you keep the head section on your **header.php** template file clean. The **[wp_enqueue_style](http://codex.wordpress.org/Function_Reference/wp_enqueue_style "wp_enqueue_style on Codex")** will help you load your styles and the **[wp_enqueue_script](http://codex.wordpress.org/Function_Reference/wp_enqueue_script "wp_enqueue_script on Codex")** will help you load your scripts. Both take the same parameters (name, source, dependencies, version, media - only for wp_enqueue_style - and in_footer - only for wp_enqueue_script) and the official WordPress documentation explains everything in great detail. Below I'll demonstrate a simple way to use them, this is the same way it works on my latest free WordPress theme, **[Ambrosia](http://wordpress.org/extend/themes/ambrosia "Ambrosia free wordpress theme")**.

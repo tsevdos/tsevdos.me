@@ -1,11 +1,10 @@
 ---
-title: "How to add iPhone/iPad startup images (splashscreens)"
+title: How to add iPhone / iPad startup images (splashscreens)
 date: "2013-09-24"
-permalink: /markup/touch-startup-splashscreen/
-categories:
+category: mobile
+tags:
   - mobile
   - markup
-tags:
   - ios
   - ipad
   - retina

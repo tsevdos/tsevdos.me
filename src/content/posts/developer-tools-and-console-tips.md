@@ -1,12 +1,11 @@
 ---
-title: "Developer Tools and Console tips"
+title: Developer Tools and Console tips
 date: "2013-12-16"
-permalink: /javascript/developer-tools-and-console-tips/
-categories:
-  - javascript
+category: javascript
 tags:
+  - javascript
   - console
-  - console.log
+  - log
   - events
 ---
 

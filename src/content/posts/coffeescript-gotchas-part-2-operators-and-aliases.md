@@ -1,9 +1,7 @@
 ---
 title: "Coffeescript gotchas (part 2): Operators and aliases"
 date: "2014-07-17"
-permalink: /coffeescript/coffeescript-gotchas-part-2-operators-and-aliases/
-categories:
-  - coffeescript
+category: coffeescript
 tags:
   - aliases
   - chaining comparison
