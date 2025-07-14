@@ -1,6 +1,6 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import { convert } from "html-to-text";
-import { NO_OF_WORDS_IN_EXCERT, POSTS_PER_PAGE, WORDS_PER_MINUTE } from "./constants";
+import { NO_OF_WORDS_IN_EXCERPT, POSTS_PER_PAGE, WORDS_PER_MINUTE } from "./constants";
 
 const range = (start: number, stop: number, step: number) =>
   Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step);
@@ -57,7 +57,7 @@ export const getPageOfPosts = (posts: CollectionEntry<"posts">[], pageNum: numbe
 export const getPostWithExtras = (posts: CollectionEntry<"posts">[]) => {
   return posts.map((post) => {
     const plainText = convertHTMLToPlainText(post.rendered?.html ?? "");
-    const excerpt = plainText.split(" ").slice(0, NO_OF_WORDS_IN_EXCERT).join(" ");
+    const excerpt = plainText.split(" ").slice(0, NO_OF_WORDS_IN_EXCERPT).join(" ");
     const readingTime = getReadingTime(plainText);
 
     return {
