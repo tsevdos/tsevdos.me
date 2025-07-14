@@ -25,7 +25,7 @@ export const getStaticPaths = (async () => {
 
     const categoryPaths = pageNumbers
       .filter((pageNum) => pageNum !== "1") // Skip page 1 since it's handled by the main category index
-      .map((pageNum) => ({ params: { category, pageNum }, props: { categoryPosts } }));
+      .map((pageNum) => ({ params: { category, pageNum } }));
 
     paths.push(...categoryPaths);
   }
@@ -35,18 +35,17 @@ export const getStaticPaths = (async () => {
 
 const { category, pageNum } = Astro.params as { category: string; pageNum: string };
 const { href } = Astro.url;
-const { categoryPosts } = Astro.props;
-
-const pageNumInt = parseInt(pageNum ?? "1", 10);
+const categoryPosts = await getAllPostsFromCategory(category);
 const totalPosts = categoryPosts.length;
-const pagePosts = getPageOfPosts(categoryPosts, pageNumInt);
-const postsWithExtras = getPostWithExtras(pagePosts);
+const pageNumInt = parseInt(pageNum ?? "1", 10);
+const categoryPagePosts = getPageOfPosts(categoryPosts, pageNumInt);
+const postsWithExtras = getPostWithExtras(categoryPagePosts);
 const { currentPage, noOfPages } = getPagination(pageNumInt, totalPosts);
 const categoryTitle = category.charAt(0).toUpperCase() + category.slice(1);
 ---
 
 <Layout
-  title={`John Tsevdos Blog - ${categoryTitle} cartegory (page ${currentPage})`}
+  title={`John Tsevdos Blog - ${categoryTitle} category (page ${currentPage})`}
   description={`${categoryTitle} posts by John Tsevdos (page ${currentPage})`}
   url={href}
 >
@@ -55,12 +54,8 @@ const categoryTitle = category.charAt(0).toUpperCase() + category.slice(1);
   <div class="container mx-auto px-4 py-16 lg:px-8 xl:max-w-7xl">
     <!-- Heading -->
     <header>
-      <h4 class="mb-1 text-sm font-bold tracking-wider text-blue-600 uppercase dark:text-blue-500">Category</h4>
-      <h1 class="mb-2 text-4xl font-black text-black dark:text-white">{categoryTitle} Posts 📔</h1>
-      <h2 class="text-2xl font-medium leading-relaxed mb-8 text-gray-700 dark:text-gray-300">
-        Page {currentPage} of {noOfPages} · {totalPosts}
-        {totalPosts === 1 ? "post" : "posts"} in {categoryTitle}
-      </h2>
+      <h1 class="mb-2 text-4xl font-black text-black dark:text-white">Blog: {categoryTitle} Posts 📔</h1>
+      <h2 class="text-2xl font-medium leading-relaxed mb-8 text-gray-700 dark:text-gray-300">Sharing ideas and code</h2>
     </header>
     <!-- END Heading -->
 

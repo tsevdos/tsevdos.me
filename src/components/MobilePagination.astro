@@ -11,7 +11,7 @@ type Props = {
 
 const { currentPage, noOfPages, totalPosts, category } = Astro.props;
 const isFirstPage = currentPage === 1;
-const isLastPage = totalPosts <= POSTS_PER_PAGE || Math.floor(totalPosts / POSTS_PER_PAGE) + 1 === currentPage;
+const isLastPage = totalPosts <= POSTS_PER_PAGE || Math.ceil(totalPosts / POSTS_PER_PAGE) === currentPage;
 ---
 
 <nav class="flex sm:hidden">

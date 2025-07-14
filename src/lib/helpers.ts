@@ -69,14 +69,14 @@ export const getPostWithExtras = (posts: CollectionEntry<"posts">[]) => {
 };
 
 export const getPagesStaticPaths = (noOfPosts: number) => {
-  const totalPages = Math.floor(noOfPosts / POSTS_PER_PAGE) + 1;
+  const totalPages = Math.ceil(noOfPosts / POSTS_PER_PAGE);
 
   return range(1, totalPages, 1).map((v) => v.toString());
 };
 
 // Pagination
 export const getPagination = (currentPage = 1, totalPosts: number) => {
-  const noOfPages = Math.floor(totalPosts / POSTS_PER_PAGE) + 1;
+  const noOfPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
 
   return { currentPage, noOfPages };
 };

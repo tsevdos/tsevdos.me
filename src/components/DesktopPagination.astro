@@ -12,7 +12,7 @@ type Props = {
 const { currentPage, noOfPages, totalPosts, category } = Astro.props;
 const noOfPagesArr = Array.from({ length: noOfPages }, (_, i) => i + 1);
 const isFirstPage = currentPage === 1;
-const isLastPage = totalPosts <= POSTS_PER_PAGE || Math.floor(totalPosts / POSTS_PER_PAGE) + 1 === currentPage;
+const isLastPage = totalPosts <= POSTS_PER_PAGE || Math.ceil(totalPosts / POSTS_PER_PAGE) === currentPage;
 ---
 
 <div class="hidden sm:flex sm:items-center sm:justify-between">
