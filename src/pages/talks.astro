@@ -1,0 +1,432 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.tsx";
+import Footer from "../components/Footer.astro";
+
+const { href } = Astro.url;
+---
+
+<Layout title="Public Speaking" description="My public presentations and talks" url={href}>
+  <Header client:load />
+
+  <div class="container mx-auto px-4 py-16 lg:px-8 xl:max-w-7xl">
+    <h1 class="mb-2 text-4xl font-black text-black dark:text-white">Talks 🥳</h1>
+    <h2 class="text-2xl font-medium leading-relaxed mb-8 text-gray-700 dark:text-gray-300">
+      Speaking at events, meetups, and conferences
+    </h2>
+
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
+      <div class="flex flex-col overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800">
+        <div class="flex-grow">
+          <div class="relative overflow-hidden" style="padding-top: 56.25%;">
+            <iframe
+              class="absolute top-0 left-0 w-full h-full"
+              title="Cypress in 10 minutes"
+              src="https://www.youtube.com/embed/xCqt4iL02Ig"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
+          <div class="p-6">
+            <h4 class="mb-2 text-lg font-bold sm:text-xl leading-7 text-gray-800 dark:text-gray-200">
+              <a
+                href="https://www.hau.gr/en-us/training/events/2024/software-development-%CE%BA%CE%B1%CE%B9-testing-%CE%BD%CE%B5%CE%B1-%CE%B5%CE%BA%CF%80%CE%B1%CE%B9%CE%B4%CE%B5%CF%85%CF%84%CE%B9%CE%BA%CE%B1-%CF%80%CF%81%CE%BF%CE%B3%CF%81%CE%B1%CE%BC%CE%BC%CE%B1%CF%84%CE%B1"
+                target="_blank"
+                rel="noreferrer"
+                class="hover:underline"
+              >
+                Software Development and Testing - Career and Training Meetup
+              </a>
+            </h4>
+            <p class="mb-3 text-sm font-medium text-gray-600 dark:text-gray-400">
+              October 8, 2024 · <strong>Hellenic American Union Theater, Athens, Greece</strong>
+            </p>
+            <p class="leading-relaxed text-gray-600 dark:text-gray-400">
+              Chit-chat about software development and testing, how to get started in these fields, various software
+              development roles, the software development life cycle, and many more tips on launching your career.
+            </p>
+          </div>
+        </div>
+        <div class="p-6 text-right">
+          <a
+            href="https://www.youtube.com/watch?v=xCqt4iL02Ig"
+            target="_blank"
+            rel="noreferrer"
+            class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
+          >
+            <span>Video</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="hi-micro hi-play-circle inline-block size-4"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm-.847-9.766A.75.75 0 0 0 6 5.866v4.268a.75.75 0 0 0 1.153.633l3.353-2.134a.75.75 0 0 0 0-1.266L7.153 5.234Z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800">
+        <div class="flex-grow">
+          <div class="relative overflow-hidden" style="padding-top: 56.25%;">
+            <iframe
+              class="absolute top-0 left-0 w-full h-full"
+              title="Cypress in 10 minutes"
+              src="https://www.youtube.com/embed/SgPen5ZORFY"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
+          <div class="p-6">
+            <h4 class="mb-2 text-lg font-bold sm:text-xl leading-7 text-gray-800 dark:text-gray-200">
+              <a
+                href="https://www.meetup.com/Ministry-of-Testing-Athens/events/254284563/"
+                target="_blank"
+                rel="noreferrer"
+                class="hover:underline"
+              >
+                Cypress in 10 minutes
+              </a>
+            </h4>
+            <p class="mb-3 text-sm font-medium text-gray-600 dark:text-gray-400">
+              2018, September · <strong>Ministry of Testing Athens Meetup #3, Athens, Greece</strong>
+            </p>
+            <p class="leading-relaxed text-gray-600 dark:text-gray-400">
+              A quick introduction and demo of the Cypress testing tool. My presentation starts at 32'.
+            </p>
+          </div>
+        </div>
+        <div class="p-6 text-right">
+          <a
+            href="https://www.youtube.com/watch?v=SgPen5ZORFY"
+            target="_blank"
+            rel="noreferrer"
+            class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
+          >
+            <span>Video</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="hi-micro hi-play-circle inline-block size-4"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm-.847-9.766A.75.75 0 0 0 6 5.866v4.268a.75.75 0 0 0 1.153.633l3.353-2.134a.75.75 0 0 0 0-1.266L7.153 5.234Z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a
+            href="https://tsevdos.github.io/presentations/MoTAthens-2018/index.html"
+            target="_blank"
+            rel="noreferrer"
+            class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
+          >
+            <span>Slides</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="hi-micro hi-document-chart-bar inline-block size-4"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 2a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 4 14h8a1.5 1.5 0 0 0 1.5-1.5V6.621a1.5 1.5 0 0 0-.44-1.06L9.94 2.439A1.5 1.5 0 0 0 8.878 2H4Zm6 5.75a.75.75 0 0 1 1.5 0v3.5a.75.75 0 0 1-1.5 0v-3.5Zm-2.75 1.5a.75.75 0 0 1 1.5 0v2a.75.75 0 0 1-1.5 0v-2Zm-2 .75a.75.75 0 0 0-.75.75v.5a.75.75 0 0 0 1.5 0v-.5a.75.75 0 0 0-.75-.75Z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800">
+        <div class="flex-grow">
+          <div class="relative overflow-hidden" style="padding-top: 56.25%;">
+            <iframe
+              class="absolute top-0 left-0 w-full h-full"
+              title="Responsive Web Design and touch devices"
+              src="https://www.youtube.com/embed/vIkPa3LUudQ"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
+          <div class="p-6">
+            <h4 class="mb-2 text-lg font-bold sm:text-xl leading-7 text-gray-800 dark:text-gray-200">
+              Responsive Web Design and touch devices
+            </h4>
+            <p class="mb-3 text-sm font-medium text-gray-600 dark:text-gray-400">
+              2013, June · <strong>JoomlaDay conference, Athens, Greece</strong>
+            </p>
+            <p class="leading-relaxed text-gray-600 dark:text-gray-400">
+              The presentation covered aspects of responsive web design on touch devices, touch device problems and
+              solutions, touch events and frameworks, mobile patterns and more.
+            </p>
+          </div>
+        </div>
+        <div class="p-6 text-right">
+          <a
+            href="https://www.youtube.com/watch?v=vIkPa3LUudQ"
+            target="_blank"
+            rel="noreferrer"
+            class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
+          >
+            <span>Video</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="hi-micro hi-play-circle inline-block size-4"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm-.847-9.766A.75.75 0 0 0 6 5.866v4.268a.75.75 0 0 0 1.153.633l3.353-2.134a.75.75 0 0 0 0-1.266L7.153 5.234Z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a
+            href="https://tsevdos.github.io/presentations/joomladay-2013/index.html"
+            target="_blank"
+            rel="noreferrer"
+            class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
+          >
+            <span>Slides</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="hi-micro hi-document-chart-bar inline-block size-4"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 2a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 4 14h8a1.5 1.5 0 0 0 1.5-1.5V6.621a1.5 1.5 0 0 0-.44-1.06L9.94 2.439A1.5 1.5 0 0 0 8.878 2H4Zm6 5.75a.75.75 0 0 1 1.5 0v3.5a.75.75 0 0 1-1.5 0v-3.5Zm-2.75 1.5a.75.75 0 0 1 1.5 0v2a.75.75 0 0 1-1.5 0v-2Zm-2 .75a.75.75 0 0 0-.75.75v.5a.75.75 0 0 0 1.5 0v-.5a.75.75 0 0 0-.75-.75Z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800">
+        <div class="flex-grow">
+          <div class="relative overflow-hidden" style="padding-top: 56.25%;">
+            <iframe
+              class="absolute top-0 left-0 w-full h-full"
+              title="Pragmatic Responsive Web Design"
+              src="https://www.youtube.com/embed/gNm8lu39TD0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
+          <div class="p-6">
+            <h4 class="mb-2 text-lg font-bold sm:text-xl leading-7 text-gray-800 dark:text-gray-200">
+              Pragmatic Responsive Web Design
+            </h4>
+            <p class="mb-3 text-sm font-medium text-gray-600 dark:text-gray-400">
+              2013, March · <strong>JoomlaFrappe conference, Athens, Greece</strong>
+            </p>
+            <p class="leading-relaxed text-gray-600 dark:text-gray-400">
+              The presentation covered various aspects of responsive web design, including workflow, tools, and tips.
+            </p>
+          </div>
+        </div>
+        <div class="p-6 text-right">
+          <a
+            href="https://www.youtube.com/watch?v=gNm8lu39TD0"
+            target="_blank"
+            rel="noreferrer"
+            class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
+          >
+            <span>Video</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="hi-micro hi-play-circle inline-block size-4"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm-.847-9.766A.75.75 0 0 0 6 5.866v4.268a.75.75 0 0 0 1.153.633l3.353-2.134a.75.75 0 0 0 0-1.266L7.153 5.234Z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a
+            href="https://tsevdos.github.io/presentations/joomlafrappe-2013/index.html"
+            target="_blank"
+            rel="noreferrer"
+            class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
+          >
+            <span>Slides</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="hi-micro hi-document-chart-bar inline-block size-4"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 2a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 4 14h8a1.5 1.5 0 0 0 1.5-1.5V6.621a1.5 1.5 0 0 0-.44-1.06L9.94 2.439A1.5 1.5 0 0 0 8.878 2H4Zm6 5.75a.75.75 0 0 1 1.5 0v3.5a.75.75 0 0 1-1.5 0v-3.5Zm-2.75 1.5a.75.75 0 0 1 1.5 0v2a.75.75 0 0 1-1.5 0v-2Zm-2 .75a.75.75 0 0 0-.75.75v.5a.75.75 0 0 0 1.5 0v-.5a.75.75 0 0 0-.75-.75Z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800">
+        <div class="flex-grow">
+          <div class="relative overflow-hidden" style="padding-top: 56.25%;">
+            <iframe
+              class="absolute top-0 left-0 w-full h-full"
+              title="Pragmatic Responsive Web Design"
+              src="https://www.youtube.com/embed/d8IbJ1QXFlI"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
+          <div class="p-6">
+            <h4 class="mb-2 text-lg font-bold sm:text-xl leading-7 text-gray-800 dark:text-gray-200">
+              Pragmatic Responsive Web Design
+            </h4>
+            <p class="mb-3 text-sm font-medium text-gray-600 dark:text-gray-400">
+              2012, December · <strong>UpNorth web conference, Thessaloniki, Greece</strong>
+            </p>
+            <p class="leading-relaxed text-gray-600 dark:text-gray-400">
+              The presentation covered various aspects of responsive web design, including workflow, tools, and tips.
+            </p>
+          </div>
+        </div>
+        <div class="p-6 text-right">
+          <a
+            href="https://www.youtube.com/watch?v=d8IbJ1QXFlI"
+            target="_blank"
+            rel="noreferrer"
+            class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
+          >
+            <span>Video</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="hi-micro hi-play-circle inline-block size-4"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm-.847-9.766A.75.75 0 0 0 6 5.866v4.268a.75.75 0 0 0 1.153.633l3.353-2.134a.75.75 0 0 0 0-1.266L7.153 5.234Z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a
+            href="http://tsevdos.github.io/presentations/upNorth-2012/index.html"
+            target="_blank"
+            rel="noreferrer"
+            class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
+          >
+            <span>Slides</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="hi-micro hi-document-chart-bar inline-block size-4"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 2a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 4 14h8a1.5 1.5 0 0 0 1.5-1.5V6.621a1.5 1.5 0 0 0-.44-1.06L9.94 2.439A1.5 1.5 0 0 0 8.878 2H4Zm6 5.75a.75.75 0 0 1 1.5 0v3.5a.75.75 0 0 1-1.5 0v-3.5Zm-2.75 1.5a.75.75 0 0 1 1.5 0v2a.75.75 0 0 1-1.5 0v-2Zm-2 .75a.75.75 0 0 0-.75.75v.5a.75.75 0 0 0 1.5 0v-.5a.75.75 0 0 0-.75-.75Z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800">
+        <div class="flex-grow">
+          <div class="relative overflow-hidden" style="padding-top: 56.25%;">
+            <iframe
+              class="absolute top-0 left-0 w-full h-full"
+              title="Drupal Tips 'n Tricks"
+              src="https://www.youtube.com/embed/5w2K3Mx7PaU"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
+          <div class="p-6">
+            <h4 class="mb-2 text-lg font-bold sm:text-xl leading-7 text-gray-800 dark:text-gray-200">
+              <a href="https://joomladaygreece.org/" target="_blank" rel="noreferrer" class="hover:underline">
+                Drupal Tips &apos;n Tricks
+              </a>
+            </h4>
+            <p class="mb-3 text-sm font-medium text-gray-600 dark:text-gray-400">
+              2010, September · <strong>DrupalCamp conference, Athens, Greece</strong>
+            </p>
+            <p class="leading-relaxed text-gray-600 dark:text-gray-400">
+              The presentation covered various tips and tricks related to design and development in Drupal CMS.
+            </p>
+          </div>
+        </div>
+        <div class="p-6 text-right">
+          <a
+            href="https://www.youtube.com/watch?v=5w2K3Mx7PaU"
+            target="_blank"
+            rel="noreferrer"
+            class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
+          >
+            <span>Video</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="hi-micro hi-play-circle inline-block size-4"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm-.847-9.766A.75.75 0 0 0 6 5.866v4.268a.75.75 0 0 0 1.153.633l3.353-2.134a.75.75 0 0 0 0-1.266L7.153 5.234Z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a
+            href="https://speakerdeck.com/tsevdos/drupal-tips-n-tricks"
+            target="_blank"
+            rel="noreferrer"
+            class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
+          >
+            <span>Slides</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="hi-micro hi-document-chart-bar inline-block size-4"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 2a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 4 14h8a1.5 1.5 0 0 0 1.5-1.5V6.621a1.5 1.5 0 0 0-.44-1.06L9.94 2.439A1.5 1.5 0 0 0 8.878 2H4Zm6 5.75a.75.75 0 0 1 1.5 0v3.5a.75.75 0 0 1-1.5 0v-3.5Zm-2.75 1.5a.75.75 0 0 1 1.5 0v2a.75.75 0 0 1-1.5 0v-2Zm-2 .75a.75.75 0 0 0-.75.75v.5a.75.75 0 0 0 1.5 0v-.5a.75.75 0 0 0-.75-.75Z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-row gap-2 py-10 sm:justify-center">
+      <a
+        href="https://github.com/tsevdos/presentations"
+        class="inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 font-semibold leading-6 text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
+      >
+        <span>View all my presentations on GitHub!</span>
+        <svg
+          class="hi-mini hi-arrow-right inline-block size-5 opacity-50"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>

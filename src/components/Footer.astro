@@ -1,106 +1,113 @@
+---
+import { getAllCategories } from "../lib/helpers";
+
+const categories = await getAllCategories();
+---
+
 <footer id="page-footer" class="bg-gray-100 dark:bg-gray-900 dark:text-gray-100">
   <div class="container mx-auto px-4 py-16 lg:px-8 xl:max-w-7xl">
-    <!-- <div class="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-6 lg:gap-10">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-6 lg:gap-10">
       <div class="space-y-6">
-        <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-400/75">Products</h4>
+        <h4 class="text-sm uppercase font-semibold tracking-wider text-gray-400">Blog categories</h4>
+        <nav class="flex flex-col space-y-3 text-sm">
+          {
+            categories.map((category) => (
+              <a href={`/blog/${category}`} class="font-medium text-gray-300 hover:text-gray-400">
+                {category}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+      <div class="space-y-6">
+        <h4 class="text-sm uppercase font-semibold tracking-wider text-gray-400">Links</h4>
         <nav class="flex flex-col space-y-3 text-sm">
           <a
-            href="javascript:void(0)"
-            class="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
+            href="https://tsevdos.com/"
+            target="_blank"
+            rel="noreferrer"
+            class="font-medium text-gray-300 hover:text-gray-400"
           >
-            Solutions
+            Tsevdos.com
           </a>
           <a
-            href="javascript:void(0)"
-            class="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
+            href="https://www.linkedin.com/in/tsevdosjohn"
+            target="_blank"
+            rel="noreferrer"
+            class="font-medium text-gray-300 hover:text-gray-400"
           >
-            Features
+            LinkedIn
           </a>
           <a
-            href="javascript:void(0)"
-            class="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
+            href="https://github.com/tsevdos"
+            target="_blank"
+            rel="noreferrer"
+            class="font-medium text-gray-300 hover:text-gray-400"
           >
-            Pricing Plans
+            GitHub
           </a>
           <a
-            href="javascript:void(0)"
-            class="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
+            href="https://www.npmjs.com/~tsevdos"
+            target="_blank"
+            rel="noreferrer"
+            class="font-medium text-gray-300 hover:text-gray-400"
           >
-            Analytics
+            npm
           </a>
           <a
-            href="javascript:void(0)"
-            class="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
+            href="https://twitter.com/tsevdos"
+            target="_blank"
+            rel="noreferrer"
+            class="font-medium text-gray-300 hover:text-gray-400"
           >
-            Support Center
+            X (twitter)
+          </a>
+          <a
+            href="https://bsky.app/profile/tsevdos.me"
+            target="_blank"
+            rel="noreferrer"
+            class="font-medium text-gray-300 hover:text-gray-400"
+          >
+            bluesky
           </a>
         </nav>
       </div>
       <div class="space-y-6">
-        <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-400/75">Legal</h4>
-        <nav class="flex flex-col space-y-3 text-sm">
+        <h4 class="text-sm uppercase font-semibold tracking-wider text-gray-400">Info</h4>
+        <p class="text leading-relaxed text-gray-300">
+          This site embraces various
           <a
-            href="javascript:void(0)"
-            class="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
+            href="https://jamstack.org"
+            target="_blank"
+            rel="noreferrer"
+            class="font-medium text-gray-300 hover:text-gray-400 underline">jamstack</a
           >
-            Team
-          </a>
+          tools and technologies, such as
           <a
-            href="javascript:void(0)"
-            class="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
+            href="https://astro.build"
+            target="_blank"
+            rel="noreferrer"
+            class="font-medium text-gray-300 hover:text-gray-400 underline">Astro</a
           >
-            Terms of Service
-          </a>
+          for static site generation (SSG),
           <a
-            href="javascript:void(0)"
-            class="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
+            href="https://www.cloudflare.com"
+            target="_blank"
+            rel="noreferrer"
+            class="font-medium text-gray-300 hover:text-gray-400 underline">Cloudflare</a
           >
-            Privacy Policy
-          </a>
+          for edge hosting and functions and
           <a
-            href="javascript:void(0)"
-            class="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
+            href="https://tailwindcss.com"
+            target="_blank"
+            rel="noreferrer"
+            class="font-medium text-gray-300 hover:text-gray-400 underline">Tailwind CSS</a
           >
-            Cookies
-          </a>
-          <a
-            href="javascript:void(0)"
-            class="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
-          >
-            Refunds
-          </a>
-        </nav>
+          for theming.
+        </p>
       </div>
-      <div class="space-y-6">
-        <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-400/75">Company Inc</h4>
-        <div class="text-sm leading-relaxed">
-          1080 Sunshine Valley, Suite 2563<br />
-          San Francisco, CA 85214
-        </div>
-        <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-400/75">
-          Join Our Newsletter
-        </h4>
-        <form onsubmit="return false;" class="space-y-3 sm:flex sm:items-center sm:space-x-2 sm:space-y-0">
-          <div class="flex items-center">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              class="block w-full grow rounded-l-lg border border-gray-200 px-3 py-2 text-sm leading-5 placeholder-gray-500 focus:z-1 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 dark:border-gray-600 dark:bg-gray-900 dark:placeholder-gray-400 dark:focus:border-blue-500"
-            />
-            <button
-              type="submit"
-              class="-ml-px inline-flex flex-none items-center justify-center space-x-2 rounded-r-lg border border-blue-700 bg-blue-700 px-3 py-2 text-sm font-semibold leading-5 text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400 focus:ring-opacity-50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400 dark:focus:ring-opacity-90"
-            >
-              Subscribe
-            </button>
-          </div>
-        </form>
-      </div>
-    </div> 
+    </div>
     <hr class="my-10 border-dashed dark:border-gray-700/75" />
-    -->
     <div
       class="flex flex-col space-y-6 text-center text-sm md:flex-row-reverse md:justify-between md:space-y-0 md:text-left"
     >

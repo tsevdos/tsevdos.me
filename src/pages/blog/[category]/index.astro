@@ -1,0 +1,89 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.tsx";
+import Footer from "../../../components/Footer.astro";
+import MobilePagination from "../../../components/MobilePagination.astro";
+import DesktopPagination from "../../../components/DesktopPagination.astro";
+import {
+  getAllCategories,
+  getAllPostsFromCategory,
+  getPageOfPosts,
+  getPostWithExtras,
+  getPagination,
+} from "../../../lib/helpers";
+import Post from "../../../components/Post.astro";
+
+export const getStaticPaths = (async () => {
+  const categories = await getAllCategories();
+
+  return categories.map((category) => ({
+    params: { category },
+  }));
+}) satisfies GetStaticPaths;
+
+const { category } = Astro.params as { category: string };
+const { href } = Astro.url;
+
+const categoryPosts = await getAllPostsFromCategory(category);
+const totalPosts = categoryPosts.length;
+const pagePosts = getPageOfPosts(categoryPosts, 1);
+const postsWithExtras = getPostWithExtras(pagePosts);
+const { currentPage, noOfPages } = getPagination(1, totalPosts);
+const categoryTitle = category.charAt(0).toUpperCase() + category.slice(1);
+---
+
+<Layout
+  title={`John Tsevdos Blog - ${categoryTitle} category`}
+  description={`${categoryTitle} posts by John Tsevdos`}
+  url={href}
+>
+  <Header client:load />
+
+  <div class="container mx-auto px-4 py-16 lg:px-8 xl:max-w-7xl">
+    <!-- Heading -->
+    <header>
+      <h1 class="mb-2 text-4xl font-black text-black dark:text-white">Blog: {categoryTitle} Posts 📔</h1>
+      <h2 class="text-2xl font-medium leading-relaxed mb-8 text-gray-700 dark:text-gray-300">
+        Sharing ideas and code (<a
+          href="/blog/rss.xml"
+          class="text-blue-600 hover:text-blue-400 dark:text-blue-400 dark:hover:text-blue-300">RSS</a
+        > available)
+      </h2>
+    </header>
+    <!-- END Heading -->
+
+    <!-- Blog Posts -->
+    <div class="space-y-4 sm:space-y-10">
+      {
+        postsWithExtras.map(({ id, data: { category, title, date }, readingTime, excerpt }) => (
+          <Post id={id} category={category} title={title} date={date} readingTime={readingTime} excerpt={excerpt} />
+        ))
+      }
+    </div>
+    <!-- END Blog Posts -->
+
+    {
+      noOfPages > 1 && (
+        <div class="grow border-t border-gray-200 py-5 dark:border-gray-700">
+          <div class="text-center dark:text-gray-100">
+            <MobilePagination
+              currentPage={currentPage}
+              noOfPages={noOfPages}
+              totalPosts={totalPosts}
+              category={category}
+            />
+            <DesktopPagination
+              currentPage={currentPage}
+              noOfPages={noOfPages}
+              totalPosts={totalPosts}
+              category={category}
+            />
+          </div>
+        </div>
+      )
+    }
+  </div>
+
+  <Footer />
+</Layout>

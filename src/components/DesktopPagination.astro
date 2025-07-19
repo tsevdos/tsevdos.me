@@ -1,0 +1,119 @@
+---
+import { POSTS_PER_PAGE } from "../lib/constants";
+import { getPageUrl } from "../lib/helpers";
+
+type Props = {
+  currentPage: number;
+  noOfPages: number;
+  totalPosts: number;
+  category?: string;
+};
+
+const { currentPage, noOfPages, totalPosts, category } = Astro.props;
+const noOfPagesArr = Array.from({ length: noOfPages }, (_, i) => i + 1);
+const isFirstPage = currentPage === 1;
+const isLastPage = totalPosts <= POSTS_PER_PAGE || Math.ceil(totalPosts / POSTS_PER_PAGE) === currentPage;
+---
+
+<div class="hidden sm:flex sm:items-center sm:justify-between">
+  <div>
+    Page <span class="font-semibold">{currentPage}</span> of
+    <span class="font-semibold">{noOfPages}</span>
+  </div>
+  <nav class="inline-flex">
+    {
+      !isFirstPage ? (
+        <a
+          href={getPageUrl(currentPage - 1, category)}
+          class="-mr-px inline-flex items-center justify-center gap-2 rounded-l-lg border border-gray-200 px-4 py-2 leading-6 font-semibold hover:z-1 hover:border-gray-300 hover:shadow-xs focus:z-1 focus:ring-3 focus:ring-gray-300/25 active:z-1 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:text-gray-300 dark:hover:border-gray-600 dark:focus:ring-gray-600/40 dark:active:border-gray-700 bg-white text-gray-800 hover:text-gray-900 dark:bg-gray-800 dark:hover:text-gray-200"
+        >
+          <svg
+            class="hi-mini hi-chevron-left -mx-1.5 inline-block size-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+      ) : (
+        <span class="-mr-px inline-flex items-center justify-center gap-2 rounded-l-lg border border-gray-200 px-4 py-2 leading-6 font-semibold bg-gray-100 text-gray-400 cursor-not-allowed dark:border-gray-700 dark:bg-gray-800/50 dark:text-gray-600">
+          <svg
+            class="hi-mini hi-chevron-left -mx-1.5 inline-block size-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </span>
+      )
+    }
+
+    {
+      noOfPagesArr.map((num) =>
+        num === currentPage ? (
+          <span class="-mr-px inline-flex items-center justify-center gap-2 border border-gray-200 px-4 py-2 leading-6 font-semibold bg-gray-100 text-gray-600 dark:border-gray-700 dark:bg-gray-700/75 dark:text-gray-400">
+            {num}
+          </span>
+        ) : (
+          <a
+            href={getPageUrl(num, category)}
+            class="-mr-px inline-flex items-center justify-center gap-2 border border-gray-200 bg-white px-4 py-2 leading-6 font-semibold text-gray-800 hover:z-1 hover:border-gray-300 hover:text-gray-900 hover:shadow-xs focus:z-1 focus:ring-3 focus:ring-gray-300/25 active:z-1 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600/40 dark:active:border-gray-700"
+          >
+            {num}
+          </a>
+        ),
+      )
+    }
+
+    {
+      !isLastPage ? (
+        <a
+          href={getPageUrl(currentPage + 1, category)}
+          class="inline-flex items-center justify-center gap-2 rounded-r-lg border border-gray-200 bg-white px-4 py-2 leading-6 font-semibold text-gray-800 hover:z-1 hover:border-gray-300 hover:text-gray-900 hover:shadow-xs focus:z-1 focus:ring-3 focus:ring-gray-300/25 active:z-1 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600/40 dark:active:border-gray-700"
+        >
+          <svg
+            class="hi-mini hi-chevron-right -mx-1.5 inline-block size-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+      ) : (
+        <span class="inline-flex items-center justify-center gap-2 rounded-r-lg border border-gray-200 px-4 py-2 leading-6 font-semibold bg-gray-100 text-gray-400 cursor-not-allowed dark:border-gray-700 dark:bg-gray-800/50 dark:text-gray-600">
+          <svg
+            class="hi-mini hi-chevron-right -mx-1.5 inline-block size-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </span>
+      )
+    }
+  </nav>
+</div>
