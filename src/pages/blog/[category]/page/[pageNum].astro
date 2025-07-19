@@ -55,7 +55,12 @@ const categoryTitle = category.charAt(0).toUpperCase() + category.slice(1);
     <!-- Heading -->
     <header>
       <h1 class="mb-2 text-4xl font-black text-black dark:text-white">Blog: {categoryTitle} Posts 📔</h1>
-      <h2 class="text-2xl font-medium leading-relaxed mb-8 text-gray-700 dark:text-gray-300">Sharing ideas and code</h2>
+      <h2 class="text-2xl font-medium leading-relaxed mb-8 text-gray-700 dark:text-gray-300">
+        Sharing ideas and code (<a
+          href="/blog/rss.xml"
+          class="text-blue-600 hover:text-blue-400 dark:text-blue-400 dark:hover:text-blue-300">RSS</a
+        > available)
+      </h2>
     </header>
     <!-- END Heading -->
 

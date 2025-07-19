@@ -20,6 +20,7 @@ export const menuItems = [
 export const config = {
   title: "Tsevdos.me",
   tagline: "the personal site of John Tsevdos",
+  RSSDescription: "RSS feed for John Tsevdos blog",
 } as const;
 
 export const POSTS_PER_PAGE = 10;
