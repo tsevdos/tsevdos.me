@@ -1,7 +1,7 @@
 ---
 title: How to load styles and scripts on a WordPress theme
 date: "2011-07-21"
-category: wordpress
+category: WordPress
 tags:
   - wordpress
   - ambrosia

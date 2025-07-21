@@ -1,9 +1,9 @@
 ---
 title: Hello world!
 date: "2010-06-02"
-category: misc
+category: Misc
 tags:
   - misc
 ---
 
-Welcome to Phrappe.com! Stay tuned 😉
+Welcome to Tsevdos.me blog! Stay tuned 😉

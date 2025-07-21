@@ -1,7 +1,7 @@
 ---
 title: Organizing jQuery Code
 date: "2011-05-09"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - code

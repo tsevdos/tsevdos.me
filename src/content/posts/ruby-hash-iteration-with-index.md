@@ -1,7 +1,7 @@
 ---
 title: Ruby Hash iteration with index
 date: "2015-12-12"
-category: ruby
+category: Ruby
 tags:
   - ruby
   - enumerable

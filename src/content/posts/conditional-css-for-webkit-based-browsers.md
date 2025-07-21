@@ -1,7 +1,7 @@
 ---
 title: Conditional CSS for Webkit-based browsers
 date: "2011-04-04"
-category: css
+category: CSS
 tags:
   - css
   - conditional

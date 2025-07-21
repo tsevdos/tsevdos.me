@@ -11,7 +11,7 @@ export const getStaticPaths = (async () => {
 
   return sortedPosts.map(({ id, data }) => ({
     params: {
-      category: data.category,
+      category: data.category.toLowerCase(),
       slug: id,
     },
   }));

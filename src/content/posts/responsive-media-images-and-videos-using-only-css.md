@@ -1,7 +1,7 @@
 ---
 title: Responsive media (images and videos) using only CSS
 date: "2012-07-04"
-category: css
+category: CSS
 tags:
   - css
   - design

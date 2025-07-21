@@ -1,7 +1,7 @@
 ---
 title: Creating an element in jQuery 1.4
 date: "2010-06-09"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - jquery

@@ -1,7 +1,7 @@
 ---
 title: "Coffeescript gotchas (part 4): Scope and Objects"
 date: "2015-06-06"
-category: coffeescript
+category: CoffeeScript
 tags:
   - class
   - classes

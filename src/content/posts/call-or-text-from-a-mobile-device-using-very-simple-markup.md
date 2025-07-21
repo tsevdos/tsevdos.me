@@ -1,7 +1,7 @@
 ---
 title: Call or text from a mobile device using very simple markup
 date: "2013-01-07"
-category: markup
+category: Markup
 tags:
   - markup
   - mobile

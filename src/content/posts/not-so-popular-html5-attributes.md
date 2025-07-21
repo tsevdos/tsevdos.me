@@ -1,7 +1,7 @@
 ---
 title: Not so popular HTML5 attributes
 date: "2013-04-08"
-category: markup
+category: Markup
 tags:
   - markup
   - html5

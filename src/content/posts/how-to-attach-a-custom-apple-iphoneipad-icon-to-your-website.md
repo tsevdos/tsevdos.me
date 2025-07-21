@@ -1,7 +1,7 @@
 ---
 title: How to attach a custom apple iPhone / iPad icon to your website
 date: "2010-08-24"
-category: markup
+category: Markup
 tags:
   - markup
   - mobile

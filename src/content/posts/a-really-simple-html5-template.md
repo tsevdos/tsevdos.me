@@ -1,7 +1,7 @@
 ---
 title: A really simple HTML5 template
 date: "2011-01-19"
-category: markup
+category: Markup
 tags:
   - markup
   - html5

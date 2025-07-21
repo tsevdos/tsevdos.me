@@ -1,7 +1,7 @@
 ---
 title: How to add iPhone / iPad startup images (splashscreens)
 date: "2013-09-24"
-category: mobile
+category: Mobile
 tags:
   - mobile
   - markup

@@ -1,7 +1,7 @@
 ---
 title: Safari's HTML5 search input
 date: "2011-07-08"
-category: markup
+category: Markup
 tags:
   - css
   - markup

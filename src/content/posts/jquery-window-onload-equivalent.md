@@ -1,7 +1,7 @@
 ---
 title: jQuery window.onload equivalent
 date: "2011-08-01"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - jquery

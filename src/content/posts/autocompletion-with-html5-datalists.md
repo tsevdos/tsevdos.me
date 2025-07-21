@@ -1,7 +1,7 @@
 ---
 title: Autocompletion with HTML5 datalists
 date: "2013-04-23"
-category: markup
+category: Markup
 tags:
   - markup
   - html5

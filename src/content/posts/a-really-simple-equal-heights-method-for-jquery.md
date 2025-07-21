@@ -1,7 +1,7 @@
 ---
 title: A really simple "equal heights" method for jQuery!
 date: "2010-09-29"
-category: javascript
+category: JavaScript
 tags:
   - jquery
 ---

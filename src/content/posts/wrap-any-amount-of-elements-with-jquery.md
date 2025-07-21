@@ -1,7 +1,7 @@
 ---
 title: Wrap any amount of elements with jQuery
 date: "2011-02-24"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - jQuery

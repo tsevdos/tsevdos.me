@@ -1,7 +1,7 @@
 ---
 title: Avoid CoffeeScript and use ES6!
 date: "2015-08-03"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - es6

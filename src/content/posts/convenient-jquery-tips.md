@@ -1,7 +1,7 @@
 ---
 title: 4 convenient jQuery tips
 date: "2010-06-05"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - jquery

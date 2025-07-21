@@ -1,7 +1,7 @@
 ---
 title: Gulp boilerplate for web designers
 date: "2014-02-17"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - gulp

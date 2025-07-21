@@ -1,7 +1,7 @@
 ---
 title: How to create a bookmarklet
 date: "2010-11-17"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - browser

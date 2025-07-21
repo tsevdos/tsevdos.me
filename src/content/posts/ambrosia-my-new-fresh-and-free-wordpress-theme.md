@@ -1,7 +1,7 @@
 ---
 title: "Ambrosia: my new, fresh and free WordPress theme"
 date: "2011-06-27"
-category: wordpress
+category: WordPress
 tags:
   - wordpress
   - ambrosia

@@ -1,7 +1,7 @@
 ---
 title: Mobile media capture straight to your web form
 date: "2013-01-23"
-category: markup
+category: Markup
 tags:
   - markup
   - mobile

@@ -1,7 +1,7 @@
 ---
 title: "Complete UX tool lists"
 date: "2013-07-23"
-category: ux
+category: UX
 tags:
   - ux
   - lists

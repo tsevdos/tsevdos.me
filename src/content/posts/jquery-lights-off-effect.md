@@ -1,7 +1,7 @@
 ---
 title: jQuery lights off effect
 date: "2011-09-12"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - code

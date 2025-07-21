@@ -1,7 +1,7 @@
 ---
 title: Mobile Webkit form tips
 date: "2012-04-19"
-category: markup
+category: Markup
 tags:
   - markup
   - mobile

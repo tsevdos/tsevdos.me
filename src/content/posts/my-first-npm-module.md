@@ -1,7 +1,7 @@
 ---
 title: My first npm module
 date: "2016-09-19"
-category: projects
+category: Projects
 tags:
   - javascript
   - backbone.js

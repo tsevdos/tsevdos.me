@@ -1,7 +1,7 @@
 ---
 title: Moved all my code to CodPen
 date: "2013-08-30"
-category: misc
+category: Misc
 tags:
   - code
   - codepen

@@ -1,7 +1,7 @@
 ---
 title: jPrefetch jQuery plugin
 date: "2013-05-14"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - html5

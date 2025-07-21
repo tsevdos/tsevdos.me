@@ -25,25 +25,20 @@ export const getStaticPaths = (async () => {
 const { category } = Astro.params as { category: string };
 const { href } = Astro.url;
 
-const categoryPosts = await getAllPostsFromCategory(category);
+const categoryPosts = await getAllPostsFromCategory(category.toLowerCase());
 const totalPosts = categoryPosts.length;
 const pagePosts = getPageOfPosts(categoryPosts, 1);
 const postsWithExtras = getPostWithExtras(pagePosts);
 const { currentPage, noOfPages } = getPagination(1, totalPosts);
-const categoryTitle = category.charAt(0).toUpperCase() + category.slice(1);
 ---
 
-<Layout
-  title={`John Tsevdos Blog - ${categoryTitle} category`}
-  description={`${categoryTitle} posts by John Tsevdos`}
-  url={href}
->
+<Layout title={`John Tsevdos Blog - ${category} category`} description={`${category} posts by John Tsevdos`} url={href}>
   <Header client:load />
 
   <div class="container mx-auto px-4 py-16 lg:px-8 xl:max-w-7xl">
     <!-- Heading -->
     <header>
-      <h1 class="mb-2 text-4xl font-black text-black dark:text-white">Blog: {categoryTitle} Posts 📔</h1>
+      <h1 class="mb-2 text-4xl font-black text-black dark:text-white">Blog: {category} Posts 📔</h1>
       <h2 class="text-2xl font-medium leading-relaxed mb-8 text-gray-700 dark:text-gray-300">
         Sharing ideas and code (<a
           href="/blog/rss.xml"

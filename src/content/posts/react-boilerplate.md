@@ -1,7 +1,7 @@
 ---
 title: React Boilerplate
 date: "2016-07-27"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - es6

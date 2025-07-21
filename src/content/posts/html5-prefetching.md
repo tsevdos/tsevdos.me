@@ -1,7 +1,7 @@
 ---
 title: HTML5 Prefetching
 date: "2013-04-16"
-category: markup
+category: Markup
 tags:
   - markup
   - attribute

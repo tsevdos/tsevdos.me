@@ -1,7 +1,7 @@
 ---
 title: Get element's tagname using DOM's tagName property
 date: "2013-09-03"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - DOM

@@ -1,7 +1,7 @@
 ---
 title: HTML5 video and mobile browsers
 date: "2012-04-30"
-category: markup
+category: Markup
 tags:
   - markup
   - mobile

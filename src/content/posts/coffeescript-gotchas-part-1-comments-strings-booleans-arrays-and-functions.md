@@ -1,7 +1,7 @@
 ---
 title: "CoffeeScript gotchas (part 1): Comments, strings, booleans, arrays and functions"
 date: "2014-06-25"
-category: coffeescript
+category: CoffeeScript
 tags:
   - arrays
   - booleans

@@ -1,7 +1,7 @@
 ---
 title: Nwrapper jQuery plug in
 date: "2011-03-28"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - jquery

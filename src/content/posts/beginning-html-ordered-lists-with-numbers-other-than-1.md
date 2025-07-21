@@ -1,7 +1,7 @@
 ---
 title: Beginning HTML ordered lists with numbers other than 1
 date: "2010-08-04"
-category: markup
+category: Markup
 tags:
   - html
   - markup

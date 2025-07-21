@@ -1,7 +1,7 @@
 ---
 title: Conditional CSS for Firefox / Gecko browsers
 date: "2012-08-20"
-category: css
+category: CSS
 tags:
   - css
   - browsers

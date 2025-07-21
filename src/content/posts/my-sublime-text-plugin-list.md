@@ -1,7 +1,7 @@
 ---
 title: My sublime text plugin list
 date: "2013-12-23"
-category: misc
+category: Misc
 tags:
   - packages
   - plugins
