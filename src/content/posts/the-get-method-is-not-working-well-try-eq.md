@@ -1,7 +1,7 @@
 ---
 title: The get() method is not working! Well try eq()...
 date: "2012-04-02"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - DOM

@@ -1,7 +1,7 @@
 ---
 title: Greek in Tech
 date: "2015-12-14"
-category: projects
+category: Projects
 tags:
   - javascript
   - backbone.js

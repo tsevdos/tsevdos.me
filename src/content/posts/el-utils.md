@@ -1,7 +1,7 @@
 ---
 title: "elUtils: my latest npm package"
 date: "2024-03-18"
-category: projects
+category: Projects
 tags:
   - javascript
   - npm

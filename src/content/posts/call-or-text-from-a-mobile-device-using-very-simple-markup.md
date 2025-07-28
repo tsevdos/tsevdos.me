@@ -1,7 +1,7 @@
 ---
 title: Call or text from a mobile device using very simple markup
 date: "2013-01-07"
-category: markup
+category: Markup
 tags:
   - markup
   - mobile
@@ -22,4 +22,4 @@ At my [latest presentation](https://speakerdeck.com/tsevdos/pragmatic-responsive
 <a href="sms:+306948123456">text me</a>
 ```
 
-The above enhancements, together with a [custom iOS home screen icon/image](http://phrappe.com/markup/how-to-attach-a-custom-apple-iphoneipad-icon-to-your-website/ "How to attach a custom apple iPhone/iPad icon to your website"), are probably the easiest markup implementations that give to your mobile site/app many more extra points! If you've tested the above example with other devices (android, windows, blackberry, etc.) please confirm that it's working (just leave a comment)...
+The above enhancements, together with a [custom iOS home screen icon/image](/blog/markup/how-to-attach-a-custom-apple-iphoneipad-icon-to-your-website/ "How to attach a custom apple iPhone/iPad icon to your website"), are probably the easiest markup implementations that give to your mobile site/app many more extra points! If you've tested the above example with other devices (android, windows, blackberry, etc.) please confirm that it's working (just leave a comment)...

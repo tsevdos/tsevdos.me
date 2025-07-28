@@ -1,7 +1,7 @@
 ---
 title: Developer Tools and Console tips
 date: "2013-12-16"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - console

@@ -1,7 +1,7 @@
 ---
 title: How to style placeholder text
 date: "2012-08-28"
-category: css
+category: CSS
 tags:
   - css
   - attribute

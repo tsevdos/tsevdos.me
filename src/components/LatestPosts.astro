@@ -33,7 +33,7 @@ const postsWithExtras = getPostWithExtras(pagePosts);
             </p>
             <h4 class="mb-2 text-lg font-bold sm:text-xl">
               <a
-                href={`/blog/${post.data.category}/${post.id}`}
+                href={`/blog/${post.data.category.toLowerCase()}/${post.id}`}
                 class="leading-7 text-gray-800 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-400"
               >
                 {post.data.title}
@@ -41,7 +41,7 @@ const postsWithExtras = getPostWithExtras(pagePosts);
             </h4>
             <p class="mb-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{post.excerpt}...</p>
             <a
-              href={`/blog/${post.data.category}/${post.id}`}
+              href={`/blog/${post.data.category.toLowerCase()}/${post.id}`}
               class="text-sm font-medium text-blue-600 hover:text-blue-400 dark:text-blue-400 dark:hover:text-blue-300"
             >
               Read More

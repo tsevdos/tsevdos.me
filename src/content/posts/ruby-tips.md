@@ -1,7 +1,7 @@
 ---
 title: Ruby tips
 date: "2015-09-14"
-category: ruby
+category: Ruby
 tags:
   - ruby
   - arguments

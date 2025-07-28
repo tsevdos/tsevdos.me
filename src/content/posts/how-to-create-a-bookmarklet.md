@@ -1,7 +1,7 @@
 ---
 title: How to create a bookmarklet
 date: "2010-11-17"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - browser
@@ -11,7 +11,7 @@ tags:
 A bookmarklet is a small Javascript program stored into a url. A user can bookmark the specific url, and execute the Javascript code on any page. The good news is that it’s not so hard to create one. A very simple example is the bookmarklet below:
 
 ```html
-<a href="javascript:alert("Phrappe.com rocks!")>A vary basic bookmarklet!</a>
+<a href="javascript:alert("Tsevdos.me rocks!")">A very basic bookmarklet!</a>
 ```
 
 As you can see, you instruct the browser to run a javascript url. You can drag & drop the link to your bookmarks, and execute the bookmarklet on any page! That’s the power of bookmarklets. Go on try it 😉
@@ -21,7 +21,7 @@ Unfortunately, we have some browser limitations on url size (usually 2000 charac
 ```js
 javascript: (function () {
   var s = document.createElement("script");
-  s.src = "http://phrappe.com/script.js";
+  s.src = "https://tsevdos.me/script.js";
   document.body.appendChild(s);
 })();
 ```

@@ -1,7 +1,7 @@
 ---
 title: Responsive web design and how to be nice to IE
 date: "2013-01-15"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - markup

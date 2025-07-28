@@ -1,7 +1,7 @@
 ---
 title: "Base tag: Learn how to use it"
 date: "2013-05-08"
-category: markup
+category: Markup
 tags:
   - markup
   - base

@@ -1,7 +1,7 @@
 ---
 title: Repocompare.io
 date: "2017-01-22"
-category: projects
+category: Projects
 tags:
   - javascript
   - babel

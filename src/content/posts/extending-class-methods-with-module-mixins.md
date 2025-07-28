@@ -1,7 +1,7 @@
 ---
 title: "Extending Class methods with Module Mixins"
 date: "2016-02-01"
-category: ruby
+category: Ruby
 tags:
   - ruby
   - class

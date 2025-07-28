@@ -1,7 +1,7 @@
 ---
 title: Grunt boilerplate for web designers
 date: "2014-01-29"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - grunt

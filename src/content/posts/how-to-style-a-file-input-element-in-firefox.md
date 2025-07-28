@@ -1,7 +1,7 @@
 ---
 title: How to style a file input element in Firefox
 date: "2013-02-05"
-category: css
+category: CSS
 tags:
   - css
   - markup

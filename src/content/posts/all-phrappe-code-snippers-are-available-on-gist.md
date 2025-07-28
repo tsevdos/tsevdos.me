@@ -1,7 +1,7 @@
 ---
 title: All Phrappe code / snippets are available on Gist
 date: "2012-03-30"
-category: misc
+category: Misc
 tags:
   - code
   - gist

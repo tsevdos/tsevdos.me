@@ -42,13 +42,13 @@ export const getAllPostsSorted = async () => {
 export const getAllCategories = async () => {
   const allPosts = await getAllPostsSorted();
 
-  return [...new Set(allPosts.flatMap((post) => post.data.category))];
+  return [...new Set(allPosts.flatMap((post) => post.data.category))].map((category) => category.toLowerCase());
 };
 
 export const getAllPostsFromCategory = async (category: string) => {
   const allPosts = await getAllPostsSorted();
 
-  return allPosts.filter((post) => post.data.category === category).sort(sortByDate);
+  return allPosts.filter((post) => post.data.category.toLowerCase() === category).sort(sortByDate);
 };
 
 export const getPageOfPosts = (posts: CollectionEntry<"posts">[], pageNum: number) =>
@@ -83,7 +83,7 @@ export const getPagination = (currentPage = 1, totalPosts: number) => {
 
 export const getPageUrl = (pageNum: number, category?: string) => {
   if (category) {
-    return pageNum === 1 ? `/blog/${category}` : `/blog/${category}/page/${pageNum}`;
+    return pageNum === 1 ? `/blog/${category.toLowerCase()}` : `/blog/${category.toLowerCase()}/page/${pageNum}`;
   }
 
   return `/blog/page/${pageNum}`;

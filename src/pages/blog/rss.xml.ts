@@ -19,7 +19,7 @@ export function GET(context: APIContext) {
     items: postsWithExtras.map((post) => ({
       title: post.data.title,
       description: `${post.excerpt}...`,
-      link: `${context.site}blog/${post.data.category}/${post.id}`,
+      link: `${context.site}blog/${post.data.category.toLowerCase()}/${post.id}`,
       pubDate: new Date(post.data.date),
     })),
     // (optional) inject custom xml

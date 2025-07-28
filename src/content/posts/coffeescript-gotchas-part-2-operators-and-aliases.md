@@ -1,7 +1,7 @@
 ---
 title: "Coffeescript gotchas (part 2): Operators and aliases"
 date: "2014-07-17"
-category: coffeescript
+category: CoffeeScript
 tags:
   - aliases
   - chaining comparison
@@ -10,14 +10,14 @@ tags:
   - ternary
 ---
 
-For this second part of the series, we'll dig into **CoffeeScript operators** and their **aliases**, which make our lives easier and our code much cleaner and more expressive. In case you missed the [first part](http://phrappe.com/coffeescript/coffeescript-gotchas-part-1-comments-strings-booleans-arrays-and-functions/ "CoffeeScript gotchas (part 1): Comments, strings, booleans, arrays and functions") I recommend you have a look at it, I'm sure you'll find something interesting.
+For this second part of the series, we'll dig into **CoffeeScript operators** and their **aliases**, which make our lives easier and our code much cleaner and more expressive. In case you missed the [first part](/blog/coffeescript/coffeescript-gotchas-part-1-comments-strings-booleans-arrays-and-functions/ "CoffeeScript gotchas (part 1): Comments, strings, booleans, arrays and functions") I recommend you have a look at it, I'm sure you'll find something interesting.
 
 ##### Update: Table of contents
 
-1. [CoffeeScript gotchas (part 1): Comments, strings, booleans, arrays and functions](http://phrappe.com/coffeescript/coffeescript-gotchas-part-1-comments-strings-booleans-arrays-and-functions/)
-2. [Coffeescript gotchas (part 2): Operators and aliases](http://phrappe.com/coffeescript/coffeescript-gotchas-part-2-operators-and-aliases/)
-3. [Coffeescript gotchas (part 3): Switch statement and loops](http://phrappe.com/coffeescript/coffeescript-gotchas-part-3-switch-statement-and-loops/)
-4. [Coffeescript gotchas (part 4): Scope and Objects](http://phrappe.com/coffeescript/coffeescript-gotchas-part-4-scope-and-objects/)
+1. [CoffeeScript gotchas (part 1): Comments, strings, booleans, arrays and functions](/blog/coffeescript/coffeescript-gotchas-part-1-comments-strings-booleans-arrays-and-functions/)
+2. [Coffeescript gotchas (part 2): Operators and aliases](/blog/coffeescript/coffeescript-gotchas-part-2-operators-and-aliases/)
+3. [Coffeescript gotchas (part 3): Switch statement and loops](/blog/coffeescript/coffeescript-gotchas-part-3-switch-statement-and-loops/)
+4. [Coffeescript gotchas (part 4): Scope and Objects](/blog/coffeescript/coffeescript-gotchas-part-4-scope-and-objects/)
 
 ## Basic operators and their aliases
 

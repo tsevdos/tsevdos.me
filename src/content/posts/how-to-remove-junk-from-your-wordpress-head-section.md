@@ -1,7 +1,7 @@
 ---
 title: How to remove junk from your WordPress "head" section
 date: "2011-07-01"
-category: wordpress
+category: WordPress
 tags:
   - wordpress
   - ambrosia

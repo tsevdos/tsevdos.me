@@ -1,7 +1,7 @@
 ---
 title: Thanks for the support!
 date: "2011-07-25"
-category: wordpress
+category: WordPress
 tags:
   - wordpress
   - ambrosia

@@ -1,7 +1,7 @@
 ---
 title: jQuery element's tag name
 date: "2013-05-22"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - element

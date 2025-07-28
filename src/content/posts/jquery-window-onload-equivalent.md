@@ -1,7 +1,7 @@
 ---
 title: jQuery window.onload equivalent
 date: "2011-08-01"
-category: javascript
+category: JavaScript
 tags:
   - javascript
   - jquery
@@ -10,7 +10,7 @@ tags:
   - window.onload
 ---
 
-Last week a reader contacted me noting that my [equal heights script](http://phrappe.com/javascript/a-really-simple-equal-heights-method-for-jquery/ "A really simple “equal heights” method for jQuery!") was not working. When I took a closer look at his code, I found out that the reason for it not working correctly wasn’t my script but the way **jQuery** works! The normal jQuery behaviour is to run the code when the DOM is ready and won't wait for images/graphics etc, to load. There are some cases though, that someone needs to run a piece of code after the entire page is fully loaded. You can achieve that with the code bellow:
+Last week a reader contacted me noting that my [equal heights script](/blog/javascript/a-really-simple-equal-heights-method-for-jquery/ "A really simple “equal heights” method for jQuery!") was not working. When I took a closer look at his code, I found out that the reason for it not working correctly wasn’t my script but the way **jQuery** works! The normal jQuery behaviour is to run the code when the DOM is ready and won't wait for images/graphics etc, to load. There are some cases though, that someone needs to run a piece of code after the entire page is fully loaded. You can achieve that with the code bellow:
 
 ```js
 $(window).load(function () {

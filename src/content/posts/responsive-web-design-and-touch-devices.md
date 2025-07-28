@@ -1,7 +1,7 @@
 ---
 title: Responsive web design and touch devices
 date: "2013-06-19"
-category: articles
+category: Articles
 tags:
   - articles
   - design

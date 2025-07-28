@@ -1,7 +1,7 @@
 ---
 title: Conditional styles for IE10
 date: "2013-07-10"
-category: css
+category: CSS
 tags:
   - css
   - conditional comments
