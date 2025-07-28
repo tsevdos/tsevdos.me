@@ -13,7 +13,7 @@ tags:
   - tagname
 ---
 
-A couple of weeks ago I posted how can you [get an element's tagname](http://phrappe.com/javascript/jquery-elements-tag-name/ "jQuery element’s tag name") using [jQuery's .prop() method](http://api.jquery.com/prop/ ".prop()"). A simpler alternative could be the below code:
+A couple of weeks ago I posted how can you [get an element's tagname](/blog/javascript/jquery-elements-tag-name/ "jQuery element’s tag name") using [jQuery's .prop() method](http://api.jquery.com/prop/ ".prop()"). A simpler alternative could be the below code:
 
 ```js
 $(el).get(0).tagName.toLowerCase();
@@ -31,4 +31,4 @@ $(el)[0].tagName.toLowerCase();
 $("#someElement")[0].tagName.toLowerCase();
 ```
 
-I believe that the above method is easier and faster than [the previous one](http://phrappe.com/javascript/jquery-elements-tag-name/ "jQuery element’s tag name").
+I believe that the above method is easier and faster than [the previous one](/blog/javascript/jquery-elements-tag-name/ "jQuery element’s tag name").

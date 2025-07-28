@@ -36,13 +36,13 @@ Keep this tip in mind because it can really boost up your web apps.
 Just take advantage of the jQuery "chaining" functions! It might feel a little awkward at first, but can save a lot of time and sweat. Below, I'm creating a div element (with an id of "test"), that contains a paragraph element with an anchor node and the text "John". Then I'm selecting that anchor and passing an attribute (a hypertext reference to be more specific or simply href), then re-selecting my first element (the div) using the `end()` function, and finally appending everything to the body of the document. Chaining rocks!
 
 ```js
-$('<div id="test"><p><a>John</a></p></div>').find("a").attr("href", "http://phrappe.com/").end().appendTo("body");
+$('<div id="test"><p><a>John</a></p></div>').find("a").attr("href", "https://tsevdos.me/").end().appendTo("body");
 ```
 
 A good habit is to change lines on each function to increase readability. So the above one-line spaghetti code can be re-written like this:
 
 ```js
-$('<div id="test"><p><a>John</a></p></div>').find("a").attr("href", "http://phrappe.com/").end().appendTo("body");
+$('<div id="test"><p><a>John</a></p></div>').find("a").attr("href", "https://tsevdos.me/").end().appendTo("body");
 ```
 
 Easy, clean, readable...

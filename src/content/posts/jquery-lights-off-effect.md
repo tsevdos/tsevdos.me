@@ -10,7 +10,7 @@ tags:
   - plugin
 ---
 
-I've been working on a "lights off" effect for videos the other day. Here's a [demo page](http://phrappe.com/demos/lightsoff/lights_off.html) (with the appropriate code) that I might turn into a proper plugin if there is enough interest. Enjoy...
+I've been working on a "lights off" effect for videos the other day. Here's a [demo page](/demos/lightsoff/lights_off.html) (with the appropriate code) that I might turn into a proper plugin if there is enough interest. Enjoy...
 
 ```js
 $(document).ready(function () {
