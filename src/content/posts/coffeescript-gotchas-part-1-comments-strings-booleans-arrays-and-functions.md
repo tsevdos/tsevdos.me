@@ -31,7 +31,7 @@ Before jumping into these, have a look at the well-written, free on-line book [C
 
 You can have **single-line** and **multi-line** comments in CoffeeScript. Always keep in mind that during compilation, the compiler will completely ignore the single line comments (they wont appear in your final Javascript file) but will keep the multi-line comments intact. In the Codepen examples below you can click the "view compiled" link to see the generated JS code and the result tab to see the result (if any)...
 
-```
+```coffee
 # Single-line comment. The compiler removes it completely
 ###
 Multiline comment
@@ -45,7 +45,7 @@ comment :-)
 
 Probably the best feature Coffeescript provides! You can finally do things like this:
 
-```
+```coffee
 name = "John"
 greeting1 = "Hello, #{name}!" # -> Hello, John!
 greeting2 = 'Hello, #{name}!' # -> Hello, #{name}!
@@ -57,7 +57,7 @@ document.write greeting2
 
 Keep in mind that double quotes are needed to compile correctly. You can even use functions!
 
-```
+```coffee
 mrFunc = (name) -> "Mr. " + name
 message = "Hello, #{mrFunc 'John'}"
 
@@ -68,7 +68,7 @@ document.write message
 
 You can also use `Heredocs`. They even support interpolation!
 
-```
+```coffee
 multiline = """
 This is
 a multiline
@@ -85,7 +85,7 @@ document.write multiline
 
 Not much news here, apart from some syntax goodies... You can use `true` with two more keywords, `yes` and `on` and you can use `false` with the opposites, `no` and `off`. Sometimes it makes more sense to use these keywords instead of the normal `true/false`.
 
-```
+```coffee
 # true === yes === on
 if true
   document.write 'true<br/>'
@@ -113,7 +113,7 @@ if !off
 
 CoffeeScript allows a very convenient syntax to create specific array ranges. You can create any range using the two dots syntax (inclusive range, which simply means that it will include the last value). Adding three dots instead excludes the last value (exclusive range). Finally you can use reverse ranges the same way. Have a look at the examples, they are much easier than they sound...
 
-```
+```coffee
 range1  = [0..10]  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 range2  = [0...10] # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 range20 = [20..0]  # [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
@@ -123,7 +123,7 @@ range20 = [20..0]  # [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5,
 
 One of the coolest and most usable CoffeeScript features is the default values on functions. Instead of checking if a value exists, etc. you can simply apply the default value right next to the parameter.
 
-```
+```coffee
 greeting = (name = "friend") ->
   "Hello #{name}"
 
@@ -136,7 +136,7 @@ document.write greeting()
 
 Another tricky part when start to learn CoffeeScript is how you write an **IIFE**. The syntax is a bit tricky, so have a look below (keep in mind that only CoffeeScript 1.3 and above supports default values on IIFE).
 
-```
+```coffee
 do (doc = document, jQuery = $) ->
   console.log "IIFE magic"
 ```

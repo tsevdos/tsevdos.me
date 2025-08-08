@@ -18,6 +18,8 @@ The [placeholder attribute](http://www.w3.org/TR/html5/common-input-element-attr
 <input type="text" placeholder="Placeholder Text" />
 ```
 
+<br />
+
 ```css
 ::-webkit-input-placeholder {
   font-style: italic;
@@ -49,6 +51,8 @@ The [placeholder attribute](http://www.w3.org/TR/html5/common-input-element-attr
 ```html
 <input type="text" placeholder="Placeholder Text" class="someclass" />
 ```
+
+<br />
 
 ```css
 input.someclass::-moz-placeholder {

@@ -25,7 +25,7 @@ This is the fourth and final part of the CoffeeScript gotchas series. On this pa
 
 Probably the most valuable feature that CoffeeScript syntax offers at the moment. With the `class` keyword you can create a new class (CoffeeScript is using the constructor function under the hood) and with the `extend` keyword you can extend one. To make things even easier, CoffeeScript provides an `initialization` (aka `constructor`) function, in case you need it. Just use the `contstructor` method and you are ready to go. You can use the concept of `super` method which represents a reference to the superclass version of the method you're in (very Ruby-like). I'm sure that all these will make more sense with the following example...
 
-```
+```coffee
 class Animal
   constructor: (@name) ->
   move: (meters) ->
@@ -52,7 +52,7 @@ tom.move()
 
 You can set up instance variables with the classic `this` Javascript keyword (CoffeeScript translates to Javascript after all), but you can save a couple of characters and maybe lines, by using the `@` symbol. You can also save a couple of more lines by omitting the instance name.
 
-```
+```coffee
 class Animal
   constructor: (name, height, weight) ->
     @name = name
@@ -68,7 +68,7 @@ class Animal
 
 Finally, if you want to pass an instance method as a callback, use the `=>`, also known as "fat arrow". The "fat arrow" binds the object's instance to `this` and makes your code easier to read. This will also be an [ES6 feature](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions "ES6 fat arrow"), so it makes a lot of sense to get used to it.
 
-```
+```coffee
 class Message
   constructor: (@txt) ->
   thin: -> console.log @txt
