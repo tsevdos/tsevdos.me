@@ -25,7 +25,7 @@ Welcome to the third part of Coffeescript gotchas. If you haven't yet read the [
 
 At last, an easier way to write switch statements. If your switch case contains a single line of code, you can write the entire thing in a single line using the `then` keyword (see second example).
 
-```
+```coffee
 name = "John"
 
 # normal switch statement
@@ -52,7 +52,7 @@ For loops have many flavors and great potential in CoffeeScript. You can loop th
 
 Iterating Arrays have never been easier...
 
-```
+```coffee
 arr = ["Ned Stark", "Jon Snow", "Arya Stark", "Jaime Lannister"]
 
 # basic array iteration
@@ -76,7 +76,7 @@ for name, i in arr by 2
 
 Looping through an object's key/value pairs is also very easy. You can also loop through just the direct key/value pairs (not the inherited ones) by using the `own` keyword (which will use the `hasOwnProperty` method under the hood).
 
-```
+```coffee
 ned =
   name : "Ned Stark"
   house : "Stark"
@@ -95,7 +95,7 @@ for own key, value of ned
 
 The `while` loop has 3 syntax flavors to make your code more descriptive and your life easier. Try to use `unless` instead of `while not`, as it's easier and preferable.
 
-```
+```coffee
 # Normal while
 num = 10
 while num

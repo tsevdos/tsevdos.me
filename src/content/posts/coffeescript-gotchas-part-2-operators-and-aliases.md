@@ -23,7 +23,7 @@ For this second part of the series, we'll dig into **CoffeeScript operators** an
 
 When it comes to `if` statements (and not only them), CoffeeScript provides many syntax aliases that keep our code clean and readable. For starters, we can forget triple equals (===) and negative double equals (!==), and use their easier aliases, the `is` and `isnt` keywords. Have a look at the example below.
 
-```
+```coffee
 name = "John"
 
 if name is "John" # true ( is equals === )
@@ -35,14 +35,14 @@ if name isnt "Johnny" # false ( isnt equals !== )
 
 You can also use the `not` keyword and get rid of Javascript's exclamation mark (!) operator. Much more readable!
 
-```
+```coffee
 if not false # compiles as if (!false) in Javascript
   console.log('not demonstration')
 ```
 
 Want to make it even more readable? You can even replace the `if not` statement with the much more descriptive `unless` keyword. It makes more sense in some cases:
 
-```
+```coffee
 # if not === unless
 
 person =
@@ -59,7 +59,7 @@ unless person.isRunning
 
 Finally, you can forget boolean operators such as double ampersands (`&&`) and the double vertical bars (`||`) and start using the much more convenient `and` and `or` keywords. The real fun starts when you combine all these new keywords. Writing Javascript becomes as easy as english!
 
-```
+```coffee
 name = 'John'
 sex  = 'male'
 isCool = true
@@ -75,7 +75,7 @@ if name is "John" or isCool is true # compiles as if ( name === "John" || isCool
 
 The ternary Operator in CoffeeScript looks a bit tricky at first, and in my opinion is probably the only operator that actually looks better in plain good old Javascript, but in case you need to use it, it looks like this:
 
-```
+```coffee
 maxValue = 10
 minValue = 1
 value = if 10 > 0 then 5 else 15 # value = 5
@@ -87,14 +87,14 @@ document.write(value)
 
 This is a unique CoffeeScript feature that checks if a variable (or property) has a value. So it basically tests if the value isn't `null` or of type `undefined`. Keep in mind that this is not testing if a value is "falsey" (like a empty string, number 0, empty array, etc.). For more details on "truthy" and "falsy" values have a look at this excellent [article on Sitepoint](http://www.sitepoint.com/javascript-truthy-falsy/ "Truthy and Falsy: When All is Not Equal in JavaScript").
 
-```
+```coffee
 if name? # compiles as if ( name !== null || name !== "undifined" )
   document.write('Safely use name value.')
 ```
 
 You can also use this feature on object properties or when you want to check if the value isn't `null` or of type `undefined`. Have a look at the examples below and discover a nicely added feature that will save you a lot of typing...
 
-```
+```coffee
 person =
 	name: 'John'
 
@@ -115,7 +115,7 @@ console.log(otherName)
 
 It looks better and more compact...
 
-```
+```coffee
 name = false # falsy value
 
 name ||= "John" # name || (name = "John");
@@ -127,7 +127,7 @@ console.log(name)
 
 Another CoffeeScript only feature. If your condition is between a range you can finally combine them, just like in algebra. Nicely done.
 
-```
+```coffee
 x = 8
 
 if 0 <= x <= 10 # compiles to if ( 0 <= x && x <= 10 )
