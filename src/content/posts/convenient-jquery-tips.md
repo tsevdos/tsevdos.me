@@ -42,12 +42,8 @@ $('<div id="test"><p><a>John</a></p></div>').find("a").attr("href", "https://tse
 A good habit is to change lines on each function to increase readability. So the above one-line spaghetti code can be re-written like this:
 
 ```js
-$('<div id="test"><p><a>John</a></p></div>')
-  .find("a")
-  .attr("href", "https://tsevdos.me/")
-  .end()
-  .appendTo("body");
-``` 
+$('<div id="test"><p><a>John</a></p></div>').find("a").attr("href", "https://tsevdos.me/").end().appendTo("body");
+```
 
 Easy, clean, readable...
 

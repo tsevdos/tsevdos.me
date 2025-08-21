@@ -12,11 +12,7 @@
     var elements = $(this).children();
     var elementsLen = elements.length;
 
-    for (
-      var i = 0, numb = 1;
-      i < elementsLen;
-      i += settings.wrapEvery, numb++
-    ) {
+    for (var i = 0, numb = 1; i < elementsLen; i += settings.wrapEvery, numb++) {
       // Default Classes Array
       var classes = [];
       if (settings.defaultClasses) {
@@ -45,12 +41,8 @@
       }
 
       elements
-        .filter(
-          ":eq(" + i + "), :lt(" + (i + settings.wrapEvery) + "):gt(" + i + ")",
-        )
-        .wrapAll(
-          "<" + settings.htmlStructure + " " + htmlClassesString + " />",
-        );
+        .filter(":eq(" + i + "), :lt(" + (i + settings.wrapEvery) + "):gt(" + i + ")")
+        .wrapAll("<" + settings.htmlStructure + " " + htmlClassesString + " />");
     }
 
     return $(this);
