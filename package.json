@@ -1,17 +1,19 @@
 {
   "name": "tsevdos.me",
-  "type": "module",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "check": "bun run lint && npm run prettier && astro check",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "lint": "eslint",
-    "prettier": "prettier . --check",
-    "prettier:fix": "prettier --write .",
+    "check": "bun check:lint && bun check:format && astro check",
+    "check:lint": "oxlint",
+    "check:format": "oxfmt --check",
+    "fix": "bun fix:lint && bun fix:format",
+    "fix:lint": "oxlint --fix",
+    "fix:format": "oxfmt",
     "astro": "astro"
   },
   "dependencies": {
@@ -24,9 +26,6 @@
     "@tailwindcss/vite": "^4.2.1",
     "astro": "5.18.0",
     "astro-expressive-code": "^0.41.7",
-    "eslint": "^9.39.3",
-    "eslint-plugin-astro": "^1.6.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
     "html-to-text": "^9.0.5",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
@@ -34,15 +33,13 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.3",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/typography": "^0.5.19",
     "@types/html-to-text": "^9.0.4",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "prettier": "^3.8.1",
-    "prettier-plugin-astro": "^0.14.1",
-    "typescript-eslint": "^8.56.1"
+    "oxfmt": "^0.36.0",
+    "oxlint": "^1.51.0"
   }
 }
