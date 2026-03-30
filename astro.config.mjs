@@ -13,12 +13,14 @@ export default defineConfig({
     react(),
     sitemap(),
     expressiveCode({
-      themes: ["catppuccin-frappe"],
       styleOverrides: {
         codeFontSize: "1.2rem",
       },
     }),
-    mdx({ optimize: true }),
+    mdx({
+      optimize: true,
+      syntaxHighlight: "shiki",
+    }),
   ],
   vite: {
     plugins: [tailwindcss()],
