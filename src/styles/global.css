@@ -23,3 +23,16 @@
     }
   }
 }
+
+/*
+Fix the backtick issue on <code> element
+https://github.com/tailwindlabs/tailwindcss-typography/issues/18#issuecomment-2637005666
+*/
+@utility prose {
+  code {
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+}

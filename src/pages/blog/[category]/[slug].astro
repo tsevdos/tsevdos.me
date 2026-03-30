@@ -4,7 +4,12 @@ import { getEntry, render } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer.astro";
-import { getAllPostsSorted, convertHTMLToPlainText, getFormattedDate, getReadingTime } from "../../../lib/helpers";
+import {
+  getAllPostsSorted,
+  convertHTMLToPlainText,
+  getFormattedDate,
+  getReadingTime,
+} from "../../../lib/helpers";
 
 export const getStaticPaths = (async () => {
   const sortedPosts = await getAllPostsSorted();
@@ -32,16 +37,26 @@ const readingTime = getReadingTime(plainText);
 const { title, date, category } = post.data;
 ---
 
-<Layout title={`John Tsevdos Blog - ${title}`} description={`John Tsevdos Blog - ${title}`} url={href}>
+<Layout
+  title={`John Tsevdos Blog - ${title}`}
+  description={`John Tsevdos Blog - ${title}`}
+  url={href}
+>
   <Header client:load />
 
   <div class="container mx-auto px-4 py-16 lg:px-8 xl:max-w-7xl">
-    <header>
-      <h1 class="mb-4 text-4xl font-black text-black dark:text-white">{title}</h1>
-      <p class="pb-3 text-l leading-relaxed font-medium text-gray-700 dark:text-gray-300">
+    <header class="mb-6">
+      <h1 class="mb-4 text-4xl font-black text-black dark:text-white">
+        {title}
+      </h1>
+      <p
+        class="pb-3 text-l leading-relaxed font-medium text-gray-700 dark:text-gray-300"
+      >
         <span class="font-bold tracking-wider text-blue-600 dark:text-blue-500">
           {category}
-        </span> · <span class="bold">{getFormattedDate(date)}</span> · {readingTime} min read
+        </span> · <span class="bold">{getFormattedDate(date)}</span> · {
+          readingTime
+        } min read
       </p>
     </header>
 
