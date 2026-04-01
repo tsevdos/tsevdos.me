@@ -30,9 +30,13 @@ const { href } = Astro.url;
 const post = await getEntry("posts", slug);
 
 // Dynamically import post-specific image or use default
-const images = import.meta.glob("../../../assets/posts/*.png", { eager: true });
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../../../assets/posts/*.png",
+  { eager: true },
+);
 const imagePath = `../../../assets/posts/${slug}.png`;
-const heroImage = images[imagePath]?.default || defaultImage;
+const heroImage =
+  (images[imagePath]?.default as ImageMetadata | undefined) || defaultImage;
 
 if (!post) {
   return Astro.redirect("/404");
