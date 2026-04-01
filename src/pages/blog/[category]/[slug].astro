@@ -4,6 +4,8 @@ import { getEntry, render } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer.astro";
+import { Image } from "astro:assets";
+import defaultImage from "../../../assets/posts/default.png";
 import {
   getAllPostsSorted,
   convertHTMLToPlainText,
@@ -26,6 +28,11 @@ const { slug } = Astro.params as { slug: string };
 const { href } = Astro.url;
 
 const post = await getEntry("posts", slug);
+
+// Dynamically import post-specific image or use default
+const images = import.meta.glob("../../../assets/posts/*.png", { eager: true });
+const imagePath = `../../../assets/posts/${slug}.png`;
+const heroImage = images[imagePath]?.default || defaultImage;
 
 if (!post) {
   return Astro.redirect("/404");
@@ -59,6 +66,16 @@ const { title, date, category } = post.data;
         } min read
       </p>
     </header>
+
+    <div class="mb-8 w-full">
+      <Image
+        src={heroImage}
+        alt={title}
+        class="w-full h-auto rounded-lg"
+        style="aspect-ratio: 1000 / 420;"
+        loading="eager"
+      />
+    </div>
 
     <article
       class="max-w-full prose prose-lg md:prose-2xl dark:prose-invert prose-a:text-blue-600 prose-a:no-underline prose-a:hover:text-blue-400 prose-a:hover:opacity-75 dark:prose-a:text-blue-400 dark:prose-a:hover:text-blue-300 prose-img:rounded-lg"
