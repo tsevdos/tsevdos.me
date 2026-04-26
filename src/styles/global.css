@@ -35,4 +35,17 @@ https://github.com/tailwindlabs/tailwindcss-typography/issues/18#issuecomment-26
       content: none;
     }
   }
+
+  /* Responsive H2 titles - smaller on mobile, larger on desktop */
+  h2 {
+    font-size: 1.5rem; /* text-2xl on mobile */
+    margin-top: 2rem; /* mt-8 on mobile */
+    margin-bottom: 1rem; /* mb-4 on mobile */
+
+    @media (min-width: 1024px) {
+      font-size: 1.875rem; /* lg:text-3xl on desktop */
+      margin-top: 3rem; /* lg:mt-12 on desktop */
+      margin-bottom: 1.5rem; /* lg:mb-6 on desktop */
+    }
+  }
 }

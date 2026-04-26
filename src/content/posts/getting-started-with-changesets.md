@@ -8,11 +8,6 @@ tags:
   - changesets
 ---
 
-<!--
-TODO: Fix the links
-1. [Changesets setup and basic usage](#changesets-setup-and-basic-usage)
-2. [Publish npm package with Changesets and GitHub Actions](#publish-npm-package-with-changesets-and-github-actions) -->
-
 [**Changesets**](https://github.com/changesets/changesets) is the best way to manage, version, and publish your packages. It works great both on standard repositories and monorepos, it integrates easily with your workflows (more on that in a future post), and most importantly, it makes sense! Below is a quick tutorial on how to set up [**Changesets**](https://github.com/changesets/changesets) and how it works. I'm also planning to write a follow up post on how to automate the publishing process using [**GitHub actions**](https://docs.github.com/en/actions), so stay tuned for that.
 
 ## Installation
