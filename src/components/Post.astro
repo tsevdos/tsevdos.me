@@ -17,8 +17,13 @@ const lowerCaseCategory = category.toLowerCase();
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "../assets/posts/*.{png,jpg,jpeg,webp}",
 );
-const thumbKey = `../assets/posts/${id}-thumb.png`;
-const imageModule = images[thumbKey] ?? images["../assets/posts/default-thumb.png"];
+const thumbPathPrefix = `../assets/posts/${id}-thumb.`;
+const thumbKey = Object.keys(images).find((key) =>
+  key.startsWith(thumbPathPrefix),
+);
+const imageModule =
+  (thumbKey ? images[thumbKey] : undefined) ??
+  images["../assets/posts/default-thumb.png"];
 const ImageThumb = (await imageModule()).default;
 ---
 
@@ -65,7 +70,8 @@ const ImageThumb = (await imageModule()).default;
       </a>
     </h4>
     <p class="mb-3 text-sm text-gray-600 dark:text-gray-400">
-      <span class="font-medium">{getFormattedDate(date)}</span> · {readingTime} min read
+      <span class="font-medium">{getFormattedDate(date)}</span> · {readingTime} min
+      read
     </p>
     <p class="leading-relaxed text-gray-600 dark:text-gray-400">{excerpt}...</p>
   </div>
