@@ -5,7 +5,7 @@ import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer.astro";
 import { Image } from "astro:assets";
-import defaultImage from "../../../assets/posts/default.png";
+import defaultImage from "../../../assets/posts/default.jpg";
 import {
   getAllPostsSorted,
   getFormattedDate,
@@ -31,14 +31,19 @@ const post = await getEntry("posts", slug);
 
 // Dynamically import post-specific image or use default
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "../../../assets/posts/*.png",
+  "../../../assets/posts/*.{png,jpg,jpeg,webp}",
   {
     eager: true,
   },
 );
-const imagePath = `../../../assets/posts/${slug}.png`;
+const imagePathPrefix = `../../../assets/posts/${slug}.`;
+const imageKey = Object.keys(images).find((key) =>
+  key.startsWith(imagePathPrefix),
+);
 const heroImage =
-  (images[imagePath]?.default as ImageMetadata | undefined) || defaultImage;
+  (imageKey
+    ? (images[imageKey]?.default as ImageMetadata | undefined)
+    : undefined) || defaultImage;
 
 if (!post) {
   return Astro.redirect("/404");

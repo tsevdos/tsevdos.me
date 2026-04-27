@@ -23,7 +23,7 @@ const thumbKey = Object.keys(images).find((key) =>
 );
 const imageModule =
   (thumbKey ? images[thumbKey] : undefined) ??
-  images["../assets/posts/default-thumb.png"];
+  images["../assets/posts/default-thumb.jpg"];
 const ImageThumb = (await imageModule()).default;
 ---
 
