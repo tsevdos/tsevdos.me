@@ -1,5 +1,4 @@
 import { getCollection, type CollectionEntry } from "astro:content";
-import { convert } from "html-to-text";
 import { NO_OF_WORDS_IN_EXCERPT, POSTS_PER_PAGE, WORDS_PER_MINUTE } from "./constants";
 
 const range = (start: number, stop: number, step: number) =>
@@ -16,14 +15,24 @@ export const getFormattedDate = (dateStr: string) =>
     day: "numeric",
   });
 
-export const convertHTMLToPlainText = (html = "") =>
-  convert(html, {
-    selectors: [
-      { selector: "a", options: { ignoreHref: true } },
-      { selector: "img", format: "skip" },
-      { selector: "figure", format: "skip" },
-    ],
-  });
+export const stripMdxToPlainText = (body = "") =>
+  body
+    .split("\n")
+    .filter((line) => !/^(import|export)\s/.test(line))
+    .join("\n")
+    .replace(/<[^>]*\/?>/g, " ") // JSX/HTML tags
+    .replace(/!\[.*?\]\(.*?\)/g, "") // images
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") // links → text
+    .replace(/```[\s\S]*?```/g, "") // fenced code blocks
+    .replace(/`([^`]+)`/g, "$1") // inline code
+    .replace(/^#{1,6}\s+/gm, "") // headings
+    .replace(/\*{1,3}([^*\n]+)\*{1,3}/g, "$1") // bold/italic (asterisks)
+    .replace(/_{1,3}([^_\n]+)_{1,3}/g, "$1") // bold/italic (underscores)
+    .replace(/^[-*+]\s+/gm, "") // unordered lists
+    .replace(/^\d+\.\s+/gm, "") // ordered lists
+    .replace(/^>\s*/gm, "") // blockquotes
+    .replace(/\n{2,}/g, " ")
+    .trim();
 
 export const getReadingTime = (text = "") => {
   const regex = /\w+/g;
@@ -56,7 +65,7 @@ export const getPageOfPosts = (posts: CollectionEntry<"posts">[], pageNum: numbe
 
 export const getPostWithExtras = (posts: CollectionEntry<"posts">[]) => {
   return posts.map((post) => {
-    const plainText = convertHTMLToPlainText(post.rendered?.html ?? "");
+    const plainText = stripMdxToPlainText(post.body);
     const excerpt = plainText.split(" ").slice(0, NO_OF_WORDS_IN_EXCERPT).join(" ");
     const readingTime = getReadingTime(plainText);
 

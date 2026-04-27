@@ -5,12 +5,12 @@ import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer.astro";
 import { Image } from "astro:assets";
-import defaultImage from "../../../assets/posts/default.png";
+import defaultImage from "../../../assets/posts/default.jpg";
 import {
   getAllPostsSorted,
-  convertHTMLToPlainText,
   getFormattedDate,
   getReadingTime,
+  stripMdxToPlainText,
 } from "../../../lib/helpers";
 
 export const getStaticPaths = (async () => {
@@ -31,19 +31,26 @@ const post = await getEntry("posts", slug);
 
 // Dynamically import post-specific image or use default
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "../../../assets/posts/*.png",
-  { eager: true },
+  "../../../assets/posts/*.{png,jpg,jpeg,webp}",
+  {
+    eager: true,
+  },
 );
-const imagePath = `../../../assets/posts/${slug}.png`;
+const imagePathPrefix = `../../../assets/posts/${slug}.`;
+const imageKey = Object.keys(images).find((key) =>
+  key.startsWith(imagePathPrefix),
+);
 const heroImage =
-  (images[imagePath]?.default as ImageMetadata | undefined) || defaultImage;
+  (imageKey
+    ? (images[imageKey]?.default as ImageMetadata | undefined)
+    : undefined) || defaultImage;
 
 if (!post) {
   return Astro.redirect("/404");
 }
 
 const { Content } = await render(post);
-const plainText = convertHTMLToPlainText(post.rendered?.html ?? "");
+const plainText = stripMdxToPlainText(post.body);
 const readingTime = getReadingTime(plainText);
 const { title, date, category } = post.data;
 ---
@@ -56,12 +63,14 @@ const { title, date, category } = post.data;
   <Header client:load />
 
   <div class="container mx-auto px-4 py-16 lg:px-8 xl:max-w-7xl">
-    <header class="mb-6">
-      <h1 class="mb-4 text-4xl font-black text-black dark:text-white">
+    <header class="mb-2 md:mb-6">
+      <h1
+        class="mb-4 text-3xl md:text-4xl font-black text-black dark:text-white"
+      >
         {title}
       </h1>
       <p
-        class="pb-3 text-l leading-relaxed font-medium text-gray-700 dark:text-gray-300"
+        class="pb-3 text-md md:text-lg leading-relaxed font-medium text-gray-700 dark:text-gray-300"
       >
         <span class="font-bold tracking-wider text-blue-600 dark:text-blue-500">
           {category}
@@ -71,18 +80,17 @@ const { title, date, category } = post.data;
       </p>
     </header>
 
-    <div class="mb-8 w-full">
+    <div class="mb-4 md:mb-8 w-full">
       <Image
         src={heroImage}
         alt={title}
         class="w-full h-auto rounded-lg"
-        style="aspect-ratio: 1000 / 420;"
         loading="eager"
       />
     </div>
 
     <article
-      class="max-w-full prose prose-lg md:prose-2xl dark:prose-invert prose-a:text-blue-600 prose-a:no-underline prose-a:hover:text-blue-400 prose-a:hover:opacity-75 dark:prose-a:text-blue-400 dark:prose-a:hover:text-blue-300 prose-img:rounded-lg"
+      class="max-w-full prose prose-lg md:prose-xl dark:prose-invert prose-a:text-blue-600 prose-a:no-underline prose-a:hover:text-blue-400 prose-a:hover:opacity-75 dark:prose-a:text-blue-400 dark:prose-a:hover:text-blue-300 prose-img:rounded-lg"
     >
       <Content />
     </article>

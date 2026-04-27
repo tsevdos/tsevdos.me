@@ -12,11 +12,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap(),
-    expressiveCode({
-      styleOverrides: {
-        codeFontSize: "1.2rem",
-      },
-    }),
+    expressiveCode(),
     mdx({
       optimize: true,
       syntaxHighlight: "shiki",
