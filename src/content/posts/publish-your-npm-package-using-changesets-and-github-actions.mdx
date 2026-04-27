@@ -20,7 +20,7 @@ For the record, at the end of 2025, and after many security issues on the [**npm
 
 Before starting, please make sure you read and understand the ["Trusted publishing for npm packages"](https://docs.npmjs.com/trusted-publishers) and the ["Npm classic tokens revoked, session-based auth and CLI token management now available"](https://github.blog/changelog/2025-12-09-npm-classic-tokens-revoked-session-based-auth-and-cli-token-management-now-available/) documentation from the **NPM** and **GitHub** sites. Now, let's start with the configuration:
 
-The first step is to [**configure trusted publishing**](https://docs.npmjs.com/trusted-publishers#configuring-trusted-publishing) on [Github actions](https://github.com/features/actions) (or GitLab CI/CD Pipelines). Visit the your npm package page at the [**npm registry**](https://www.npmjs.com/), and click on the **"Settings" tab**. Then click on **"Add a trusted publisher"**, GitHub Actions in our case, and fill in the following fields:
+The first step is to [**configure trusted publishing**](https://docs.npmjs.com/trusted-publishers#configuring-trusted-publishing) on [Github actions](https://github.com/features/actions) (or GitLab CI/CD Pipelines). Visit your npm package page at the [**npm registry**](https://www.npmjs.com/), and click on the **"Settings" tab**. Then click on **"Add a trusted publisher"**, GitHub Actions in our case, and fill in the following fields:
 
 1. **Organization or user (required)**: Your GitHub username or organization name
 2. **Repository (required)**: Your repository name
