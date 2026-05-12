@@ -25,4 +25,4 @@ export const config = {
 
 export const POSTS_PER_PAGE = 12;
 export const WORDS_PER_MINUTE = 200;
-export const NO_OF_WORDS_IN_EXCERPT = 30;
+export const NO_OF_WORDS_IN_EXCERPT = 20;
