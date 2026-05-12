@@ -23,6 +23,6 @@ export const config = {
   RSSDescription: "RSS feed for John Tsevdos blog",
 } as const;
 
-export const POSTS_PER_PAGE = 10;
+export const POSTS_PER_PAGE = 12;
 export const WORDS_PER_MINUTE = 200;
 export const NO_OF_WORDS_IN_EXCERPT = 30;

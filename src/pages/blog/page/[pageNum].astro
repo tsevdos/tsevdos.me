@@ -61,7 +61,9 @@ const { currentPage, noOfPages } = getPagination(pageNumInt, totalPosts);
     <!-- END Heading -->
 
     <!-- Blog Posts -->
-    <div class="space-y-4 sm:space-y-10">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 xl:gap-8"
+    >
       {
         postsWithExtras.map(
           ({ id, data: { category, title, date }, readingTime, excerpt }) => (
