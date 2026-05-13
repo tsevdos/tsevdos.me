@@ -28,24 +28,21 @@ const ImageThumb = (await imageModule()).default;
 ---
 
 <article
-  class="group flex flex-col overflow-hidden rounded-lg bg-white shadow-md hover:shadow-xl transition-all duration-300 ease-out hover:scale-[1.02] dark:bg-gray-800 h-full"
+  class="group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-md hover:shadow-xl transition-all duration-300 ease-out hover:scale-[1.02] motion-reduce:transition-none motion-reduce:hover:scale-100 dark:bg-gray-800 h-full"
 >
-  <a
-    href={`/blog/${lowerCaseCategory}/${id}`}
-    class="relative block w-full overflow-hidden aspect-video"
-  >
+  <div class="relative block w-full overflow-hidden aspect-video">
     <Image
       src={ImageThumb}
       alt={`${title} thumbnail`}
-      class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-110"
+      class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-110 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
     />
-  </a>
+  </div>
   <div class="flex flex-col grow p-6">
     <div class="mb-3">
       <a
         href={`/blog/${lowerCaseCategory}`}
-        class="inline-flex rounded-full bg-blue-100 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-blue-800 hover:bg-blue-200 hover:text-blue-900 transition-colors duration-200 dark:bg-blue-900/75 dark:text-blue-200 dark:hover:bg-blue-800/75 dark:hover:text-blue-100"
-        onclick="event.stopPropagation()"
+        aria-label={`View all ${category} posts`}
+        class="relative z-10 inline-flex rounded-full bg-blue-100 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-blue-800 hover:bg-blue-200 hover:text-blue-900 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:bg-blue-900/75 dark:text-blue-200 dark:hover:bg-blue-800/75 dark:hover:text-blue-100 dark:focus-visible:ring-blue-400 dark:focus-visible:ring-offset-gray-800"
       >
         {category}
       </a>
@@ -53,37 +50,38 @@ const ImageThumb = (await imageModule()).default;
     <h3 class="mb-3 text-xl md:text-2xl font-bold leading-tight tracking-tight">
       <a
         href={`/blog/${lowerCaseCategory}/${id}`}
-        class="text-gray-800 hover:text-blue-600 transition-colors duration-200 dark:text-gray-100 dark:hover:text-blue-400"
+        class="text-gray-800 hover:text-blue-600 transition-colors duration-200 dark:text-gray-100 dark:hover:text-blue-400 before:absolute before:inset-0 before:z-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:relative focus-visible:z-10 dark:focus-visible:ring-blue-400 dark:focus-visible:ring-offset-gray-800"
       >
         {title}
       </a>
     </h3>
     <p class="mb-4 text-sm md:text-base text-gray-600 dark:text-gray-400">
-      <span class="font-semibold">{getFormattedDate(date)}</span> · {
-        readingTime
-      } min read
+      <time datetime={date} class="font-semibold">{getFormattedDate(date)}</time
+      > · {readingTime} min read
     </p>
     <p
       class="mb-6 text-base leading-relaxed text-gray-600 dark:text-gray-400 grow"
     >
       {excerpt}...
     </p>
-    <a
-      href={`/blog/${lowerCaseCategory}/${id}`}
-      class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-semibold text-sm transition-colors duration-200 group/link"
+    <div
+      aria-hidden="true"
+      class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold text-sm group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-200"
     >
       Read Post
       <svg
-        class="w-4 h-4 transition-transform duration-200 group-hover/link:translate-x-1"
+        class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"
+        aria-hidden="true"
+        focusable="false"
       >
         <path
           fill-rule="evenodd"
           d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
           clip-rule="evenodd"></path>
       </svg>
-    </a>
+    </div>
   </div>
 </article>
