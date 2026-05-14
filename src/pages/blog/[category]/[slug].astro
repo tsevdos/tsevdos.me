@@ -62,35 +62,35 @@ const { title, date, category } = post.data;
 >
   <Header client:load />
 
-  <div class="container mx-auto px-4 py-16 lg:px-8 xl:max-w-7xl">
-    <header class="mb-2 md:mb-6">
+  <div class="container mx-auto px-4 py-12 md:py-16 lg:px-8 xl:max-w-7xl">
+    <header class="mb-6 md:mb-8">
       <h1
-        class="mb-4 text-3xl md:text-4xl font-black text-black dark:text-white"
+        class="mb-4 md:mb-6 text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-black dark:text-white"
       >
         {title}
       </h1>
       <p
-        class="pb-3 text-md md:text-lg leading-relaxed font-medium text-gray-700 dark:text-gray-300"
+        class="text-base md:text-lg leading-relaxed font-medium text-gray-700 dark:text-gray-300"
       >
-        <span class="font-bold tracking-wider text-blue-600 dark:text-blue-500">
+        <span class="font-bold tracking-wide text-blue-600 dark:text-blue-500">
           {category}
-        </span> · <span class="bold">{getFormattedDate(date)}</span> · {
+        </span> · <span class="font-semibold">{getFormattedDate(date)}</span> · {
           readingTime
         } min read
       </p>
     </header>
 
-    <div class="mb-4 md:mb-8 w-full">
+    <div class="mb-8 md:mb-12">
       <Image
         src={heroImage}
         alt={title}
-        class="w-full h-auto rounded-lg"
+        class="w-full h-auto rounded-lg shadow-md"
         loading="eager"
       />
     </div>
 
     <article
-      class="max-w-full prose prose-lg md:prose-xl dark:prose-invert prose-a:text-blue-600 prose-a:no-underline prose-a:hover:text-blue-400 prose-a:hover:opacity-75 dark:prose-a:text-blue-400 dark:prose-a:hover:text-blue-300 prose-img:rounded-lg"
+      class="max-w-none prose prose-base md:prose-lg lg:prose-xl dark:prose-invert prose-headings:font-bold prose-headings:tracking-tight prose-a:text-blue-600 prose-a:no-underline prose-a:hover:text-blue-400 prose-a:transition-colors dark:prose-a:text-blue-400 dark:prose-a:hover:text-blue-300 prose-img:rounded-lg prose-img:shadow-md prose-pre:bg-gray-900 prose-pre:shadow-lg dark:prose-pre:bg-gray-950"
     >
       <Content />
     </article>
