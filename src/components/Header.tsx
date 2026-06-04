@@ -20,14 +20,22 @@ export default function Header() {
     if (document.documentElement.classList.contains("dark")) {
       localStorage.setItem("theme", "");
 
+      if (!document.startViewTransition) {
+        document.documentElement.classList.remove("dark");
+        return;
+      }
+
       // Use the View Transition API to animate the theme change
       document.startViewTransition(() => {
         document.documentElement.classList.remove("dark");
       });
-
-      // document.documentElement.classList.remove("dark");
     } else {
       localStorage.setItem("theme", "dark");
+
+      if (!document.startViewTransition) {
+        document.documentElement.classList.add("dark");
+        return;
+      }
 
       // Use the View Transition API to animate the theme change
       document.startViewTransition(() => {
