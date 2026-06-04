@@ -19,10 +19,28 @@ export default function Header() {
   const toggleTheme = () => {
     if (document.documentElement.classList.contains("dark")) {
       localStorage.setItem("theme", "");
-      document.documentElement.classList.remove("dark");
+
+      if (!document.startViewTransition) {
+        document.documentElement.classList.remove("dark");
+        return;
+      }
+
+      // Use the View Transition API to animate the theme change
+      document.startViewTransition(() => {
+        document.documentElement.classList.remove("dark");
+      });
     } else {
       localStorage.setItem("theme", "dark");
-      document.documentElement.classList.add("dark");
+
+      if (!document.startViewTransition) {
+        document.documentElement.classList.add("dark");
+        return;
+      }
+
+      // Use the View Transition API to animate the theme change
+      document.startViewTransition(() => {
+        document.documentElement.classList.add("dark");
+      });
     }
   };
 
