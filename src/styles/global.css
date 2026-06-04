@@ -49,3 +49,8 @@ https://github.com/tailwindlabs/tailwindcss-typography/issues/18#issuecomment-26
     }
   }
 }
+
+/* View transition */
+::view-transition(root) {
+  animation-delay: 500ms;
+}

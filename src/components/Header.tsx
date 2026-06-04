@@ -19,10 +19,20 @@ export default function Header() {
   const toggleTheme = () => {
     if (document.documentElement.classList.contains("dark")) {
       localStorage.setItem("theme", "");
-      document.documentElement.classList.remove("dark");
+
+      // Use the View Transition API to animate the theme change
+      document.startViewTransition(() => {
+        document.documentElement.classList.remove("dark");
+      });
+
+      // document.documentElement.classList.remove("dark");
     } else {
       localStorage.setItem("theme", "dark");
-      document.documentElement.classList.add("dark");
+
+      // Use the View Transition API to animate the theme change
+      document.startViewTransition(() => {
+        document.documentElement.classList.add("dark");
+      });
     }
   };
 
