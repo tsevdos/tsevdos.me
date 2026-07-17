@@ -17,27 +17,27 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.6",
-    "@astrojs/mdx": "4.3.13",
-    "@astrojs/react": "4.4.2",
-    "@astrojs/rss": "4.0.15",
-    "@astrojs/sitemap": "3.7.0",
-    "@headlessui/react": "^2.2.9",
-    "@tailwindcss/vite": "^4.2.1",
-    "astro": "5.18.0",
-    "astro-expressive-code": "^0.41.7",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "tailwindcss": "^4.2.1",
-    "typescript": "^5.9.3"
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/mdx": "^7.0.3",
+    "@astrojs/react": "^6.0.1",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.3",
+    "@headlessui/react": "^2.2.10",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.1.0",
+    "astro-expressive-code": "^0.44.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.11",
-    "@tailwindcss/typography": "^0.5.19",
-    "@types/react": "^19.2.14",
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "oxfmt": "^0.36.0",
-    "oxlint": "^1.51.0"
+    "oxfmt": "^0.59.0",
+    "oxlint": "^1.74.0"
   }
 }
