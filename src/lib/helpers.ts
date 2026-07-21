@@ -4,7 +4,7 @@ import { NO_OF_WORDS_IN_EXCERPT, POSTS_PER_PAGE, WORDS_PER_MINUTE } from "./cons
 const range = (start: number, stop: number, step: number) =>
   Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step);
 
-const sortByDate = (postA: CollectionEntry<"posts">, postB: CollectionEntry<"posts">) =>
+const sortByDate = (postA: CollectionEntry<"posts" | "talks">, postB: CollectionEntry<"posts" | "talks">) =>
   +new Date(postB.data.date) - +new Date(postA.data.date);
 
 // Miscellaneous
@@ -14,6 +14,18 @@ export const getFormattedDate = (dateStr: string) =>
     month: "long",
     day: "numeric",
   });
+
+export const getTalksFormattedDate = (dateStr: string) => {
+  const date = new Date(dateStr);
+
+  if (date.getDate() === 1) {
+    const year = date.getFullYear();
+    const month = date.toLocaleDateString("en-US", { month: "long" });
+    return `${year}, ${month}`;
+  }
+
+  return getFormattedDate(dateStr);
+};
 
 export const stripMdxToPlainText = (body = "") =>
   body
@@ -81,6 +93,13 @@ export const getPagesStaticPaths = (noOfPosts: number) => {
   const totalPages = Math.ceil(noOfPosts / POSTS_PER_PAGE);
 
   return range(1, totalPages, 1).map((v) => v.toString());
+};
+
+// Talks
+export const getAllTalksSorted = async () => {
+  const talks = await getCollection("talks");
+
+  return talks.sort(sortByDate);
 };
 
 // Pagination

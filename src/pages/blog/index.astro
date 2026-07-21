@@ -25,33 +25,23 @@ export const getStaticPaths = (async () => {
 
 const { pageNum } = Astro.params as { pageNum: string };
 const { href } = Astro.url;
-
 const pageNumInt = parseInt(pageNum ?? "1", 10);
 const { currentPage, noOfPages } = getPagination(pageNumInt, totalPosts);
 const pagePosts = getPageOfPosts(sortedPosts, pageNumInt);
 const postsWithExtras = getPostWithExtras(pagePosts);
 ---
 
-<Layout
-  title="John Tsevdos Blog"
-  description="All posts by John Tsevdos"
-  url={href}
->
+<Layout title="John Tsevdos Blog" description="All posts by John Tsevdos" url={href}>
   <Header client:load />
 
-  <div
-    class="container mx-auto px-4 py-8 sm:px-6 md:py-12 lg:px-8 xl:max-w-7xl"
-  >
-    <!-- Heading -->
+  <div class="container mx-auto px-4 py-8 sm:px-6 md:py-12 lg:px-8 xl:max-w-7xl">
     <header class="mb-8">
       <h1
         class="mb-3 text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-black dark:text-white"
       >
         Blog: All Posts ✍️
       </h1>
-      <h2
-        class="text-xl sm:text-2xl font-medium leading-relaxed text-gray-700 dark:text-gray-300"
-      >
+      <h2 class="text-xl sm:text-2xl font-medium leading-relaxed text-gray-700 dark:text-gray-300">
         Sharing ideas and code (<a
           href="/blog/rss.xml"
           class="text-blue-600 hover:text-blue-500 transition-colors dark:text-blue-400 dark:hover:text-blue-300"
@@ -59,23 +49,20 @@ const postsWithExtras = getPostWithExtras(pagePosts);
         > available)
       </h2>
     </header>
-    <!-- END Heading -->
 
     <!-- Blog Posts -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {
-        postsWithExtras.map(
-          ({ id, data: { category, title, date }, readingTime, excerpt }) => (
-            <Post
-              id={id}
-              category={category}
-              title={title}
-              date={date}
-              readingTime={readingTime}
-              excerpt={excerpt}
-            />
-          ),
-        )
+        postsWithExtras.map(({ id, data: { category, title, date }, readingTime, excerpt }) => (
+          <Post
+            id={id}
+            category={category}
+            title={title}
+            date={date}
+            readingTime={readingTime}
+            excerpt={excerpt}
+          />
+        ))
       }
     </div>
     <!-- END Blog Posts -->
@@ -83,11 +70,7 @@ const postsWithExtras = getPostWithExtras(pagePosts);
     <!-- Footer -->
     <div class="grow mt-10 pt-6">
       <div class="text-center dark:text-gray-100">
-        <MobilePagination
-          currentPage={currentPage}
-          noOfPages={noOfPages}
-          totalPosts={totalPosts}
-        />
+        <MobilePagination currentPage={currentPage} noOfPages={noOfPages} totalPosts={totalPosts} />
         <DesktopPagination
           currentPage={currentPage}
           noOfPages={noOfPages}
