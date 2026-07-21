@@ -7,9 +7,9 @@ import Footer from "../../components/Footer.astro";
 import { getAllTalksSorted, getTalksFormattedDate } from "../../lib/helpers";
 
 export const getStaticPaths = (async () => {
-  const sortedPosts = await getAllTalksSorted();
+  const sortedTalks = await getAllTalksSorted();
 
-  return sortedPosts.map(({ id }) => ({
+  return sortedTalks.map(({ id }) => ({
     params: {
       slug: id,
     },
@@ -29,11 +29,7 @@ const { title, eventLink, date, place, video, slidesLink } = talk.data;
 const { videoId } = video;
 ---
 
-<Layout
-  title={`John Tsevdos Blog - ${title}`}
-  description={`John Tsevdos Blog - ${title}`}
-  url={href}
->
+<Layout title={`Public Speaking - ${title}`} description={`Public Speaking - ${title}`} url={href}>
   <Header client:load />
 
   <div class="container mx-auto px-4 py-12 md:py-16 lg:px-8 xl:max-w-7xl">
@@ -80,7 +76,7 @@ const { videoId } = video;
 
     <div class="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
       <a
-        href={`https://www.youtube.com/watch?v=${video}`}
+        href={`https://www.youtube.com/watch?v=${videoId}`}
         target="_blank"
         rel="noopener noreferrer"
         class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
