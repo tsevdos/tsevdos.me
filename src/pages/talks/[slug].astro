@@ -1,0 +1,131 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getEntry, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer.astro";
+import { getAllTalksSorted, getTalksFormattedDate } from "../../lib/helpers";
+
+export const getStaticPaths = (async () => {
+  const sortedPosts = await getAllTalksSorted();
+
+  return sortedPosts.map(({ id }) => ({
+    params: {
+      slug: id,
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { slug } = Astro.params as { slug: string };
+const { href } = Astro.url;
+const talk = await getEntry("talks", slug);
+
+if (!talk) {
+  return Astro.redirect("/404");
+}
+
+const { Content } = await render(talk);
+const { title, eventLink, date, place, video, slidesLink } = talk.data;
+const { videoId } = video;
+---
+
+<Layout
+  title={`John Tsevdos Blog - ${title}`}
+  description={`John Tsevdos Blog - ${title}`}
+  url={href}
+>
+  <Header client:load />
+
+  <div class="container mx-auto px-4 py-12 md:py-16 lg:px-8 xl:max-w-7xl">
+    <header class="mb-6 md:mb-8">
+      <h1
+        class="mb-4 md:mb-6 text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-black dark:text-white"
+      >
+        {title}
+      </h1>
+
+      <p class="text-base md:text-lg leading-relaxed font-medium text-gray-700 dark:text-gray-300">
+        {getTalksFormattedDate(date)} · {
+          eventLink ? (
+            <a
+              href={eventLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-semibold underline"
+            >
+              {place}
+            </a>
+          ) : (
+            <span class="font-semibold">{place}</span>
+          )
+        }
+      </p>
+    </header>
+
+    <div class="mb-8 md:mb-12">
+      <iframe
+        class="w-full aspect-video"
+        title={title}
+        src={`https://www.youtube.com/embed/${videoId}`}
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        loading="lazy"></iframe>
+    </div>
+
+    <article
+      class="max-w-none prose prose-base md:prose-lg lg:prose-xl dark:prose-invert prose-headings:font-bold prose-headings:tracking-tight prose-a:text-blue-600 prose-a:no-underline prose-a:hover:text-blue-400 prose-a:transition-colors dark:prose-a:text-blue-400 dark:prose-a:hover:text-blue-300 prose-img:rounded-lg prose-img:shadow-md prose-pre:bg-gray-900 prose-pre:shadow-lg dark:prose-pre:bg-gray-950"
+    >
+      <Content />
+    </article>
+
+    <div class="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <a
+        href={`https://www.youtube.com/watch?v=${video}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
+      >
+        <span>Watch Video</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          class="inline-block size-4"
+          aria-hidden="true"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm-.847-9.766A.75.75 0 0 0 6 5.866v4.268a.75.75 0 0 0 1.153.633l3.353-2.134a.75.75 0 0 0 0-1.266L7.153 5.234Z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </a>
+      {
+        slidesLink && (
+          <a
+            href={slidesLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
+          >
+            <span>View Slides</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="inline-block size-4"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 2a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 4 14h8a1.5 1.5 0 0 0 1.5-1.5V6.621a1.5 1.5 0 0 0-.44-1.06L9.94 2.439A1.5 1.5 0 0 0 8.878 2H4Zm6 5.75a.75.75 0 0 1 1.5 0v3.5a.75.75 0 0 1-1.5 0v-3.5Zm-2.75 1.5a.75.75 0 0 1 1.5 0v2a.75.75 0 0 1-1.5 0v-2Zm-2 .75a.75.75 0 0 0-.75.75v.5a.75.75 0 0 0 1.5 0v-.5a.75.75 0 0 0-.75-.75Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+        )
+      }
+    </div>
+  </div>
+
+  <Footer />
+</Layout>

@@ -9,45 +9,39 @@ const { href } = Astro.url;
 <Layout title="About John Tsevdos" description="About John Tsevdos" url={href}>
   <Header client:load />
 
-  <div class="container mx-auto px-4 py-16 lg:px-8 xl:max-w-7xl">
-    <header>
-      <h1 class="mb-2 text-4xl font-black text-black dark:text-white">
+  <div class="container mx-auto px-4 py-8 sm:px-6 md:py-12 lg:px-8 xl:max-w-7xl">
+    <header class="mb-8">
+      <h1
+        class="mb-3 text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-black dark:text-white"
+      >
         About 😁
       </h1>
-      <h2
-        class="text-2xl font-medium leading-relaxed mb-8 text-gray-700 dark:text-gray-300"
-      >
+      <h2 class="text-xl sm:text-2xl font-medium leading-relaxed text-gray-700 dark:text-gray-300">
         Learn more about me
       </h2>
     </header>
 
     <article
-      class="max-w-none prose prose-base md:prose-lg lg:prose-xl dark:prose-invert prose-headings:font-bold prose-headings:tracking-tight prose-a:text-blue-600 prose-a:no-underline prose-a:hover:text-blue-400 prose-a:transition-colors dark:prose-a:text-blue-400 dark:prose-a:hover:text-blue-300 prose-img:rounded-lg prose-img:shadow-md prose-pre:bg-gray-900 prose-pre:shadow-lg dark:prose-pre:bg-gray-950"
+      class="max-w-none prose prose-base md:prose-lg lg:prose-xl xl:prose-2xl dark:prose-invert prose-headings:font-bold prose-headings:tracking-tight prose-a:text-blue-600 prose-a:no-underline prose-a:hover:text-blue-400 prose-a:transition-colors dark:prose-a:text-blue-400 dark:prose-a:hover:text-blue-300 prose-img:rounded-lg prose-img:shadow-md prose-pre:bg-gray-900 prose-pre:shadow-lg dark:prose-pre:bg-gray-950"
     >
       <p>
-        I am a <strong>software engineer</strong> from <strong
-          >Athens, Greece</strong
-        > 🇬🇷, with over <strong>18 years of experience</strong>
+        I am a <strong>software engineer</strong> from <strong>Athens, Greece</strong> 🇬🇷, with over <strong
+          >18 years of experience</strong
+        >
         crafting elegant and effective web applications. Currently, I work at <strong
-          ><a class="font-bold" href="https://orfium.com" target="_blank"
-            >Orfium</a
-          ></strong
-        > as a <strong>front-end team leader</strong> (Senior Software Engineer Level
-        2), a company specializing in music rights management and monetization solutions.
-        Outside of work, I enjoy working on <strong
-          ><a class="font-bold" href="/open-source-software" target="_blank"
-            >personal projects</a
+          ><a class="font-bold" href="https://orfium.com" target="_blank">Orfium</a></strong
+        > as a <strong>front-end team leader</strong> (Senior Software Engineer Level 2), a company specializing
+        in music rights management and monetization solutions. Outside of work, I enjoy working on <strong
+          ><a class="font-bold" href="/open-source-software" target="_blank">personal projects</a
           ></strong
         >, contributing to <strong
-          ><a
-            class="font-bold"
-            href="https://github.com/tsevdos"
-            target="_blank">open-source projects</a
+          ><a class="font-bold" href="https://github.com/tsevdos" target="_blank"
+            >open-source projects</a
           ></strong
-        >, and consulting on web applications and technologies. I also share my
-        knowledge of <strong>JavaScript</strong>, <strong>TypeScript</strong>,
-        and <strong>React</strong> as an <strong>instructor</strong> at seminars and
-        workshops, and I co-host the <strong
+        >, and consulting on web applications and technologies. I also share my knowledge of <strong
+          >JavaScript</strong
+        >, <strong>TypeScript</strong>, and <strong>React</strong> as an <strong>instructor</strong> at
+        seminars and workshops, and I co-host the <strong
           ><a
             class="font-bold"
             href="https://www.meetup.com/react-to-react-athens-meetup/"
@@ -56,37 +50,28 @@ const { href } = Astro.url;
         >.
       </p>
       <p>
-        For the past <strong>8 years</strong>, I have been building <strong
-          >web applications</strong
-        > using <a
-          class="font-bold"
-          href="https://facebook.github.io/react/"
-          target="_blank">React</a
-        > and frameworks such as <a
-          class="font-bold"
-          href="https://nextjs.org/"
-          target="_blank">Next.js</a
-        >, <a
-          class="font-bold"
-          href="https://tanstack.com/start/latest"
-          target="_blank">TanStack Start</a
-        > and <a class="font-bold" href="https://astro.build/" target="_blank"
-          >Astro</a
-        >. I have worked with a wide range of state management tools, from <a
+        For the past <strong>8 years</strong>, I have been building <strong>web applications</strong
+        > using <a class="font-bold" href="https://facebook.github.io/react/" target="_blank"
+          >React</a
+        > and frameworks such as <a class="font-bold" href="https://nextjs.org/" target="_blank"
+          >Next.js</a
+        >, <a class="font-bold" href="https://tanstack.com/start/latest" target="_blank"
+          >TanStack Start</a
+        > and <a class="font-bold" href="https://astro.build/" target="_blank">Astro</a>. I have
+        worked with a wide range of state management tools, from <a
           href="https://redux.js.org/"
           target="_blank">Redux</a
         > and
         <a href="https://mobx.js.org/" target="_blank">Mobx</a> to
         <a href="https://recoiljs.org/" target="_blank">Recoil</a>
-        and <a href="https://zustand.surge.sh" target="_blank">Zustand</a>. I
-        have also used many libraries from the
+        and <a href="https://zustand.surge.sh" target="_blank">Zustand</a>. I have also used many
+        libraries from the
         <strong>React ecosystem</strong>, including <a
           href="https://github.com/ReactTraining/react-router"
           target="_blank">React Router</a
-        >, <a href="https://react-query.tanstack.com/" target="_blank"
-          >React Query</a
-        >, <a href="https://www.styled-components.com/" target="_blank"
-          >Styled-Components</a
+        >, <a href="https://react-query.tanstack.com/" target="_blank">React Query</a>, <a
+          href="https://www.styled-components.com/"
+          target="_blank">Styled-Components</a
         >, <a href="https://emotion.sh" target="_blank">emotion.js</a>, <a
           href="https://react-hook-form.com/"
           target="_blank">React Hook Form</a
@@ -100,9 +85,10 @@ const { href } = Astro.url;
           class="font-bold"
           href="https://go.dev/"
           target="_blank">Go</a
-        > and exploring functional and reactive programming with languages and libraries
-        like <a class="font-bold" href="https://gleam.run/" target="_blank"
-          >Gleam</a
+        > and exploring functional and reactive programming with languages and libraries like <a
+          class="font-bold"
+          href="https://gleam.run/"
+          target="_blank">Gleam</a
         >, <a href="http://ramdajs.com/" target="_blank">Ramda.js</a>, and <a
           href="http://reactivex.io/rxjs/"
           target="_blank">RxJS</a
@@ -120,30 +106,24 @@ const { href } = Astro.url;
         >, <a href="https://lodash.com/" target="_blank">lodash</a>, <a
           href="https://github.com/mzabriskie/axios"
           target="_blank">axios</a
-        >, <a href="https://date-fns.org/" target="_blank">date-fns</a>, and
-        many more.
+        >, <a href="https://date-fns.org/" target="_blank">date-fns</a>, and many more.
       </p>
       <p>
         On the <strong>backend stack</strong>, I enjoy working with <a
           class="font-bold"
           href="https://nodejs.org/"
           target="_blank">Node.js</a
-        >, <a class="font-bold" href="https://nextjs.org/" target="_blank"
-          >Next.js</a
-        >, <a class="font-bold" href="https://www.honojs.com/" target="_blank"
-          >hono</a
+        >, <a class="font-bold" href="https://nextjs.org/" target="_blank">Next.js</a>, <a
+          class="font-bold"
+          href="https://www.honojs.com/"
+          target="_blank">hono</a
         >,
-        <a class="font-bold" href="https://expressjs.com/" target="_blank"
-          >express</a
-        >, and express-like frameworks. I also have a decent understanding of <a
+        <a class="font-bold" href="https://expressjs.com/" target="_blank">express</a>, and
+        express-like frameworks. I also have a decent understanding of <a
           class="font-bold"
           href="https://www.php.net/"
           target="_blank">PHP</a
-        >, <a
-          class="font-bold"
-          href="https://www.ruby-lang.org/"
-          target="_blank">Ruby</a
-        > (and <a
+        >, <a class="font-bold" href="https://www.ruby-lang.org/" target="_blank">Ruby</a> (and <a
           class="font-bold"
           href="http://rubyonrails.org/"
           target="_blank">Rails</a
@@ -151,36 +131,28 @@ const { href } = Astro.url;
           class="font-bold"
           href="https://www.postgresql.org/"
           target="_blank">PostgreSQL</a
-        >, <a class="font-bold" href="https://www.mysql.com/" target="_blank"
-          >MySQL</a
-        >, <a class="font-bold" href="https://sqlite.org/" target="_blank"
-          >SQLite</a
-        >, and <a
+        >, <a class="font-bold" href="https://www.mysql.com/" target="_blank">MySQL</a>, <a
           class="font-bold"
-          href="https://www.mongodb.com/"
-          target="_blank">MongoDB</a
-        >. Finally, I am a big fan of <a
+          href="https://sqlite.org/"
+          target="_blank">SQLite</a
+        >, and <a class="font-bold" href="https://www.mongodb.com/" target="_blank">MongoDB</a>.
+        Finally, I am a big fan of <a
           class="font-bold"
           href="https://www.linux.org/"
           target="_blank">Linux OS</a
         >
-        (currently using <a
-          class="font-bold"
-          href="https://www.ubuntu.com"
-          target="_blank">Ubuntu</a
-        > and <a
-          class="font-bold"
-          href="https://get.opensuse.org/tumbleweed/"
-          target="_blank">OpenSUSE Tumbleweed</a
+        (currently using <a class="font-bold" href="https://www.ubuntu.com" target="_blank"
+          >Ubuntu</a
+        > and <a class="font-bold" href="https://get.opensuse.org/tumbleweed/" target="_blank"
+          >OpenSUSE Tumbleweed</a
         > distros), <a href="https://git-scm.com/" target="_blank">Git</a>, and <a
           href="https://en.wikipedia.org/wiki/Agile_software_development"
           target="_blank">agile methodologies</a
         >, and I try to practice <a
           href="https://en.wikipedia.org/wiki/Test-driven_development"
           target="_blank">Test-Driven Development (TDD)</a
-        > as much as possible. If you would like to learn more <strong
-          >about me</strong
-        >, feel free to take a look at <a
+        > as much as possible. If you would like to learn more <strong>about me</strong>, feel free
+        to take a look at <a
           class="font-bold"
           href="https://public.tsevdos.me/john_tsevdos_cv.pdf"
           target="_blank">my CV</a

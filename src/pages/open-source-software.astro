@@ -17,9 +17,17 @@ const { href } = Astro.url;
 <Layout title="Open Source Software" description="My Open Source Software projects" url={href}>
   <Header client:load />
 
-  <div class="container mx-auto px-4 py-16 lg:px-8 xl:max-w-7xl">
-    <h1 class="mb-2 text-4xl font-black text-black dark:text-white">Open Source Software 🤝</h1>
-    <h2 class="text-2xl font-medium leading-relaxed mb-8 text-gray-700 dark:text-gray-300">I code stuff</h2>
+  <div class="container mx-auto px-4 py-8 sm:px-6 md:py-12 lg:px-8 xl:max-w-7xl">
+    <header class="mb-8">
+      <h1
+        class="mb-3 text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-black dark:text-white"
+      >
+        Open Source Software 🤝
+      </h1>
+      <h2 class="text-xl sm:text-2xl font-medium leading-relaxed text-gray-700 dark:text-gray-300">
+        I code stuff
+      </h2>
+    </header>
 
     <div class="grid gap-4 lg:grid-cols-2 lg:gap-8">
       <div class="relative">
@@ -35,8 +43,8 @@ const { href } = Astro.url;
               <p class="mb-1 font-semibold text-blue-500 dark:text-blue-400">npm package</p>
               <h3 class="mb-2 text-xl font-semibold">elUtils</h3>
               <p>
-                A library of convenient, easy-to-use, and lightweight utility functions that solve common problems
-                encountered while building Greek (and not only) applications.
+                A library of convenient, easy-to-use, and lightweight utility functions that solve
+                common problems encountered while building Greek (and not only) applications.
               </p>
             </div>
           </div>
@@ -170,8 +178,8 @@ const { href } = Astro.url;
               <p class="mb-1 font-semibold text-blue-500 dark:text-blue-400">web app</p>
               <h3 class="mb-2 text-xl font-semibold">RepoCompare</h3>
               <p>
-                With Repocompare you can quickly and easily search and compare Github repositories on stars, forks,
-                issues and subscribers.
+                With Repocompare you can quickly and easily search and compare Github repositories
+                on stars, forks, issues and subscribers.
               </p>
             </div>
           </div>
@@ -242,8 +250,8 @@ const { href } = Astro.url;
               <p class="mb-1 font-semibold text-blue-500 dark:text-blue-400">web app</p>
               <h3 class="mb-2 text-xl font-semibold">Greek in Tech</h3>
               <p>
-                A single-page application (SPA) that displays greek words we use in technology. Check out how many they
-                are!
+                A single-page application (SPA) that displays greek words we use in technology.
+                Check out how many they are!
               </p>
             </div>
           </div>
@@ -383,8 +391,8 @@ const { href } = Astro.url;
               <p class="mb-1 font-semibold text-blue-500 dark:text-blue-400">wordpress theme</p>
               <h3 class="mb-2 text-xl font-semibold">Ambrosia theme</h3>
               <p>
-                A modern, minimalistic, accessible, super clean, WP theme built with the latest W3C standards (HTML5 and
-                CSS3).
+                A modern, minimalistic, accessible, super clean, WP theme built with the latest W3C
+                standards (HTML5 and CSS3).
               </p>
             </div>
           </div>
@@ -523,7 +531,10 @@ const { href } = Astro.url;
             <div class="grow p-5">
               <p class="mb-1 font-semibold text-blue-500 dark:text-blue-400">jquery plugin</p>
               <h3 class="mb-2 text-xl font-semibold">jQuery nwrapper</h3>
-              <p>A jQuery plugin that allows you to wrap every n elements (a wrap()-like method on steroids).</p>
+              <p>
+                A jQuery plugin that allows you to wrap every n elements (a wrap()-like method on
+                steroids).
+              </p>
             </div>
           </div>
 
@@ -593,8 +604,9 @@ const { href } = Astro.url;
               <p class="mb-1 font-semibold text-blue-500 dark:text-blue-400">jquery plugin</p>
               <h3 class="mb-2 text-xl font-semibold">jPrefetch</h3>
               <p>
-                A jquery plugin for easier and more dynamic implementation of the new HTML5 prefetch attribute. For more
-                details regarding the HTML5 prefetch I strongly recommend to read my article <a
+                A jquery plugin for easier and more dynamic implementation of the new HTML5 prefetch
+                attribute. For more details regarding the HTML5 prefetch I strongly recommend to
+                read my article <a
                   class="text-blue-500 font-bold underline dark:text-blue-400"
                   href="/blog/markup/html5-prefetching/">HTML5 prefetching</a
                 >.

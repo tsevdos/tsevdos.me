@@ -1,0 +1,65 @@
+---
+import { render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.tsx";
+import Footer from "../../components/Footer.astro";
+import Talk from "../../components/Talk.astro";
+import { getAllTalksSorted } from "../../lib/helpers";
+
+const sortedTalks = await getAllTalksSorted();
+// Pre-render all talks
+const talksWithContent = await Promise.all(
+  sortedTalks.map(async (talk) => {
+    const { Content } = await render(talk);
+    return { ...talk, Content };
+  }),
+);
+
+const { href } = Astro.url;
+---
+
+<Layout
+  title="Public Speaking"
+  description="Speaking at events, meetups, and conferences"
+  url={href}
+>
+  <Header client:load />
+
+  <div class="container mx-auto px-4 py-8 sm:px-6 md:py-12 lg:px-8 xl:max-w-7xl">
+    <header class="mb-8">
+      <h1
+        class="mb-3 text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-black dark:text-white"
+      >
+        Talks 🥳
+      </h1>
+      <h2 class="text-xl sm:text-2xl font-medium leading-relaxed text-gray-700 dark:text-gray-300">
+        Speaking at events, meetups, and conferences
+      </h2>
+    </header>
+
+    <!-- Talks  -->
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
+      {
+        talksWithContent.map(
+          ({ id, Content, data: { title, eventLink, date, place, video, slidesLink } }) => (
+            <Talk
+              id={id}
+              title={title}
+              date={date}
+              place={place}
+              eventLink={eventLink}
+              video={video}
+              slidesLink={slidesLink}
+            >
+              <Content />
+            </Talk>
+          ),
+        )
+      }
+
+      <!-- TODO: add a pagination someday -->
+    </div>
+
+    <Footer />
+  </div>
+</Layout>
