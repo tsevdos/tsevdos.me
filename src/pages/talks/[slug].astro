@@ -25,7 +25,7 @@ if (!talk) {
 }
 
 const { Content } = await render(talk);
-const { title, eventLink, date, place, video, slidesLink } = talk.data;
+const { title, eventLink, date, event, video, slidesLink } = talk.data;
 const { videoId } = video;
 ---
 
@@ -49,10 +49,10 @@ const { videoId } = video;
               rel="noopener noreferrer"
               class="font-semibold underline"
             >
-              {place}
+              {event}
             </a>
           ) : (
-            <span class="font-semibold">{place}</span>
+            <span class="font-semibold">{event}</span>
           )
         }
       </p>

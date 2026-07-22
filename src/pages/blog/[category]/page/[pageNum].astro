@@ -8,9 +8,9 @@ import DesktopPagination from "../../../../components/DesktopPagination.astro";
 import {
   getAllPostsFromCategory,
   getAllCategories,
-  getPageOfPosts,
+  getPageFromCollection,
   getPostWithExtras,
-  getPagesStaticPaths,
+  getCollectionsStaticPaths,
   getPagination,
 } from "../../../../lib/helpers";
 import Post from "../../../../components/Post.astro";
@@ -21,7 +21,7 @@ export const getStaticPaths = (async () => {
 
   for (const category of categories) {
     const categoryPosts = await getAllPostsFromCategory(category);
-    const pageNumbers = getPagesStaticPaths(categoryPosts.length);
+    const pageNumbers = getCollectionsStaticPaths(categoryPosts.length);
 
     const categoryPaths = pageNumbers
       .filter((pageNum) => pageNum !== "1") // Skip page 1 since it's handled by the main category index
@@ -41,7 +41,7 @@ const { href } = Astro.url;
 const categoryPosts = await getAllPostsFromCategory(category);
 const totalPosts = categoryPosts.length;
 const pageNumInt = parseInt(pageNum ?? "1", 10);
-const categoryPagePosts = getPageOfPosts(categoryPosts, pageNumInt);
+const categoryPagePosts = getPageFromCollection<"posts">(categoryPosts, pageNumInt);
 const postsWithExtras = getPostWithExtras(categoryPagePosts);
 const { currentPage, noOfPages } = getPagination(pageNumInt, totalPosts);
 ---
@@ -61,9 +61,7 @@ const { currentPage, noOfPages } = getPagination(pageNumInt, totalPosts);
       >
         Blog: {category} Posts 📔
       </h1>
-      <h2
-        class="text-xl sm:text-2xl font-medium leading-relaxed text-gray-700 dark:text-gray-300"
-      >
+      <h2 class="text-xl sm:text-2xl font-medium leading-relaxed text-gray-700 dark:text-gray-300">
         Sharing ideas and code (<a
           href="/blog/rss.xml"
           class="text-blue-600 hover:text-blue-500 transition-colors dark:text-blue-400 dark:hover:text-blue-300"
@@ -74,22 +72,18 @@ const { currentPage, noOfPages } = getPagination(pageNumInt, totalPosts);
     <!-- END Heading -->
 
     <!-- Blog Posts -->
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
-    >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
       {
-        postsWithExtras.map(
-          ({ id, data: { category, title, date }, readingTime, excerpt }) => (
-            <Post
-              id={id}
-              category={category}
-              title={title}
-              date={date}
-              readingTime={readingTime}
-              excerpt={excerpt}
-            />
-          ),
-        )
+        postsWithExtras.map(({ id, data: { category, title, date }, readingTime, excerpt }) => (
+          <Post
+            id={id}
+            category={category}
+            title={title}
+            date={date}
+            readingTime={readingTime}
+            excerpt={excerpt}
+          />
+        ))
       }
     </div>
     <!-- END Blog Posts -->
@@ -104,12 +98,14 @@ const { currentPage, noOfPages } = getPagination(pageNumInt, totalPosts);
               noOfPages={noOfPages}
               totalPosts={totalPosts}
               category={category}
+              basePath="/blog"
             />
             <DesktopPagination
               currentPage={currentPage}
               noOfPages={noOfPages}
               totalPosts={totalPosts}
               category={category}
+              basePath="/blog"
             />
           </div>
         </div>

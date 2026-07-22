@@ -1,7 +1,7 @@
 ---
 title: Software Development and Testing - Career and Training Meetup
 date: "2024-10-08"
-place: Hellenic American Union Theater, Athens, Greece
+event: Hellenic American Union Theater, Athens, Greece
 eventLink: https://www.hau.gr/en-us/training/events/2024/software-development-and-testing-new-seminars
 video:
   platform: youtube
@@ -9,4 +9,4 @@ video:
 # slidesLink:
 ---
 
-Chit-chat about software development and testing, how to get started in these fields, various software development roles, the software development life cycle, and many more tips on launching your career.
+An honest conversation about careers in software development and testing. This talk breaks down the different roles in tech—from frontend and backend developers to QA engineers—explains the software development lifecycle, and shares practical advice for newcomers looking to break into the industry or level up their skills.
