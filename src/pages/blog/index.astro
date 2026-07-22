@@ -1,5 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
+import type { CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.tsx";
 import Footer from "../../components/Footer.astro";
@@ -7,9 +8,9 @@ import MobilePagination from "../../components/MobilePagination.astro";
 import DesktopPagination from "../../components/DesktopPagination.astro";
 import {
   getAllPostsSorted,
-  getPageOfPosts,
+  getPageFromCollection,
   getPostWithExtras,
-  getPagesStaticPaths,
+  getCollectionsStaticPaths,
   getPagination,
 } from "../../lib/helpers";
 import Post from "../../components/Post.astro";
@@ -18,7 +19,7 @@ const sortedPosts = await getAllPostsSorted();
 const totalPosts = sortedPosts.length;
 
 export const getStaticPaths = (async () => {
-  const paths = getPagesStaticPaths(totalPosts);
+  const paths = getCollectionsStaticPaths(totalPosts);
 
   return paths.map((pageNum) => ({ params: { pageNum } }));
 }) satisfies GetStaticPaths;
@@ -27,7 +28,7 @@ const { pageNum } = Astro.params as { pageNum: string };
 const { href } = Astro.url;
 const pageNumInt = parseInt(pageNum ?? "1", 10);
 const { currentPage, noOfPages } = getPagination(pageNumInt, totalPosts);
-const pagePosts = getPageOfPosts(sortedPosts, pageNumInt);
+const pagePosts = getPageFromCollection(sortedPosts, pageNumInt) as CollectionEntry<"posts">[];
 const postsWithExtras = getPostWithExtras(pagePosts);
 ---
 
@@ -67,18 +68,24 @@ const postsWithExtras = getPostWithExtras(pagePosts);
     </div>
     <!-- END Blog Posts -->
 
-    <!-- Footer -->
+    <!-- Pagination -->
     <div class="grow mt-10 pt-6">
       <div class="text-center dark:text-gray-100">
-        <MobilePagination currentPage={currentPage} noOfPages={noOfPages} totalPosts={totalPosts} />
+        <MobilePagination
+          currentPage={currentPage}
+          noOfPages={noOfPages}
+          totalPosts={totalPosts}
+          basePath="/blog"
+        />
         <DesktopPagination
           currentPage={currentPage}
           noOfPages={noOfPages}
           totalPosts={totalPosts}
+          basePath="/blog"
         />
       </div>
     </div>
-    <!-- END  Footer -->
+    <!-- END Pagination -->
   </div>
 
   <Footer />

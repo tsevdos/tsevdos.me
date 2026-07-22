@@ -72,8 +72,8 @@ export const getAllPostsFromCategory = async (category: string) => {
   return allPosts.filter((post) => post.data.category.toLowerCase() === category).sort(sortByDate);
 };
 
-export const getPageOfPosts = (posts: CollectionEntry<"posts">[], pageNum: number) =>
-  posts.slice((pageNum - 1) * POSTS_PER_PAGE, pageNum * POSTS_PER_PAGE);
+export const getPageFromCollection = (entries: CollectionEntry<"posts" | "talks">[], pageNum: number) =>
+  entries.slice((pageNum - 1) * POSTS_PER_PAGE, pageNum * POSTS_PER_PAGE);
 
 export const getPostWithExtras = (posts: CollectionEntry<"posts">[]) => {
   return posts.map((post) => {
@@ -89,7 +89,7 @@ export const getPostWithExtras = (posts: CollectionEntry<"posts">[]) => {
   });
 };
 
-export const getPagesStaticPaths = (noOfPosts: number) => {
+export const getCollectionsStaticPaths = (noOfPosts: number) => {
   const totalPages = Math.ceil(noOfPosts / POSTS_PER_PAGE);
 
   return range(1, totalPages, 1).map((v) => v.toString());
@@ -109,10 +109,12 @@ export const getPagination = (currentPage = 1, totalPosts: number) => {
   return { currentPage, noOfPages };
 };
 
-export const getPageUrl = (pageNum: number, category?: string) => {
-  if (category) {
-    return pageNum === 1 ? `/blog/${category.toLowerCase()}` : `/blog/${category.toLowerCase()}/page/${pageNum}`;
+export const getPageUrl = (pageNum: number, category?: string, basePath = "/blog") => {
+  if (basePath === "/blog" && category) {
+    return pageNum === 1
+      ? `${basePath}/${category.toLowerCase()}`
+      : `${basePath}/${category.toLowerCase()}/page/${pageNum}`;
   }
 
-  return `/blog/page/${pageNum}`;
+  return pageNum === 1 ? basePath : `${basePath}/page/${pageNum}`;
 };
