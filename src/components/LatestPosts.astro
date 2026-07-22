@@ -1,11 +1,10 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import { getAllPostsSorted, getPageFromCollection, getPostWithExtras } from "../lib/helpers";
 import Post from "./Post.astro";
 
 const NO_OF_POSTS = 4;
 const sortedPosts = await getAllPostsSorted();
-const pagePosts = getPageFromCollection(sortedPosts, 1) as CollectionEntry<"posts">[];
+const pagePosts = getPageFromCollection<"posts">(sortedPosts, 1);
 const postsWithExtras = getPostWithExtras(pagePosts);
 ---
 

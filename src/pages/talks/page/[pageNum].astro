@@ -1,7 +1,6 @@
 ---
 import { render } from "astro:content";
 import type { GetStaticPaths } from "astro";
-import type { CollectionEntry } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.tsx";
 import Footer from "../../../components/Footer.astro";
@@ -19,10 +18,12 @@ export const getStaticPaths = (async () => {
   const sortedTalks = await getAllTalksSorted();
   const paths = getCollectionsStaticPaths(sortedTalks.length);
 
-  return paths.map((pageNum) => ({
-    params: { pageNum },
-    props: { sortedTalks },
-  }));
+  return paths
+    .filter((pageNum) => pageNum !== "1") // Skip page 1 since it's handled by /talks
+    .map((pageNum) => ({
+      params: { pageNum },
+      props: { sortedTalks },
+    }));
 }) satisfies GetStaticPaths;
 
 const { pageNum } = Astro.params as { pageNum: string };
@@ -31,7 +32,7 @@ const { sortedTalks } = Astro.props;
 
 const pageNumInt = parseInt(pageNum ?? "1", 10);
 const totalTalks = sortedTalks.length;
-const pageTalks = getPageFromCollection(sortedTalks, pageNumInt) as CollectionEntry<"talks">[];
+const pageTalks = getPageFromCollection<"talks">(sortedTalks, pageNumInt);
 const talksWithContent = await Promise.all(
   pageTalks.map(async (talk) => {
     const { Content } = await render(talk);

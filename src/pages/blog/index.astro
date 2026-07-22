@@ -1,6 +1,4 @@
 ---
-import type { GetStaticPaths } from "astro";
-import type { CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.tsx";
 import Footer from "../../components/Footer.astro";
@@ -10,26 +8,16 @@ import {
   getAllPostsSorted,
   getPageFromCollection,
   getPostWithExtras,
-  getCollectionsStaticPaths,
   getPagination,
 } from "../../lib/helpers";
 import Post from "../../components/Post.astro";
 
 const sortedPosts = await getAllPostsSorted();
 const totalPosts = sortedPosts.length;
-
-export const getStaticPaths = (async () => {
-  const paths = getCollectionsStaticPaths(totalPosts);
-
-  return paths.map((pageNum) => ({ params: { pageNum } }));
-}) satisfies GetStaticPaths;
-
-const { pageNum } = Astro.params as { pageNum: string };
-const { href } = Astro.url;
-const pageNumInt = parseInt(pageNum ?? "1", 10);
-const { currentPage, noOfPages } = getPagination(pageNumInt, totalPosts);
-const pagePosts = getPageFromCollection(sortedPosts, pageNumInt) as CollectionEntry<"posts">[];
+const { currentPage, noOfPages } = getPagination(1, totalPosts);
+const pagePosts = getPageFromCollection<"posts">(sortedPosts, 1);
 const postsWithExtras = getPostWithExtras(pagePosts);
+const { href } = Astro.url;
 ---
 
 <Layout title="John Tsevdos Blog" description="All posts by John Tsevdos" url={href}>

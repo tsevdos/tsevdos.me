@@ -1,40 +1,24 @@
 ---
 import { render } from "astro:content";
-import type { GetStaticPaths } from "astro";
-import type { CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.tsx";
 import Footer from "../../components/Footer.astro";
 import Talk from "../../components/Talk.astro";
 import MobilePagination from "../../components/MobilePagination.astro";
 import DesktopPagination from "../../components/DesktopPagination.astro";
-import {
-  getCollectionsStaticPaths,
-  getPagination,
-  getAllTalksSorted,
-  getPageFromCollection,
-} from "../../lib/helpers";
+import { getPagination, getAllTalksSorted, getPageFromCollection } from "../../lib/helpers";
 
 const sortedTalks = await getAllTalksSorted();
 const totalTalks = sortedTalks.length;
-
-export const getStaticPaths = (async () => {
-  const paths = getCollectionsStaticPaths(totalTalks);
-
-  return paths.map((pageNum) => ({ params: { pageNum } }));
-}) satisfies GetStaticPaths;
-
-const { pageNum } = Astro.params as { pageNum: string };
-const { href } = Astro.url;
-const pageNumInt = parseInt(pageNum ?? "1", 10);
-const { currentPage, noOfPages } = getPagination(pageNumInt, totalTalks);
-const pageTalks = getPageFromCollection(sortedTalks, pageNumInt) as CollectionEntry<"talks">[];
+const { currentPage, noOfPages } = getPagination(1, totalTalks);
+const pageTalks = getPageFromCollection<"talks">(sortedTalks, 1);
 const talksWithContent = await Promise.all(
   pageTalks.map(async (talk) => {
     const { Content } = await render(talk);
     return { ...talk, Content };
   }),
 );
+const { href } = Astro.url;
 ---
 
 <Layout

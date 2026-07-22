@@ -37,13 +37,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   },
 );
 const imagePathPrefix = `../../../assets/posts/${slug}.`;
-const imageKey = Object.keys(images).find((key) =>
-  key.startsWith(imagePathPrefix),
-);
+const imageKey = Object.keys(images).find((key) => key.startsWith(imagePathPrefix));
 const heroImage =
-  (imageKey
-    ? (images[imageKey]?.default as ImageMetadata | undefined)
-    : undefined) || defaultImage;
+  (imageKey ? (images[imageKey]?.default as ImageMetadata | undefined) : undefined) || defaultImage;
 
 if (!post) {
   return Astro.redirect("/404");
@@ -69,14 +65,10 @@ const { title, date, category } = post.data;
       >
         {title}
       </h1>
-      <p
-        class="text-base md:text-lg leading-relaxed font-medium text-gray-700 dark:text-gray-300"
-      >
+      <p class="text-base md:text-lg leading-relaxed font-medium text-gray-700 dark:text-gray-300">
         <span class="font-bold tracking-wide text-blue-600 dark:text-blue-500">
           {category}
-        </span> · <span class="font-semibold">{getFormattedDate(date)}</span> · {
-          readingTime
-        } min read
+        </span> · <span class="font-semibold">{getFormattedDate(date)}</span> · {readingTime} min read
       </p>
     </header>
 

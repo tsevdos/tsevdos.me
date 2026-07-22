@@ -72,8 +72,10 @@ export const getAllPostsFromCategory = async (category: string) => {
   return allPosts.filter((post) => post.data.category.toLowerCase() === category).sort(sortByDate);
 };
 
-export const getPageFromCollection = (entries: CollectionEntry<"posts" | "talks">[], pageNum: number) =>
-  entries.slice((pageNum - 1) * POSTS_PER_PAGE, pageNum * POSTS_PER_PAGE);
+export const getPageFromCollection = <T extends "posts" | "talks">(
+   entries: CollectionEntry<T>[],
+   pageNum: number,
+ ): CollectionEntry<T>[] => entries.slice((pageNum - 1) * POSTS_PER_PAGE, pageNum * POSTS_PER_PAGE);
 
 export const getPostWithExtras = (posts: CollectionEntry<"posts">[]) => {
   return posts.map((post) => {

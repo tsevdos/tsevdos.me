@@ -1,6 +1,5 @@
 ---
 import type { GetStaticPaths } from "astro";
-import type { CollectionEntry } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.tsx";
 import Footer from "../../../components/Footer.astro";
@@ -28,7 +27,7 @@ const { href } = Astro.url;
 
 const categoryPosts = await getAllPostsFromCategory(category.toLowerCase());
 const totalPosts = categoryPosts.length;
-const pagePosts = getPageFromCollection(categoryPosts, 1) as CollectionEntry<"posts">[];
+const pagePosts = getPageFromCollection<"posts">(categoryPosts, 1);
 const postsWithExtras = getPostWithExtras(pagePosts);
 const { currentPage, noOfPages } = getPagination(1, totalPosts);
 ---

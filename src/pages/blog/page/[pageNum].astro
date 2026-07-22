@@ -1,6 +1,5 @@
 ---
 import type { GetStaticPaths } from "astro";
-import type { CollectionEntry } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.tsx";
 import Footer from "../../../components/Footer.astro";
@@ -19,10 +18,12 @@ export const getStaticPaths = (async () => {
   const sortedPosts = await getAllPostsSorted();
   const paths = getCollectionsStaticPaths(sortedPosts.length);
 
-  return paths.map((pageNum) => ({
-    params: { pageNum },
-    props: { sortedPosts },
-  }));
+  return paths
+    .filter((pageNum) => pageNum !== "1") // Skip page 1 since it's handled by /blog
+    .map((pageNum) => ({
+      params: { pageNum },
+      props: { sortedPosts },
+    }));
 }) satisfies GetStaticPaths;
 
 const { pageNum } = Astro.params as { pageNum: string };
@@ -31,7 +32,7 @@ const { sortedPosts } = Astro.props;
 
 const pageNumInt = parseInt(pageNum ?? "1", 10);
 const totalPosts = sortedPosts.length;
-const pagePosts = getPageFromCollection(sortedPosts, pageNumInt) as CollectionEntry<"posts">[];
+const pagePosts = getPageFromCollection<"posts">(sortedPosts, pageNumInt);
 const postsWithExtras = getPostWithExtras(pagePosts);
 const { currentPage, noOfPages } = getPagination(pageNumInt, totalPosts);
 ---
