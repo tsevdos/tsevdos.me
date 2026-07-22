@@ -60,12 +60,12 @@ const talksWithContent = await Promise.all(
     <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
       {
         talksWithContent.map(
-          ({ id, Content, data: { title, eventLink, date, place, video, slidesLink } }) => (
+          ({ id, Content, data: { title, eventLink, date, event, video, slidesLink } }) => (
             <Talk
               id={id}
               title={title}
               date={date}
-              place={place}
+              event={event}
               eventLink={eventLink}
               video={video}
               slidesLink={slidesLink}

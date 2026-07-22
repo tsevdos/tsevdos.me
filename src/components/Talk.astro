@@ -5,7 +5,7 @@ type Props = {
   id: string;
   title: string;
   date: string;
-  place: string;
+  event: string;
   eventLink?: string;
   video: {
     videoId: string;
@@ -13,7 +13,7 @@ type Props = {
   slidesLink?: string;
 };
 
-const { id, video, title, date, eventLink, place, slidesLink } = Astro.props;
+const { id, video, title, date, eventLink, event, slidesLink } = Astro.props;
 ---
 
 <article class="flex flex-col overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800">
@@ -38,10 +38,10 @@ const { id, video, title, date, eventLink, place, slidesLink } = Astro.props;
           {
             eventLink ? (
               <a href={eventLink} target="_blank" rel="noreferrer" class="hover:underline">
-                {place}
+                {event}
               </a>
             ) : (
-              place
+              event
             )
           }
         </strong>

@@ -1,7 +1,7 @@
 ---
 title: Drupal Tips 'n Tricks
 date: "2010-09-01"
-place: DrupalCamp conference, Athens, Greece
+event: DrupalCamp conference, Athens, Greece
 # eventLink:
 video:
   platform: youtube
@@ -9,4 +9,4 @@ video:
 slidesLink: https://speakerdeck.com/tsevdos/drupal-tips-n-tricks
 ---
 
-The presentation covered various tips and tricks related to design and development in Drupal CMS.
+A practical deep-dive into lesser-known Drupal techniques that can dramatically improve your development workflow. This talk covers module recommendations, theming, performance optimizations, and real-world solutions to common challenges faced when building and maintaining Drupal sites.

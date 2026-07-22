@@ -1,7 +1,7 @@
 ---
 title: Pragmatic Responsive Web Design
 date: "2013-03-01"
-place: JoomlaFrappe conference, Athens, Greece
+event: JoomlaFrappe conference, Athens, Greece
 # eventLink:
 video:
   platform: youtube
@@ -9,4 +9,4 @@ video:
 slidesLink: https://tsevdos.github.io/presentations/joomlafrappe-2013/index.html
 ---
 
-The presentation covered various aspects of responsive web design, including workflow, tools, and tips.
+A hands-on guide to implementing responsive web design in real projects. This talk explores practical workflows for going mobile-first, essential tools for testing across devices, CSS media query strategies, and battle-tested tips for delivering fluid, adaptive experiences without overcomplicating your codebase.
