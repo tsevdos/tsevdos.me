@@ -51,14 +51,14 @@ const { id, video, title, date, eventLink, event, slidesLink } = Astro.props;
       </div>
     </div>
   </div>
-  <div class="p-6 text-right">
+  <div class="p-6 flex flex-row-reverse gap-4">
     <a
       href={`https://www.youtube.com/watch?v=${video.videoId}`}
       target="_blank"
       rel="noreferrer"
       class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
     >
-      <span>Video</span>
+      <span>YouTube Video</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"
