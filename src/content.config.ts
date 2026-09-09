@@ -30,7 +30,7 @@ const talks = defineCollection({
 const projects = defineCollection({
   loader: glob({ pattern: ["**/*.md", "**/*.mdx"], base: "./src/content/projects" }),
   schema: z.object({
-    id: z.number(),
+    id: z.coerce.number(),
     title: z.string(),
     type: z.enum(["npm package", "web app", "jquery plugin", "wordpress theme"]),
     homepage: z.url().optional(),
