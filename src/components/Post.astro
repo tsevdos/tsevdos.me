@@ -1,29 +1,24 @@
 ---
 import { Image } from "astro:assets";
+import { type CollectionEntry } from "astro:content";
 import { getFormattedDate } from "../lib/helpers";
 
-type Props = {
+type PostProps = CollectionEntry<"posts">["data"] & {
   id: string;
-  category: string;
-  title: string;
-  date: string;
   readingTime: number;
   excerpt: string;
 };
 
-const { id, category, title, date, readingTime, excerpt } = Astro.props;
+const { id, category, title, date, readingTime, excerpt } = Astro.props as PostProps;
 const lowerCaseCategory = category.toLowerCase();
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "../assets/posts/*.{png,jpg,jpeg,webp}",
 );
 const thumbPathPrefix = `../assets/posts/${id}-thumb.`;
-const thumbKey = Object.keys(images).find((key) =>
-  key.startsWith(thumbPathPrefix),
-);
+const thumbKey = Object.keys(images).find((key) => key.startsWith(thumbPathPrefix));
 const imageModule =
-  (thumbKey ? images[thumbKey] : undefined) ??
-  images["../assets/posts/default-thumb.jpg"];
+  (thumbKey ? images[thumbKey] : undefined) ?? images["../assets/posts/default-thumb.jpg"];
 const ImageThumb = (await imageModule()).default;
 ---
 
@@ -56,12 +51,10 @@ const ImageThumb = (await imageModule()).default;
       </a>
     </h3>
     <p class="mb-4 text-sm md:text-base text-gray-600 dark:text-gray-400">
-      <time datetime={date} class="font-semibold">{getFormattedDate(date)}</time
-      > · {readingTime} min read
+      <time datetime={date} class="font-semibold">{getFormattedDate(date)}</time> · {readingTime} min
+      read
     </p>
-    <p
-      class="mb-6 text-base leading-relaxed text-gray-600 dark:text-gray-400 grow"
-    >
+    <p class="mb-6 text-base leading-relaxed text-gray-600 dark:text-gray-400 grow">
       {excerpt}...
     </p>
     <div

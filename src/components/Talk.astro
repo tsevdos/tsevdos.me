@@ -1,19 +1,10 @@
 ---
 import { getTalksFormattedDate } from "../lib/helpers";
+import { type CollectionEntry } from "astro:content";
 
-type Props = {
-  id: string;
-  title: string;
-  date: string;
-  event: string;
-  eventLink?: string;
-  video: {
-    videoId: string;
-  };
-  slidesLink?: string;
-};
+type TalkProps = CollectionEntry<"talks">["data"] & { id: string };
 
-const { id, video, title, date, eventLink, event, slidesLink } = Astro.props;
+const { id, video, title, date, eventLink, event, slidesLink } = Astro.props as TalkProps;
 ---
 
 <article class="flex flex-col overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800">
