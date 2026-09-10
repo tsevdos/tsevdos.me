@@ -27,4 +27,17 @@ const talks = defineCollection({
   }),
 });
 
-export const collections = { posts, talks };
+const projects = defineCollection({
+  loader: glob({ pattern: ["**/*.md", "**/*.mdx"], base: "./src/content/projects" }),
+  schema: z.object({
+    id: z.coerce.number(),
+    title: z.string(),
+    type: z.enum(["npm package", "web app", "jquery plugin", "wordpress theme"]),
+    homepage: z.url().optional(),
+    repo: z.url(),
+    image: z.string(),
+    status: z.enum(["active", "Help wanted!", "Deprecated...", "Abandonware"]),
+  }),
+});
+
+export const collections = { posts, talks, projects };

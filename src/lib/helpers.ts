@@ -72,7 +72,7 @@ export const getAllPostsFromCategory = async (category: string) => {
   return allPosts.filter((post) => post.data.category.toLowerCase() === category).sort(sortByDate);
 };
 
-export const getPageFromCollection = <T extends "posts" | "talks">(
+export const getPageFromCollection = <T extends "posts" | "talks" | "projects">(
   entries: CollectionEntry<T>[],
   pageNum: number,
 ): CollectionEntry<T>[] => entries.slice((pageNum - 1) * POSTS_PER_PAGE, pageNum * POSTS_PER_PAGE);
@@ -119,4 +119,11 @@ export const getPageUrl = (pageNum: number, category?: string, basePath = "/blog
   }
 
   return pageNum === 1 ? basePath : `${basePath}/page/${pageNum}`;
+};
+
+// Projects
+export const getAllProjectsSorted = async () => {
+  const projects = await getCollection("projects");
+
+  return projects.sort((a, b) => a.data.id - b.data.id);
 };

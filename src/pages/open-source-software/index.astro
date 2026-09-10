@@ -1,0 +1,57 @@
+---
+import { render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.tsx";
+import Footer from "../../components/Footer.astro";
+import Project from "../../components/Project.astro";
+import { getAllProjectsSorted, getPageFromCollection } from "../../lib/helpers";
+
+const sortedProjects = await getAllProjectsSorted();
+const pageProjects = getPageFromCollection<"projects">(sortedProjects, 1);
+const projectsWithContent = await Promise.all(
+  pageProjects.map(async (project) => {
+    const { Content } = await render(project);
+    return { ...project, Content };
+  }),
+);
+const { href } = Astro.url;
+---
+
+<Layout title="Open Source Software" description="My Open Source Software projects" url={href}>
+  <Header client:load />
+
+  <div class="container mx-auto px-4 py-8 sm:px-6 md:py-12 lg:px-8 xl:max-w-7xl">
+    <header class="mb-8">
+      <h1
+        class="mb-3 text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-black dark:text-white"
+      >
+        Open Source Software 🤝
+      </h1>
+      <h2 class="text-xl sm:text-2xl font-medium leading-relaxed text-gray-700 dark:text-gray-300">
+        I code stuff
+      </h2>
+    </header>
+
+    <!-- Projects  -->
+    <div class="grid gap-4 lg:grid-cols-2 lg:gap-8">
+      {
+        projectsWithContent.map(
+          ({ Content, data: { title, type, homepage, repo, status, image } }) => (
+            <Project
+              title={title}
+              type={type}
+              image={image}
+              homepage={homepage}
+              repo={repo}
+              status={status}
+            >
+              <Content />
+            </Project>
+          ),
+        )
+      }
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
