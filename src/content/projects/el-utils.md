@@ -8,4 +8,4 @@ image: npm.webp
 status: Help wanted!
 ---
 
-A library of convenient, easy-to-use, and lightweight utility functions that solve common problems encountered while building Greek (and not only) applications.
+elUtils is a zero-dependency, strongly typed TypeScript library for common application tasks, with modules covering Greek and international geolocation data, validation, dates, formatting, and language utilities. Its tree-shakeable functions make it practical for applications that need focused helpers without bringing in a larger framework.

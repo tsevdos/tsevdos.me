@@ -16,11 +16,15 @@ const isDeprecatedOrAbandonware = ["Deprecated...", "Abandonware"].includes(stat
 
 <div class="relative">
     <div
-        class="h-full flex flex-col justify-between overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800 dark:text-gray-100"
+        class="group relative flex h-full flex-col justify-between overflow-hidden rounded-lg bg-white shadow-md transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:scale-100 dark:bg-gray-800 dark:text-gray-100 dark:shadow-black/30 dark:hover:shadow-black/50"
     >
         <div>
-            <div>
-                <Image src={getProjectImage(image)} alt={`${title} ${type}`} />
+            <div class="overflow-hidden">
+                <Image
+                    src={getProjectImage(image)}
+                    alt={`${title} ${type}`}
+                    class="transition-transform duration-300 ease-out group-hover:scale-110 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                />
             </div>
 
             <div class="grow p-5">

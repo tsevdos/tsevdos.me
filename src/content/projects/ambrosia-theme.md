@@ -1,5 +1,5 @@
 ---
-id: 06
+id: 07
 title: Ambrosia theme
 type: wordpress theme
 homepage: https://wordpress.org/themes/ambrosia/
@@ -8,4 +8,4 @@ image: ambrosia-theme.png
 status: Abandonware
 ---
 
-A modern, minimalistic, accessible, super clean, WP theme built with the latest W3C standards (HTML5 and CSS3).
+Ambrosia is a lightweight, modern WordPress theme built around responsive HTML5 and CSS3 markup. It combines a clean layout with custom menus, multiple widget areas, threaded comments, sticky posts, translation support, and accessibility-minded standards, making it a flexible theme for content-focused sites.

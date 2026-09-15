@@ -1,5 +1,5 @@
 ---
-id: 04
+id: 05
 title: Greek in Tech
 type: web app
 homepage: https://greekintech.com
@@ -8,4 +8,4 @@ image: greekintech.png
 status: Help wanted!
 ---
 
-A single-page application (SPA) that displays greek words we use in technology. Check out how many they are!
+Greek in Tech explores the Greek language and mythology behind words used in modern computing and software engineering. The project provides a browsable collection of entries with definitions, categories, and references, alongside an npm package with all entries plus helpers for selecting a random term or retrieving one by ID.
