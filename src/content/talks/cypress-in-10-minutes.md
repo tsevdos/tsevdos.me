@@ -1,5 +1,6 @@
 ---
 title: Cypress in 10 minutes
+type: presentation
 date: "2018-09-01"
 event: "Ministry of Testing Athens Meetup #3, Orange Grove, Athens, Greece"
 eventLink: https://www.meetup.com/Ministry-of-Testing-Athens/events/254284563/

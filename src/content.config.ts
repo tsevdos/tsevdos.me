@@ -16,14 +16,18 @@ const talks = defineCollection({
   loader: glob({ pattern: ["**/*.md", "**/*.mdx"], base: "./src/content/talks" }),
   schema: z.object({
     title: z.string(),
+    type: z.enum(["workshop", "presentation"]),
     date: z.string(),
     event: z.string(),
     eventLink: z.string().optional(),
+    image: z.string().optional(),
     video: z.object({
       platform: z.string(),
       videoId: z.string(),
-    }),
+    }).optional(),
     slidesLink: z.string().optional(),
+  }).refine(({ video, image }) => video || image, {
+    message: "Each talk must provide either a video or an image.",
   }),
 });
 

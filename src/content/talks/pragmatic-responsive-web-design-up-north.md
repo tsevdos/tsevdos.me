@@ -1,5 +1,6 @@
 ---
 title: Pragmatic Responsive Web Design
+type: presentation
 date: "2012-12-01"
 event: UpNorth web conference, Thessaloniki, Greece
 # eventLink:

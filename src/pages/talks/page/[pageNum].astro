@@ -1,5 +1,4 @@
 ---
-import { render } from "astro:content";
 import type { GetStaticPaths } from "astro";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.tsx";
@@ -12,6 +11,7 @@ import {
   getPageFromCollection,
   getCollectionsStaticPaths,
   getPagination,
+  getTalksWithExcerpts,
 } from "../../../lib/helpers";
 
 export const getStaticPaths = (async () => {
@@ -33,12 +33,7 @@ const { sortedTalks } = Astro.props;
 const pageNumInt = parseInt(pageNum ?? "1", 10);
 const totalTalks = sortedTalks.length;
 const pageTalks = getPageFromCollection<"talks">(sortedTalks, pageNumInt);
-const talksWithContent = await Promise.all(
-  pageTalks.map(async (talk) => {
-    const { Content } = await render(talk);
-    return { ...talk, Content };
-  }),
-);
+const talksWithExcerpts = getTalksWithExcerpts(pageTalks);
 const { currentPage, noOfPages } = getPagination(pageNumInt, totalTalks);
 ---
 
@@ -51,9 +46,7 @@ const { currentPage, noOfPages } = getPagination(pageNumInt, totalTalks);
 
   <div class="container mx-auto px-4 py-8 sm:px-6 md:py-12 lg:px-8 xl:max-w-7xl">
     <header class="mb-8">
-      <h1
-        class="mb-3 text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-black dark:text-white"
-      >
+      <h1 class="mb-3 text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-black dark:text-white">
         Talks 🥳
       </h1>
       <h2 class="text-xl sm:text-2xl font-medium leading-relaxed text-gray-700 dark:text-gray-300">
@@ -63,23 +56,23 @@ const { currentPage, noOfPages } = getPagination(pageNumInt, totalTalks);
 
     <!-- Talks -->
     <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
-      {
-        talksWithContent.map(
-          ({ id, Content, data: { title, eventLink, date, event, video, slidesLink } }) => (
-            <Talk
-              id={id}
-              title={title}
-              date={date}
-              event={event}
-              eventLink={eventLink}
-              video={video}
-              slidesLink={slidesLink}
-            >
-              <Content />
-            </Talk>
-          ),
-        )
-      }
+      {talksWithExcerpts.map(
+        ({ id, excerpt, data: { title, type, eventLink, date, event, video, image, slidesLink } }) => (
+          <Talk
+            id={id}
+            title={title}
+            type={type}
+            date={date}
+            event={event}
+            eventLink={eventLink}
+            video={video}
+            image={image}
+            slidesLink={slidesLink}
+          >
+            <p>{excerpt}...</p>
+          </Talk>
+        ),
+      )}
     </div>
     <!-- END Talks -->
 

@@ -1,5 +1,6 @@
 ---
 title: Drupal Tips 'n Tricks
+type: presentation
 date: "2010-09-01"
 event: DrupalCamp conference, Athens, Greece
 # eventLink:
