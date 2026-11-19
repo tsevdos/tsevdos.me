@@ -1,5 +1,6 @@
 ---
 title: Software Development and Testing - Career and Training Meetup
+type: presentation
 date: "2024-10-08"
 event: Hellenic American Union Theater, Athens, Greece
 eventLink: https://www.hau.gr/en-us/training/events/2024/software-development-and-testing-new-seminars

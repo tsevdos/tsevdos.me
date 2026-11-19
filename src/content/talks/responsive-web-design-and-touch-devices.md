@@ -1,5 +1,6 @@
 ---
 title: Responsive Web Design and touch devices
+type: presentation
 date: "2013-06-01"
 event: JoomlaDay conference, Athens, Greece
 # eventLink:

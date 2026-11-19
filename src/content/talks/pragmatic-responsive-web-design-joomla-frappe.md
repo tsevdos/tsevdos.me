@@ -1,5 +1,6 @@
 ---
 title: Pragmatic Responsive Web Design
+type: presentation
 date: "2013-03-01"
 event: JoomlaFrappe conference, Athens, Greece
 # eventLink:

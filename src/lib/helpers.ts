@@ -1,5 +1,11 @@
 import { getCollection, type CollectionEntry } from "astro:content";
+import type { ImageMetadata } from "astro";
 import { NO_OF_WORDS_IN_EXCERPT, POSTS_PER_PAGE, WORDS_PER_MINUTE } from "./constants";
+
+const talkImages = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/talks/*.{png,jpg,jpeg,webp}",
+  { eager: true },
+);
 
 const range = (start: number, stop: number, step: number) =>
   Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step);
@@ -102,6 +108,28 @@ export const getAllTalksSorted = async () => {
   const talks = await getCollection("talks");
 
   return talks.sort(sortByDate);
+};
+
+export const getTalksWithExcerpts = (talks: CollectionEntry<"talks">[]) =>
+  talks.map((talk) => {
+    const plainText = stripMdxToPlainText(talk.body);
+    const excerpt = plainText.split(/\s+/).slice(0, NO_OF_WORDS_IN_EXCERPT).join(" ");
+
+    return { excerpt, ...talk };
+  });
+
+export const getTalkImage = (imageName: string, useThumbnail = false) => {
+  const imagePath = `../assets/talks/${imageName}`;
+  const thumbnailPath = imagePath.replace(/(\.[^.]+)$/, "-thumb$1");
+  const image = useThumbnail
+    ? (talkImages[thumbnailPath] ?? talkImages[imagePath])
+    : talkImages[imagePath];
+
+  if (!image) {
+    throw new Error(`Talk image "${imageName}" was not found in src/assets/talks.`);
+  }
+
+  return image.default;
 };
 
 // Pagination

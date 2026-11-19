@@ -1,5 +1,6 @@
 ---
 title: "React Without Surprises: Building Predictable Applications - Workshop Intro"
+type: presentation
 date: "2026-06-25"
 event: "React Athens MeetUp #12, Agile Actors, Athens, Greece"
 eventLink: https://www.meetup.com/react-athens-meetup/events/315114982/

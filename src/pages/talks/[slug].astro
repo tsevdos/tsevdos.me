@@ -4,7 +4,8 @@ import { getEntry, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer.astro";
-import { getAllTalksSorted, getTalksFormattedDate } from "../../lib/helpers";
+import { Image } from "astro:assets";
+import { getAllTalksSorted, getTalkImage, getTalksFormattedDate } from "../../lib/helpers";
 
 export const getStaticPaths = (async () => {
   const sortedTalks = await getAllTalksSorted();
@@ -25,8 +26,7 @@ if (!talk) {
 }
 
 const { Content } = await render(talk);
-const { title, eventLink, date, event, video, slidesLink } = talk.data;
-const { videoId } = video;
+const { title, eventLink, date, event, video, image, slidesLink } = talk.data;
 ---
 
 <Layout title={`Public Speaking - ${title}`} description={`Public Speaking - ${title}`} url={href}>
@@ -58,15 +58,25 @@ const { videoId } = video;
       </p>
     </header>
 
-    <div class="mb-8 md:mb-12">
-      <iframe
-        class="w-full aspect-video"
-        title={title}
-        src={`https://www.youtube.com/embed/${videoId}`}
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-        loading="lazy"></iframe>
-    </div>
+    {
+      video ? (
+        <div class="mb-8 md:mb-12">
+          <iframe
+            class="w-full aspect-video"
+            title={title}
+            src={`https://www.youtube.com/embed/${video.videoId}`}
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            loading="lazy"></iframe>
+        </div>
+      ) : (
+        image && (
+          <div class="mb-8 md:mb-12">
+            <Image src={getTalkImage(image)} alt={title} class="w-full rounded-lg shadow-md" />
+          </div>
+        )
+      )
+    }
 
     <article
       class="max-w-none prose prose-base md:prose-lg lg:prose-xl dark:prose-invert prose-headings:font-bold prose-headings:tracking-tight prose-a:text-blue-600 prose-a:no-underline prose-a:hover:text-blue-400 prose-a:transition-colors dark:prose-a:text-blue-400 dark:prose-a:hover:text-blue-300 prose-img:rounded-lg prose-img:shadow-md prose-pre:bg-gray-900 prose-pre:shadow-lg dark:prose-pre:bg-gray-950"
@@ -100,26 +110,30 @@ const { videoId } = video;
           </a>
         )
       }
-      <a
-        href={`https://www.youtube.com/watch?v=${videoId}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
-      >
-        <span>YouTube Video</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 16 16"
-          fill="currentColor"
-          class="inline-block size-4"
-          aria-hidden="true"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm-.847-9.766A.75.75 0 0 0 6 5.866v4.268a.75.75 0 0 0 1.153.633l3.353-2.134a.75.75 0 0 0 0-1.266L7.153 5.234Z"
-            clip-rule="evenodd"></path>
-        </svg>
-      </a>
+      {
+        video && (
+          <a
+            href={`https://www.youtube.com/watch?v=${video.videoId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center justify-center gap-2 rounded-lg border border-blue-700 bg-blue-700 px-7 py-3.5 text-sm font-semibold text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400/50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400/90"
+          >
+            <span>YouTube Video</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="inline-block size-4"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm-.847-9.766A.75.75 0 0 0 6 5.866v4.268a.75.75 0 0 0 1.153.633l3.353-2.134a.75.75 0 0 0 0-1.266L7.153 5.234Z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        )
+      }
     </div>
   </div>
 
